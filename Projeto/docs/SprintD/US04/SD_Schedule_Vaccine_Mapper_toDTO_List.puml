@@ -1,0 +1,42 @@
+@startuml
+autonumber
+
+title
+<u>SD_SCHEDULE_VACCINE_MAPPER_TODTO_LIST</u>
+end title
+
+participant "svMapper:\nScheduleVaccineMapper" as SVM
+participant "listSV:\nList<ScheduleVaccine>" as LSV
+participant "listSVDto:\nList<ScheduleVaccineDto>" as LSVD
+participant "sv:\nScheduleVaccine" as SV
+participant "svDto:\nScheduleVaccineDto" as SVD
+
+[o-> SVM : toListDTO(listSV)
+activate SVM
+SVM --> LSVD** : create()
+
+loop foreach object in listSV
+
+SVM -> LSV : sv = get(i)
+activate LSV
+deactivate LSV
+
+SVM -> SV : date = getDate()
+activate SV
+deactivate SV
+
+SVM -> SV : time = getTime()
+activate SV
+deactivate SV
+
+SVM --> SVD** : create(date, time)
+
+SVM -> LSVD : add(svDto)
+activate LSVD
+deactivate LSVD
+
+end loop
+
+<-- SVM : listSVDto
+deactivate SVM
+@enduml

@@ -1,0 +1,30 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_Change_Sort_Order</u>
+end title
+
+participant ":\nImportManageCenterDataController" as controller
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+
+[o-> lSFStore : changeSortOrder(order)
+activate lSFStore
+    lSFStore -> lSFStore : validateOrder(order)
+    activate lSFStore
+    deactivate lSFStore
+    opt In case the chosen order isn't the actual order
+        lSFStore -> lSFStore : setOrder(order)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : reverse(lSFList)
+        activate lSFStore
+        deactivate lSFStore
+    end
+deactivate lSFStore
+
+
+@enduml

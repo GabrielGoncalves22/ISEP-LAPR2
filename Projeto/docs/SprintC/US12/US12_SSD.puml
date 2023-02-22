@@ -1,0 +1,22 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : starts specifying a new vaccine type
+activate ":System"
+":System" --> OE : request data (code, description, technology)
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows the data and requests a confirmation
+deactivate ":System"
+
+OE -> ":System" : confirms the data
+activate ":System"
+":System" --> OE : informs operation success
+deactivate ":System"
+deactivate OE
+
+@enduml

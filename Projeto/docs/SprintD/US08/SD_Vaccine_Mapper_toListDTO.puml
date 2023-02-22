@@ -1,0 +1,39 @@
+@startuml
+autonumber
+
+title
+<u>SD_VACCINE_MAPPER_TOLISTDTO</u>
+end title
+
+participant "vMapper:\nVaccineMapper" as VM
+participant ":\nVaccineMapper" as VM
+participant "listV:\nList<Vaccine>" as LV
+participant "listVDto:\nList<VaccineDTO>" as LVD
+participant "v:\nVaccine" as V
+participant "vDto:\nVaccineDTO" as VD
+
+[o-> VM : toListDTO(listV)
+activate VM
+VM --> LVD** : create()
+
+loop foreach object in listV
+
+VM -> LV : v = get(i)
+activate LV
+deactivate LV
+
+VM -> VM : vDto = toDTO(v)
+activate VM
+VM --> VD** : create()
+
+deactivate VM
+
+VM -> LVD : add(vDto)
+activate LVD
+deactivate LVD
+
+end loop
+
+<-- VM : listVDto
+deactivate VM
+@enduml

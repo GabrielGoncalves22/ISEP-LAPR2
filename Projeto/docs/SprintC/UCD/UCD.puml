@@ -1,0 +1,97 @@
+@startuml
+left to right direction
+
+:SNS User: as snsUser
+:Nurse: as nurse
+:Administrator: as admin
+:Receptionist: as receptionist
+:Center Coordinator: as centerCoordinator
+
+package System {
+    'US1 - Sprint C
+    usecase "UC01: Schedule a vaccine" as UC1
+    'US2 - Sprint C
+    usecase "UC02: Schedule a vaccination" as UC2
+    'US3 - Sprint B
+    usecase "UC03: Register SNS user" as UC3
+    'US4 - Sprint C
+    usecase "UC04: Register the SNS user arrival" as UC4
+    'US5 - Sprint C
+    usecase "UC05: Consult the users in the waiting room" as UC5
+    usecase "UC06: Consult the patient information sheet for instructions on the vaccine to be administered" as UC6
+    usecase "UC07: Register the vaccine administration to the user" as UC7
+    usecase "UC08: Register adverse reactions to the vaccine" as UC8
+    'US9 - Sprint B
+    usecase "UC09: Register vaccination center" as UC9
+    'US10 - Sprint B
+    usecase "UC10: Register employee" as UC10
+    'US11 - Sprint B
+    usecase "UC11: List employees" as UC11
+    'US12 - Sprint B
+    usecase "UC12: Register vaccine type" as UC12
+    'US13 - Sprint B
+    usecase "UC13: Register vaccine and its administration process" as UC13
+    'US14 - Sprint C
+    usecase "UC14: Load a set of users from a CSV file" as UC14
+    usecase "UC15: Request the issuance of the certificate" as UC15
+    usecase "UC16: Visualise the vaccination process" as UC16
+    usecase "UC17: Evaluate vaccination process" as UC17
+    'US18 - Sprint C
+    usecase "UC18: List of all vaccines" as UC18
+    usecase "UC19: Analyse the data from other centres" as UC19
+    usecase "UC20: Visualize the stats and graphs" as UC20
+    usecase "UC21: To generate reports" as UC21
+
+
+}
+
+'------- Project Requirements --------
+
+'US1 - Sprint C
+snsUser -- UC1
+
+'US2 - Sprint C
+receptionist -- UC2
+'US3 - Sprint B
+receptionist -- UC3
+'US4 - Sprint C
+receptionist -- UC4
+
+'US5 - Sprint C
+nurse -- UC5
+
+'US9 - Sprint B
+admin -- UC9
+'US10 - Sprint B
+admin -- UC10
+'US11 - Sprint B
+admin -- UC11
+'US12 - Sprint B
+admin -- UC12
+'US13 - Sprint B
+admin -- UC13
+'US14 - Sprint C
+admin -- UC14
+
+'US18 - Sprint C
+centerCoordinator -- UC18
+
+'--------------------------
+
+'------- Other UCs identified --------
+
+nurse -- UC6
+nurse -- UC7
+nurse -- UC8
+
+snsUser -- UC15
+
+centerCoordinator -- UC16
+centerCoordinator -- UC17
+centerCoordinator -- UC19
+centerCoordinator -- UC20
+centerCoordinator -- UC21
+
+'--------------------------
+
+@enduml

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="628px" preserveAspectRatio="none" style="width:339px;height:628px;background:#FFFFFF;" version="1.1" viewBox="0 0 339 628" width="339px" zoomAndPan="magnify"><defs/><g><!--MD5=[01435ace8273dc3cae88e7f376e4d373]
+cluster core--><g id="cluster_core"><path d="M8.5,161 L41.5,161 A3.75,3.75 0 0 1 44,163.5 L51,184.6094 L329.5,184.6094 A2.5,2.5 0 0 1 332,187.1094 L332,618.5 A2.5,2.5 0 0 1 329.5,621 L8.5,621 A2.5,2.5 0 0 1 6,618.5 L6,163.5 A2.5,2.5 0 0 1 8.5,161 " style="stroke:#000000;stroke-width:1.5;fill:none;"/><line style="stroke:#000000;stroke-width:1.5;fill:none;" x1="6" x2="51" y1="184.6094" y2="184.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="32" x="10" y="177.5332">core</text></g><!--MD5=[27f772719433d509ddbc20ff768eba08]
+cluster domain--><g id="cluster_domain"><path d="M90.5,391 L142.5,391 A3.75,3.75 0 0 1 145,393.5 L152,414.6094 L297.5,414.6094 A2.5,2.5 0 0 1 300,417.1094 L300,511.5 A2.5,2.5 0 0 1 297.5,514 L90.5,514 A2.5,2.5 0 0 1 88,511.5 L88,393.5 A2.5,2.5 0 0 1 90.5,391 " style="stroke:#000000;stroke-width:1.5;fill:none;"/><line style="stroke:#000000;stroke-width:1.5;fill:none;" x1="88" x2="152" y1="414.6094" y2="414.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="51" x="92" y="407.5332">domain</text></g><!--MD5=[64e2e010ba86d7988e5cd73bd64f61f9]
+cluster ui--><g id="cluster_ui"><path d="M87.5,6 L101.5,6 A3.75,3.75 0 0 1 104,8.5 L111,29.6094 L293.5,29.6094 A2.5,2.5 0 0 1 296,32.1094 L296,126.5 A2.5,2.5 0 0 1 293.5,129 L87.5,129 A2.5,2.5 0 0 1 85,126.5 L85,8.5 A2.5,2.5 0 0 1 87.5,6 " style="stroke:#000000;stroke-width:1.5;fill:none;"/><line style="stroke:#000000;stroke-width:1.5;fill:none;" x1="85" x2="111" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="13" x="89" y="22.5332">ui</text></g><path d="M220.5,435 L259.5,435 A3.75,3.75 0 0 1 262,437.5 L269,458.6094 L273.5,458.6094 A2.5,2.5 0 0 1 276,461.1094 L276,487.7188 A2.5,2.5 0 0 1 273.5,490.2188 L220.5,490.2188 A2.5,2.5 0 0 1 218,487.7188 L218,437.5 A2.5,2.5 0 0 1 220.5,435 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="218" x2="269" y1="458.6094" y2="458.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="38" x="222" y="451.5332">model</text><path d="M133.5,435 L166.5,435 A3.75,3.75 0 0 1 169,437.5 L176,458.6094 L180.5,458.6094 A2.5,2.5 0 0 1 183,461.1094 L183,487.7188 A2.5,2.5 0 0 1 180.5,490.2188 L133.5,490.2188 A2.5,2.5 0 0 1 131,487.7188 L131,437.5 A2.5,2.5 0 0 1 133.5,435 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="131" x2="176" y1="458.6094" y2="458.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="32" x="135" y="451.5332">store</text><path d="M61.5,312 L110.5,312 A3.75,3.75 0 0 1 113,314.5 L120,335.6094 L124.5,335.6094 A2.5,2.5 0 0 1 127,338.1094 L127,364.7188 A2.5,2.5 0 0 1 124.5,367.2188 L61.5,367.2188 A2.5,2.5 0 0 1 59,364.7188 L59,314.5 A2.5,2.5 0 0 1 61.5,312 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="59" x2="120" y1="335.6094" y2="335.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="63" y="328.5332">mapper</text><path d="M42.5,550 L63.5,550 A3.75,3.75 0 0 1 66,552.5 L73,573.6094 L77.5,573.6094 A2.5,2.5 0 0 1 80,576.1094 L80,602.7188 A2.5,2.5 0 0 1 77.5,605.2188 L42.5,605.2188 A2.5,2.5 0 0 1 40,602.7188 L40,552.5 A2.5,2.5 0 0 1 42.5,550 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="40" x2="73" y1="573.6094" y2="573.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="44" y="566.5332">dto</text><path d="M56,197 L116,197 A3.75,3.75 0 0 1 118.5,199.5 L125.5,220.6094 L130,220.6094 A2.5,2.5 0 0 1 132.5,223.1094 L132.5,249.7188 A2.5,2.5 0 0 1 130,252.2188 L56,252.2188 A2.5,2.5 0 0 1 53.5,249.7188 L53.5,199.5 A2.5,2.5 0 0 1 56,197 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="53.5" x2="125.5" y1="220.6094" y2="220.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="57.5" y="213.5332">controller</text><path d="M205,50 L255,50 A3.75,3.75 0 0 1 257.5,52.5 L264.5,73.6094 L269,73.6094 A2.5,2.5 0 0 1 271.5,76.1094 L271.5,102.7188 A2.5,2.5 0 0 1 269,105.2188 L205,105.2188 A2.5,2.5 0 0 1 202.5,102.7188 L202.5,52.5 A2.5,2.5 0 0 1 205,50 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="202.5" x2="264.5" y1="73.6094" y2="73.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="49" x="206.5" y="66.5332">console</text><path d="M131,50 L151,50 A3.75,3.75 0 0 1 153.5,52.5 L160.5,73.6094 L165,73.6094 A2.5,2.5 0 0 1 167.5,76.1094 L167.5,102.7188 A2.5,2.5 0 0 1 165,105.2188 L131,105.2188 A2.5,2.5 0 0 1 128.5,102.7188 L128.5,52.5 A2.5,2.5 0 0 1 131,50 " fill="#F1F1F1" style="stroke:#181818;stroke-width:0.5;"/><line style="stroke:#181818;stroke-width:0.5;" x1="128.5" x2="160.5" y1="73.6094" y2="73.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="132.5" y="66.5332">gui</text><!--MD5=[6039f7d15f55a216370d1daf26142be4]
+link ui to controller--><g id="link_ui_controller"><path d="M93,129.4057 C93,132.3715 93,135.3904 93,138.4399 C93,144.5388 93,150.7602 93,156.9241 C93,169.2519 93,181.35 93,191.78 " fill="none" id="ui-to-controller" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="93,196.98,97,187.98,93,191.98,89,187.98,93,196.98" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[f4db482f32edd77abe30d6b96ed6334c]
+link controller to domain--><g id="link_controller_domain"><path d="M114.23,252.16 C125.8,268.43 138.96,290.22 145,312 C151.54,335.55 159.89,347.62 145,367 C136.59,377.94 124.54,365.03 115,375 C111.705,378.4438 108.9294,382.3219 106.5957,386.4787 C106.0122,387.5179 105.4564,388.5745 104.927,389.6461 C104.7947,389.914 104.664,390.1828 104.5349,390.4526 C104.4704,390.5874 104.4063,390.7225 104.3425,390.8578 " fill="none" id="controller-to-domain" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="104.3425,390.8578,111.7957,384.4196,106.4727,386.3343,104.5581,381.0113,104.3425,390.8578" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[95af60e6d793701562f73311d2ec55eb]
+link controller to dto--><g id="link_controller_dto"><path d="M71.77,252.16 C60.2,268.43 47.04,290.22 41,312 C18.39,393.49 38.01,494.22 50.9,544.62 " fill="none" id="controller-to-dto" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="52.2,549.63,53.8103,539.9137,50.9437,544.7904,46.067,541.9238,52.2,549.63" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[0debf692dbcdfac11f15bbe1559bdbdf]
+link controller to mapper--><g id="link_controller_mapper"><path d="M93,252.28 C93,268.6 93,289.56 93,306.72 " fill="none" id="controller-to-mapper" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="93,311.91,97,302.91,93,306.91,89,302.91,93,311.91" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[dd712a83684d45c2d6098647f34cdc3e]
+link mapper to domain--><g id="link_mapper_domain"><path d="M93.66,367.05 C93.7663,371.3638 93.8811,376.0178 94.0009,380.8665 C94.0608,383.2908 94.1219,385.7639 94.1839,388.2673 C94.1994,388.8932 94.2149,389.5209 94.2305,390.1503 C94.2344,390.3077 94.2382,390.4651 94.2421,390.6227 " fill="none" id="mapper-to-domain" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="94.2421,390.6227,98.0183,381.5265,94.1185,385.6242,90.0207,381.7244,94.2421,390.6227" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[868a81ec62f7ffb5c8ad3d4c697bcfae]
+link mapper to dto--><g id="link_mapper_dto"><path d="M82.22,367.03 C81.37,369.69 80.61,372.38 80,375 C66.25,433.81 61.95,504.42 60.61,544.52 " fill="none" id="mapper-to-dto" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="60.44,549.73,64.7207,540.8601,60.5971,544.7325,56.7247,540.6088,60.44,549.73" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[7c93149738b86cc6ff2d6206bb3856af]
+link domain to dto--><g id="link_domain_dto"><path d="M95.8083,514.3415 C95.7899,514.4557 95.7713,514.5699 95.7526,514.684 C95.7151,514.9123 95.6769,515.1406 95.6381,515.3686 C95.5605,515.8248 95.4802,516.2804 95.3971,516.7353 C95.2308,517.6451 95.0535,518.552 94.8646,519.4548 C94.1087,523.0659 93.1662,526.61 92,530 C89.87,536.2 86.66,542.34 83.09,548.02 " fill="none" id="domain-to-dto" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="80.3,552.28,88.5996,546.9774,83.057,548.1088,81.9256,542.5662,80.3,552.28" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[473b5982910e355582a12fc24bb95109]
+@startuml
+
+package core {
+    package domain {
+        package model {
+        }
+        package store {
+        }
+    }
+
+    package mapper {
+    }
+
+    package dto {
+    }
+
+    package controller {
+    }
+}
+
+package ui {
+    package console {
+    }
+
+    package gui {
+    }
+}
+
+ui ..> controller
+
+controller ..> domain
+controller ..> dto
+controller ..> mapper
+
+mapper ..> domain
+mapper ..> dto
+
+domain ..> dto
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

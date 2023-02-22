@@ -1,0 +1,64 @@
+@startuml
+autonumber
+actor "Administrator" as ADM
+
+participant ":SpecifyNew \n VaccineTypeUI" as UI
+participant ":SpecifyNew \n VaccineTypeController" as CTRL
+participant ":Company" as CMP
+participant "store: VaccineTypeStore" as VTS
+participant "vt:VaccineType" as VT
+
+activate ADM
+ADM -> UI : starts specifying a new vaccine type
+activate UI
+UI --> ADM : request data(code, description, technology)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+
+UI -> CTRL : createVaccineType(code, description, technology)
+activate CTRL
+
+CTRL -> CMP : store = getVaccineTypeStore()
+activate CMP
+deactivate CMP
+
+CTRL -> VTS : vt = createVaccineType(code, description, technology)
+activate VTS
+VTS --> VT** : create(code, description, technology)
+deactivate VTS
+
+CTRL -> VTS : validateVaccineType(vt)
+activate VTS
+deactivate VTS
+
+deactivate CMP
+deactivate CTRL
+
+UI --> ADM : shows the data and requests a confirmation
+deactivate UI
+
+ADM -> UI : confirms the data
+activate UI
+UI -> CTRL : saveVaccineType()
+activate CTRL
+
+CTRL -> VTS : saveVaccineType(vt)
+activate VTS
+
+VTS -> VTS: validateVaccineType(vt)
+activate VTS
+deactivate VTS
+|||
+VTS -> VTS: addVaccineType(vt)
+activate VTS
+deactivate VTS
+
+deactivate VTS
+deactivate CTRL
+UI --> ADM : informs operation success
+deactivate UI
+deactivate ADM
+
+@enduml

@@ -1,0 +1,169 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+package core {
+    package domain {
+        package model {
+            class Company {
+                +getVaccinationCenterStore()
+                +getSNSUserStore()
+                +getVaccinationScheduleStore()
+                +getArrivalSNSUserStore()
+            }
+
+            class ArrivalSNSUser {
+                -waitingRoom
+                +ArrivalSNSUser(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+            }
+
+            class SNSUser {
+                -name
+                -address
+                -sex
+                -phoneNumber
+                -email
+                -birthDate
+                -snsUserNumber
+                -citizenCardNumber
+                +SNSUser(name, address, sex, phoneNumber, email, \nbirthDate, snsUserNumber, citizenCardNumber)
+            }
+
+            class VaccinationCenter {
+                -name
+                -address
+                -phoneNumber
+                -email
+                -faxNumber
+                -website
+                -openingHours
+                -closingHours
+                -slotDuration
+                -slotVaccineLimit
+                {static} -numberVaccinationCenters
+                +VaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+            }
+
+            class Date {
+                -year
+                -month
+                -day
+                +Date(year, month, day)
+                {static} +currentDate()
+            }
+
+            class Time {
+                -hours
+                -minutes
+                -seconds
+                +Time(hours, minutes, seconds)
+                -checkHours(hours)
+                -checkMinutes(minutes)
+                -checkSeconds(seconds)
+                {static} +currentTime()
+            }
+
+
+            class ScheduleVaccine {
+                +ScheduleVaccine(snsUser, vaccinationCenter, date, time, vaccineType)
+                +getDate()
+                +getTime()
+            }
+        }
+
+        package store {
+            class ArrivalSNSUserStore {
+                +createArrivalSNSUser(auDto)
+                +validateArrivalSNSUser(au)
+                +checkDuplicates(au)
+                +saveArrivalSNSUser(au)
+                -addArrivalSNSUser(au)
+            }
+
+            class SNSUserStore {
+                +getSNSUser(snsUserNumber)
+            }
+
+            class VaccinationCenterStore {
+                +getVaccinationCenterStore(vcId)
+            }
+
+            class ScheduleVaccineStore {
+                +getVaccinationScheduleListSNSUser(su, vc)
+            }
+        }
+    }
+
+    package mapper {
+        class ArrivalSNSUserMapper {
+            +toModel(auDTO)
+        }
+
+        class ScheduleVaccineMapper {
+            +toListDTO(listSV)
+        }
+    }
+
+    package dto {
+        class ArrivalSNSUserDTO {
+            -snsUser
+            -arrivalDate
+            -arrivalTime
+            -vaccinationCenter
+            -waitingRoom
+            +ArrivalSNSUserDTO(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+            +getSnsUser()
+            +getArrivalDate()
+            +getArrivalTime()
+            +getVaccinationCenter()
+        }
+
+        class ScheduleVaccineDTO {
+            -snsUser
+            -vaccinationCenter
+            -date
+            -time
+            -vaccineType
+            +ScheduleVaccineDTO(date, time)
+        }
+    }
+
+    package controller {
+        class RegisterArrivalSNSUserController {
+            +createArrivalSNSUser()
+            +saveArrivalSNSUser()
+            +createSNSUser(snsUserNumber)
+            +getListSNSUserVaccinationSchedule()
+        }
+    }
+}
+
+package ui {
+    class RegisterArrivalSNSUserUI {
+    }
+}
+
+ArrivalSNSUser o-- SNSUser
+ArrivalSNSUser o-- Date
+ArrivalSNSUser o-- Time
+ArrivalSNSUser o-- VaccinationCenter
+
+ScheduleVaccine o-- SNSUser
+ScheduleVaccine o-- Date
+ScheduleVaccine o-- Time
+ScheduleVaccine o-- VaccinationCenter
+
+ui ..> controller
+
+controller ..> domain
+controller ..> dto
+controller ..> mapper
+
+mapper ..> domain
+mapper ..> dto
+
+domain ..> dto
+
+Company "1" -- "1" store : uses >
+
+@enduml

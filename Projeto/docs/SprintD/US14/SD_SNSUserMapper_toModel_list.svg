@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="946px" preserveAspectRatio="none" style="width:801px;height:946px;background:#FFFFFF;" version="1.1" viewBox="0 0 801 946" width="801px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="786.6563" style="stroke:#181818;stroke-width:1.0;" width="10" x="143" y="87.5703"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="281" y="203.4922"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="414" y="806.875"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="263.8438"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="324.1953"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="384.5469"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="444.8984"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="505.25"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="565.6016"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="625.9531"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="686.3047"/><rect height="682.0859" style="stroke:#000000;stroke-width:1.5;fill:none;" width="716" x="79" y="162.7891"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="148" x2="148" y1="55.2188" y2="892.2266"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="286" x2="286" y1="55.2188" y2="892.2266"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="419" x2="419" y1="135.6797" y2="892.2266"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="533" x2="533" y1="55.2188" y2="892.2266"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="750" x2="750" y1="764.4141" y2="892.2266"/><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118" x="89" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="146" y="26.5332">:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="96" y="44.1426">SNSUserMapper</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="118" x="89" y="891.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="146" y="912.7598">:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="96" y="930.3691">SNSUserMapper</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="217" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="262.5" y="26.5332">lSUDto:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="224" y="44.1426">List&lt;SNSUserDTO&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="138" x="217" y="891.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="262.5" y="912.7598">lSUDto:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="224" y="930.3691">List&lt;SNSUserDTO&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108" x="365" y="891.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="406.5" y="912.7598">lSU:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="372" y="930.3691">List&lt;SNSUser&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="483" y="5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="521" y="26.5332">dto:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="490" y="44.1426">SNSUserDTO</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="483" y="891.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="24" x="521" y="912.7598">dto:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="490" y="930.3691">SNSUserDTO</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="715" y="891.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="722.5" y="912.7598">snsUser:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="722" y="930.3691">SNSUser</text><rect fill="#FFFFFF" height="786.6563" style="stroke:#181818;stroke-width:1.0;" width="10" x="143" y="87.5703"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="281" y="203.4922"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="414" y="806.875"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="263.8438"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="324.1953"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="384.5469"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="444.8984"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="505.25"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="565.6016"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="625.9531"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="528" y="686.3047"/><ellipse cx="7.5" cy="86.8203" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/><polygon fill="#181818" points="131,83.5703,141,87.5703,131,91.5703,135,87.5703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="12" x2="137" y1="87.5703" y2="87.5703"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="116" x="15" y="82.7139">toModelList(lSUDto)</text><polygon fill="#181818" points="353,113.9219,363,117.9219,353,121.9219,357,117.9219" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="153" x2="359" y1="117.9219" y2="117.9219"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="44" x="160" y="113.0654">create()</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108" x="365" y="95.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="406.5" y="117.1035">lSU:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="372" y="134.7129">List&lt;SNSUser&gt;</text><path d="M79,162.7891 L152,162.7891 L152,171.1406 L142,181.1406 L79,181.1406 L79,162.7891 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="682.0859" style="stroke:#000000;stroke-width:1.5;" width="716" x="79" y="162.7891"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="28" x="94" y="177.2842">loop</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="141" x="167" y="176.208">[for each object in lSUDto]</text><polygon fill="#181818" points="269,199.4922,279,203.4922,269,207.4922,273,203.4922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="275" y1="203.4922" y2="203.4922"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="63" x="160" y="198.6357">dto = get(i)</text><polygon fill="#181818" points="516,259.8438,526,263.8438,516,267.8438,520,263.8438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="263.8438" y2="263.8438"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="108" x="160" y="258.9873">name = getName()</text><polygon fill="#181818" points="516,320.1953,526,324.1953,516,328.1953,520,324.1953" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="324.1953" y2="324.1953"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="136" x="160" y="319.3389">address = getAddress()</text><polygon fill="#181818" points="516,380.5469,526,384.5469,516,388.5469,520,384.5469" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="384.5469" y2="384.5469"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="86" x="160" y="379.6904">sex = getSex()</text><polygon fill="#181818" points="516,440.8984,526,444.8984,516,448.8984,520,444.8984" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="444.8984" y2="444.8984"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="204" x="160" y="440.042">phoneNumber = getPhoneNumber()</text><polygon fill="#181818" points="516,501.25,526,505.25,516,509.25,520,505.25" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="505.25" y2="505.25"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="106" x="160" y="500.3936">email = getEmail()</text><polygon fill="#181818" points="516,561.6016,526,565.6016,516,569.6016,520,565.6016" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="565.6016" y2="565.6016"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="148" x="160" y="560.7451">birthDate = getBirthDate()</text><polygon fill="#181818" points="516,621.9531,526,625.9531,516,629.9531,520,625.9531" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="625.9531" y2="625.9531"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="160" y="621.0967">snsNumber = getSNSNumber()</text><polygon fill="#181818" points="516,682.3047,526,686.3047,516,690.3047,520,686.3047" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="522" y1="686.3047" y2="686.3047"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="264" x="160" y="681.4482">citizenCardNumber = getCitizenCardNumber()</text><polygon fill="#181818" points="703,742.6563,713,746.6563,703,750.6563,707,746.6563" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="153" x2="709" y1="746.6563" y2="746.6563"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="538" x="160" y="741.7998">create(name, sex, birthDate, address, phoneNumber, email, snsNumber, citizenCardNumber)</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="715" y="724.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="55" x="722.5" y="745.8379">snsUser:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="722" y="763.4473">SNSUser</text><polygon fill="#181818" points="402,802.875,412,806.875,402,810.875,406,806.875" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="153" x2="408" y1="806.875" y2="806.875"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="160" y="802.0186">add(snsUser)</text><polygon fill="#181818" points="11,870.2266,1,874.2266,11,878.2266,7,874.2266" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="5" x2="147" y1="874.2266" y2="874.2266"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="17" y="869.3701">lSU</text><!--MD5=[183279fbfe121107a1b78550a6a0fd08]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":\nSNSUserMapper" as mapper
+participant "lSUDto:\nList<SNSUserDTO>" as lSUDto
+participant "lSU:\nList<SNSUser>" as lSU
+participant "dto:\nSNSUserDTO" as dto
+participant "snsUser:\nSNSUser" as snsUser
+
+
+[o-> mapper : toModelList(lSUDto)
+activate mapper
+
+    mapper - -> lSU** : create()
+
+    loop for each object in lSUDto
+        mapper -> lSUDto : dto = get(i)
+        activate lSUDto
+        deactivate lSUDto
+        mapper -> dto : name = getName()
+        activate dto
+        deactivate dto
+        mapper -> dto : address = getAddress()
+        activate dto
+        deactivate dto
+        mapper -> dto : sex = getSex()
+        activate dto
+        deactivate dto
+        mapper -> dto : phoneNumber = getPhoneNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : email = getEmail()
+        activate dto
+        deactivate dto
+        mapper -> dto : birthDate = getBirthDate()
+        activate dto
+        deactivate dto
+        mapper -> dto : snsNumber = getSNSNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : citizenCardNumber = getCitizenCardNumber()
+        activate dto
+        deactivate dto
+        mapper - -> snsUser** : create(name, sex, birthDate, address, phoneNumber, email, snsNumber, citizenCardNumber)
+        mapper -> lSU : add(snsUser)
+        activate lSU
+        deactivate lSU
+    end
+
+    [<- - mapper : lSU
+
+
+deactivate mapper
+
+@enduml
+
+@startuml
+
+participant ":\nSNSUserMapper" as mapper
+participant "lSUDto:\nList<SNSUserDTO>" as lSUDto
+participant "lSU:\nList<SNSUser>" as lSU
+participant "dto:\nSNSUserDTO" as dto
+participant "snsUser:\nSNSUser" as snsUser
+
+
+[o-> mapper : toModelList(lSUDto)
+activate mapper
+
+    mapper - -> lSU** : create()
+
+    loop for each object in lSUDto
+        mapper -> lSUDto : dto = get(i)
+        activate lSUDto
+        deactivate lSUDto
+        mapper -> dto : name = getName()
+        activate dto
+        deactivate dto
+        mapper -> dto : address = getAddress()
+        activate dto
+        deactivate dto
+        mapper -> dto : sex = getSex()
+        activate dto
+        deactivate dto
+        mapper -> dto : phoneNumber = getPhoneNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : email = getEmail()
+        activate dto
+        deactivate dto
+        mapper -> dto : birthDate = getBirthDate()
+        activate dto
+        deactivate dto
+        mapper -> dto : snsNumber = getSNSNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : citizenCardNumber = getCitizenCardNumber()
+        activate dto
+        deactivate dto
+        mapper - -> snsUser** : create(name, sex, birthDate, address, phoneNumber, email, snsNumber, citizenCardNumber)
+        mapper -> lSU : add(snsUser)
+        activate lSU
+        deactivate lSU
+    end
+
+    [<- - mapper : lSU
+
+
+deactivate mapper
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

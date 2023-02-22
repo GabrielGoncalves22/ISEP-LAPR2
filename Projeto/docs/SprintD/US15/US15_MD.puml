@@ -1,0 +1,79 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Employee {
+    -name
+    -address
+    -phoneNumber
+    -citizenCardNumber
+    -role
+}
+
+class VaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -address
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class CenterCoordinator {
+}
+
+class CommunityMassVaccinationCenter {
+}
+
+class VaccinationStatistics {
+    -date1
+    -date2
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -address
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class VaccineAdministration {
+    -lotNumber
+    -administrationDate
+    -administrationTime
+    -leavingDate
+    -leavingTime
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+}
+
+
+
+CenterCoordinator --|> Employee
+Company "1" -- "*" Employee : knows >
+CommunityMassVaccinationCenter --|> VaccinationCenter
+Company "1" -- "*" VaccinationCenter : manage >
+CenterCoordinator "1" -- "1" CommunityMassVaccinationCenter : manage >
+VaccinationCenter "1" -- "*" VaccinationStatistics : has >
+VaccineAdministration "*" -- "1" SNSUser : administered on >
+VaccineAdministration "*" -- "1" Vaccine : is administrated <
+Company "1" -- "*" Vaccine : applies >
+VaccinationStatistics "1" -- "*" VaccineAdministration : based on data acuired from <
+
+
+@enduml

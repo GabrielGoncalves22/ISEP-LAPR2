@@ -1,0 +1,70 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class Company {
+    -designation
+    +getVaccineCenterStore
+}
+
+class VaccineCenter {
+    -name
+    -address
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -openingHours
+    -closingHours
+    -slotDuration
+    -slotVaccineLimit
+    +VaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+    -checkName(name)
+    -checkAddress(address)
+    -checkPhoneNumber(phoneNumber)
+    -checkEmail(email)
+    -checkFaxNumber(faxNumber)
+    -checkWebsite(website)
+}
+
+class RegisterVaccinationCenterUI {
+}
+
+class RegisterVaccinationCenterController {
+   -company
+   -vc
+   -store
+   +createVaccineCenter(name,address, phoneNumber, email, faxNumber,
+      website, openingHours, closingHours, slotDuration, slotVaccineLimit)
+   +createSchedule(hours, minutes, seconds)
+   +saveVaccineCenter()
+}
+class VaccineCenterStore {
+    -vaccineCenterList
+    +createVaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+    +createSchedule(hours, minutes, seconds)
+    +validateVaccineCenter(vc)
+    +saveVaccineCenter(vc)
+    -addVaccineCenter(vc)
+}
+
+class Time{
+-hours
+-minutes
+-seconds
++ Time(hours, minutes, seconds)
+-checkHours(hours)
+-checkMinutes(minutes)
+-checkSeconds(seconds)
++toString()
++toStringHHMMSS()
+}
+
+
+RegisterVaccinationCenterUI ..> RegisterVaccinationCenterController
+RegisterVaccinationCenterController ..> Company
+RegisterVaccinationCenterController ..> VaccineCenter
+Company "1" -- "*" VaccineCenter : manage >
+Company "1" -- "1" VaccineCenterStore : uses >
+VaccineCenter *.. Time
+@enduml++

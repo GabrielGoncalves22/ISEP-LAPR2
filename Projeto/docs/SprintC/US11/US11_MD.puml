@@ -1,0 +1,36 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Employee {
+    -id
+    -name
+    -phoneNumber
+    -email
+    -citizenCardNumber
+    -role
+}
+
+class Nurse {
+}
+
+class Receptionist {
+}
+
+class CenterCoordinator {
+}
+
+'--------- Generalization ---------
+CenterCoordinator --|> Employee
+Nurse --|> Employee
+Receptionist --|> Employee
+
+'------------ Relations ------------
+Employee "*" -- "1" Company : employs <
+
+@enduml

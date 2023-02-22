@@ -1,0 +1,241 @@
+@startuml
+
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Address #green {
+    -country
+    -city
+    -county
+    -parish
+    -street
+    -portNumber
+    -postalCode
+    -floor
+    -observation
+}
+
+class SNSUser {
+    -name
+     <color:#green>-sex
+     <color:#green>-phoneNumber
+     <color:#green>-email
+    -birthDate
+    -SNSNumber
+    <color:#green>-citizenCardNumber
+}
+
+class Vaccine {
+    <color:#green>-id
+    -name
+    <color:#green>-brand
+}
+
+class VaccineType {
+    -code
+    <color:#green>-description
+    <color:#green>-technology
+}
+
+class VaccineAdministration {
+    -lotNumber
+}
+
+class VaccineSchedule {
+    -date
+    -time
+}
+
+class CommunityMassVaccinationCenter #green {
+    -name
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class HealthCareCenter {
+}
+
+class VaccinationCenter #green {
+}
+
+class Schedule #green  {
+    -openingHours
+    -closingHours
+}
+
+class Employee #green {
+    -id
+    -name
+    -phoneNumber
+    -citizenCardNumber
+    -role
+}
+
+class Administrator {
+}
+
+class Nurse {
+}
+
+class Receptionist {
+}
+
+class CenterCoordinator {
+}
+
+class VaccinationCertificate {
+}
+
+class AdverseReaction {
+    -reaction
+}
+
+class VaccinationProgram {
+}
+
+class Report {
+}
+
+class DailyPerformance {
+}
+
+class AgeGroup #green {
+    -minAge
+    -maxAge
+    -dosesAdministered
+}
+
+class AdministrationProcess {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class VaccinationQueue {
+    -date
+    -entryTime
+    -exitTime
+}
+
+class Message {
+    <color:#green>-date
+    <color:#green>-time
+    <color:#green>-textMessage
+}
+
+class Email #green {
+    -subject
+    -recipientEmail
+}
+
+class SMS #green {
+    -number
+}
+
+class User #green {
+    -email
+    -password
+}
+
+'----- Generalization -----
+
+Administrator -[#green]-|> User
+CenterCoordinator -[#green]-|> Employee
+Email -[#green]-|> Message
+Employee -[#green]-|> User
+HealthCareCenter -[#green]-|> CommunityMassVaccinationCenter
+Nurse -[#green]-|> Employee
+Receptionist -[#green]-|> Employee
+SMS -[#green]-|> Message
+VaccinationCenter -[#green]-|> CommunityMassVaccinationCenter
+
+'--------------------------
+
+'------- Relations --------
+
+Address "1" -[#green]- "1" CommunityMassVaccinationCenter : has <
+Address "1" -[#green]- "1" Employee : has <
+Address "1" -[#green]- "1" SNSUser : has <
+
+Administrator "1" -- "*" CommunityMassVaccinationCenter : create >
+Administrator "1" -- "*" Employee : create >
+
+AdverseReaction "*" -[#green]- "1" VaccineAdministration : give <
+
+AgeGroup "1" -[#green]- "1..*" AdministrationProcess : has >
+
+CenterCoordinator "1" -- "*" DailyPerformance : evaluate >
+CenterCoordinator "1" -- "*" Report : generate >
+CenterCoordinator "1" -- "1" VaccinationCenter : manage >
+
+CommunityMassVaccinationCenter "1" -- "*" DailyPerformance : has >
+CommunityMassVaccinationCenter "1" -- "*" Report : has >
+CommunityMassVaccinationCenter "1" -- "1" VaccinationQueue : has >
+CommunityMassVaccinationCenter "1" -[#green]- "*" Message : contains >
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" Vaccine : applies >
+Company "1" -[#green]- "*" Message : send >
+
+Employee "*" -[#green]- "1" Company : employs <
+
+HealthCareCenter "1" -- "*" VaccineType : can administer >
+
+Message "0..1" -- "1" VaccineAdministration : is issued within a period of time after >
+Message "0..1" -- "1" VaccineSchedule : emitted on >
+
+Nurse "1" -- "*" VaccineSchedule : view >
+Nurse "1"-- "*" AdverseReaction : register >
+Nurse "1"-- "*" CommunityMassVaccinationCenter : work >
+Nurse "1"-- "*" VaccineAdministration : view and register >
+
+Receptionist "1" -- "1" VaccinationQueue : manage >
+Receptionist "1"-- "*" CommunityMassVaccinationCenter : work >
+
+SNSUser "*" -- "1" Administrator: created by >
+SNSUser "*" -[#green]- "1" Receptionist: created by >
+SNSUser "1" -- "*" AdverseReaction : have >
+SNSUser "1" -- "*" Message : receive >
+
+Schedule "1" -[#green]- "1" CommunityMassVaccinationCenter : has <
+
+VaccinationCertificate "*" -- "1" Nurse : requested by >
+VaccinationCertificate "*" -- "1" SNSUser : requested by >
+
+VaccinationProgram "*" -- "1" Company : contains <
+
+VaccinationQueue "1" -- "*" DailyPerformance : based on <
+VaccinationQueue "1" -- "*" SNSUser : have >
+VaccinationQueue "1" -- "1..*" Nurse : seen by >
+
+Vaccine "*" -- "1" Administrator: created by >
+Vaccine "*" -- "1" VaccineType : is of >
+Vaccine "1" -[#green]- "1..*" AgeGroup : constituted >
+
+VaccineAdministration "*" -- "1" SNSUser : administered on >
+VaccineAdministration "*" -- "1" Vaccine : of >
+VaccineAdministration "0..1" -- "0..1" VaccineSchedule : fulfilling >
+
+VaccineSchedule "*" -- "1" CommunityMassVaccinationCenter : has <
+VaccineSchedule "*" -- "1" Receptionist : requested by >
+VaccineSchedule "*" -- "1" SNSUser : requested by >
+VaccineSchedule "*" -- "1" VaccineType : for taking >
+
+VaccineType "*" -- "1" Administrator: created by >
+VaccineType "*" -- "1" Company : promotes administration <
+VaccineType "1" -- "*" VaccinationCenter : administered by >
+
+'--------------------------
+
+@enduml

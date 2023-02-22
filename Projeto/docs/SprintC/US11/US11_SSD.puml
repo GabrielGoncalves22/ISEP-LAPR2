@@ -1,0 +1,18 @@
+@startuml
+autonumber
+actor "Administrator" as admin
+
+activate admin
+admin -> ":System" : Start ordering the list of employees
+activate ":System"
+":System" --> admin : shows employee function/role list and requests to select one
+deactivate ":System"
+
+admin -> ":System" : selects a employee function/role
+activate ":System"
+":System" --> admin : shows a list of employees with the selected function/role
+deactivate ":System"
+
+deactivate admin
+
+@enduml

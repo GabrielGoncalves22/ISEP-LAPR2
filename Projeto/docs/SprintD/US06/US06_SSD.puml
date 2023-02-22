@@ -1,0 +1,14 @@
+@startuml
+
+autonumber
+
+actor "<<automatic>> \nTimer/Clock" as T
+participant ":System" as S
+
+activate T
+    T -> S : asks to execute the daily task that records the total of people vaccinated for each vaccination center.
+    activate S
+
+    S --> T : executes the task and exports a .csv file containing the recorded data.
+
+@enduml

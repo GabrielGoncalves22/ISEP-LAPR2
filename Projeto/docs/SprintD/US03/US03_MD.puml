@@ -1,0 +1,49 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Employee {
+    -id
+    -name
+    -phoneNumber
+    -email
+    -citizenCardNumber
+}
+
+class Receptionist {
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class Address {
+    -country
+    -city
+    -county
+    -parish
+    -street
+    -portNumber
+    -postalCode
+    -floor
+    -observation
+}
+
+Address "1" -- "1" SNSUser : has <
+Company "1" -- "*" SNSUser : owns >
+Receptionist "*" -- "1" Company : knows <
+SNSUser "*" -- "1" Receptionist: created by >
+Receptionist --|> Employee
+
+@enduml

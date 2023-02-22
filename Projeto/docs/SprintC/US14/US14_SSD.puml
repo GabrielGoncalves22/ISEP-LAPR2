@@ -1,0 +1,32 @@
+@startuml
+autonumber
+actor "Administrator" as admin
+participant ":System" as sys
+
+activate admin
+admin -> sys : start ordering to load a set of users from a CSV file
+activate sys
+sys --> admin : asks to insert the path of CSV file to be loaded
+deactivate sys
+
+||15|
+
+admin -> sys : insert the path for CSV file to be loaded
+activate sys
+
+alt if file is valid
+    sys --> admin : requests confirmation to start loading the specified file
+    deactivate sys
+
+    ||15|
+
+    admin -> sys : confirms the file to be loaded
+    activate sys
+end
+
+sys --> admin : informs operation success
+deactivate sys
+
+deactivate admin
+
+@enduml

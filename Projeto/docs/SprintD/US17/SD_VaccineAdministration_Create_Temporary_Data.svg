@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="737px" preserveAspectRatio="none" style="width:1905px;height:737px;background:#FFFFFF;" version="1.1" viewBox="0 0 1905 737" width="1905px" zoomAndPan="magnify"><defs/><g><rect height="27.6094" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="369" x="767.25" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" text-decoration="underline" textLength="359" x="772.25" y="29.5332">SD_VaccineAdministration_Create_Temporary_Data</text><rect fill="#FFFFFF" height="539.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="370" y="126.1797"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="375" y="466.2891"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="375" y="539.6406"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="156.5313"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="216.8828"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="277.2344"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="337.5859"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="397.9375"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1306" y="604.9922"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="374.5" x2="374.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1140.5" x2="1140.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1310.5" x2="1310.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1492.5" x2="1492.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1614.5" x2="1614.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1691.5" x2="1691.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1757.5" x2="1757.5" y1="93.8281" y2="683.3438"/><line style="stroke:#181818;stroke-width:0.5;stroke-dasharray:5.0,5.0;" x1="1845.5" x2="1845.5" y1="93.8281" y2="683.3438"/><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="187" x="281.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="348.5" y="65.1426">vaStore:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="288.5" y="82.752">VaccineAdministrationStore</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="187" x="281.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="348.5" y="703.877">vaStore:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="288.5" y="721.4863">VaccineAdministrationStore</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="1076.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="1128.5" y="65.1426">lSF:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="1083.5" y="82.752">LegacySystemFile</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="129" x="1076.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="25" x="1128.5" y="703.877">lSF:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="1083.5" y="721.4863">LegacySystemFile</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="191" x="1215.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1273.5" y="65.1426">tempListVA:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="1222.5" y="82.752">List&lt;VaccineAdministration&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="191" x="1215.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1273.5" y="703.877">tempListVA:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="177" x="1222.5" y="721.4863">List&lt;VaccineAdministration&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="153" x="1416.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="1483.5" y="65.1426">va:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="1423.5" y="82.752">VaccineAdministration</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="153" x="1416.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="19" x="1483.5" y="703.877">va:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="139" x="1423.5" y="721.4863">VaccineAdministration</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="1579.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="1604.5" y="65.1426">sU:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1586.5" y="82.752">SNSUser</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="70" x="1579.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="20" x="1604.5" y="703.877">sU:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="56" x="1586.5" y="721.4863">SNSUser</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="1659.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="1686" y="65.1426">v:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="1666.5" y="82.752">Vaccine</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="1659.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="11" x="1686" y="703.877">v:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="1666.5" y="721.4863">Vaccine</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="49" x="1733.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="1740.5" y="65.1426">dose:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="1741.5" y="82.752">Dose</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="49" x="1733.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="1740.5" y="703.877">dose:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="33" x="1741.5" y="721.4863">Dose</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="107" x="1792.5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1837" y="65.1426">vc:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1799.5" y="82.752">VaccineCenter</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="107" x="1792.5" y="682.3438"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="18" x="1837" y="703.877">vc:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="93" x="1799.5" y="721.4863">VaccineCenter</text><rect fill="#FFFFFF" height="539.1641" style="stroke:#181818;stroke-width:1.0;" width="10" x="370" y="126.1797"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="375" y="466.2891"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="375" y="539.6406"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="156.5313"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="216.8828"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="277.2344"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="337.5859"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1136" y="397.9375"/><rect fill="#FFFFFF" height="30" style="stroke:#181818;stroke-width:1.0;" width="10" x="1306" y="604.9922"/><ellipse cx="7.5" cy="125.4297" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/><polygon fill="#181818" points="358,122.1797,368,126.1797,358,130.1797,362,126.1797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="12" x2="364" y1="126.1797" y2="126.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="15" y="121.3232">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="332" x="26" y="121.3232">createLegacySystemTemporaryData(sU, v, dose, lSF, vc)</text><polygon fill="#181818" points="1124,152.5313,1134,156.5313,1124,160.5313,1128,156.5313" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1130" y1="156.5313" y2="156.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="151.6748">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="229" x="398" y="151.6748">nADate = getNurseAdministrationDate()</text><polygon fill="#181818" points="1124,212.8828,1134,216.8828,1124,220.8828,1128,216.8828" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1130" y1="216.8828" y2="216.8828"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="212.0264">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="231" x="398" y="212.0264">nATime = getNurseAdministrationTime()</text><polygon fill="#181818" points="1124,273.2344,1134,277.2344,1124,281.2344,1128,277.2344" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1130" y1="277.2344" y2="277.2344"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="272.3779">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="178" x="398" y="272.3779">leavingDate = getLeavingDate()</text><polygon fill="#181818" points="1124,333.5859,1134,337.5859,1124,341.5859,1128,337.5859" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1130" y1="337.5859" y2="337.5859"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="332.7295">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="180" x="398" y="332.7295">leavingTime = getLeavingTime()</text><polygon fill="#181818" points="1124,393.9375,1134,397.9375,1124,401.9375,1128,397.9375" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1130" y1="397.9375" y2="397.9375"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="393.0811">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="164" x="398" y="393.0811">lotNumber = getLotNumber()</text><line style="stroke:#181818;stroke-width:1.0;" x1="385" x2="427" y1="458.2891" y2="458.2891"/><line style="stroke:#181818;stroke-width:1.0;" x1="427" x2="427" y1="458.2891" y2="471.2891"/><line style="stroke:#181818;stroke-width:1.0;" x1="386" x2="427" y1="471.2891" y2="471.2891"/><polygon fill="#181818" points="396,467.2891,386,471.2891,396,475.2891,392,471.2891" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="392" y="453.4326">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="731" x="403" y="453.4326">va = instantiateVaccineAdministration(snsUser, vaccine, dose, nADate, nATime, leavingDate, leavingTime, vCenter, lotNumber)</text><line style="stroke:#181818;stroke-width:1.0;" x1="385" x2="427" y1="531.6406" y2="531.6406"/><line style="stroke:#181818;stroke-width:1.0;" x1="427" x2="427" y1="531.6406" y2="544.6406"/><line style="stroke:#181818;stroke-width:1.0;" x1="386" x2="427" y1="544.6406" y2="544.6406"/><polygon fill="#181818" points="396,540.6406,386,544.6406,396,548.6406,392,544.6406" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="392" y="526.7842">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="193" x="403" y="526.7842">validateVaccineAdministration(va)</text><polygon fill="#181818" points="1294,600.9922,1304,604.9922,1294,608.9922,1298,604.9922" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="380" x2="1300" y1="604.9922" y2="604.9922"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="387" y="600.1357">9</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="41" x="398" y="600.1357">add(va)</text><polygon fill="#181818" points="11,661.3438,1,665.3438,11,669.3438,7,665.3438" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="5" x2="374" y1="665.3438" y2="665.3438"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="14" x="17" y="660.4873">10</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="49" x="35" y="660.4873">success</text><!--MD5=[6a3a33919a7941a175c70ca3e15a1f85]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_VaccineAdministration_Create_Temporary_Data</u>
+end title
+
+participant "vaStore:\nVaccineAdministrationStore" as vaStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant "tempListVA:\nList<VaccineAdministration>" as tempListVA
+participant "va:\nVaccineAdministration" as va
+participant "sU:\nSNSUser" as sU
+participant "v:\nVaccine" as v
+participant "dose:\nDose" as dose
+participant "vc:\nVaccineCenter" as vc
+
+[o-> vaStore : createLegacySystemTemporaryData(sU, v, dose, lSF, vc)
+activate vaStore
+
+    vaStore -> lSF : nADate = getNurseAdministrationDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : nATime = getNurseAdministrationTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingDate = getLeavingDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingTime = getLeavingTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : lotNumber = getLotNumber()
+    activate lSF
+    deactivate lSF
+
+    vaStore -> vaStore : va = instantiateVaccineAdministration(snsUser, vaccine, dose, nADate, nATime, leavingDate, leavingTime, vCenter, lotNumber)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> vaStore : validateVaccineAdministration(va)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> tempListVA : add(va)
+    activate tempListVA
+    deactivate tempListVA
+
+    <- - vaStore : success
+deactivate vaStore
+
+
+@enduml
+
+@startuml
+
+autonumber
+
+title
+<u>SD_VaccineAdministration_Create_Temporary_Data</u>
+end title
+
+participant "vaStore:\nVaccineAdministrationStore" as vaStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant "tempListVA:\nList<VaccineAdministration>" as tempListVA
+participant "va:\nVaccineAdministration" as va
+participant "sU:\nSNSUser" as sU
+participant "v:\nVaccine" as v
+participant "dose:\nDose" as dose
+participant "vc:\nVaccineCenter" as vc
+
+[o-> vaStore : createLegacySystemTemporaryData(sU, v, dose, lSF, vc)
+activate vaStore
+
+    vaStore -> lSF : nADate = getNurseAdministrationDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : nATime = getNurseAdministrationTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingDate = getLeavingDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingTime = getLeavingTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : lotNumber = getLotNumber()
+    activate lSF
+    deactivate lSF
+
+    vaStore -> vaStore : va = instantiateVaccineAdministration(snsUser, vaccine, dose, nADate, nATime, leavingDate, leavingTime, vCenter, lotNumber)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> vaStore : validateVaccineAdministration(va)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> tempListVA : add(va)
+    activate tempListVA
+    deactivate tempListVA
+
+    <- - vaStore : success
+deactivate vaStore
+
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

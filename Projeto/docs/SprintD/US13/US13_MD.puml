@@ -1,0 +1,47 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+}
+
+class AgeGroup {
+    -minAge
+    -maxAge
+    -dosesAdministered
+}
+
+class AdministrationProcess {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class Administrator {
+}
+
+AgeGroup "1" -- "1..*" AdministrationProcess : has >
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" Vaccine : applies >
+Company "1" -- "*" VaccineType : promotes administration >
+
+Vaccine "*" -- "1" Administrator: created by >
+Vaccine "*" -- "1" VaccineType : is of >
+Vaccine "1" -- "1..*" AgeGroup : constituted >
+
+@enduml

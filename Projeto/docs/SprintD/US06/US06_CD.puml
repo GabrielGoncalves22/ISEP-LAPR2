@@ -1,0 +1,39 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class App{
+}
+
+class Company{
+}
+
+class Date{
+-date
+}
+
+class ExportFullVaccinatedCSV{
++getVaccinationCenterStore()
++getVaccinationCenter()
++getVaccinatedSNSUserStore()
++getListOfVaccinatedSNSUser()
+}
+
+class VaccinationCenterStore{
++getVaccinationCenter()
+}
+
+class VaccinatedSNSUserStore{
++getListOfVaccinatedSNSUser()
+}
+
+Company "1" -- "1" App
+App "1" -- "1" ExportFullVaccinatedCSV
+ExportFullVaccinatedCSV "1" -- "1" VaccinationCenterStore
+VaccinationCenterStore "1" -- "*" VaccinatedSNSUserStore
+Company "1" -- "*" VaccinationCenterStore : has >
+App  .>  VaccinationCenterStore
+ExportFullVaccinatedCSV "1" -- "1" Date : gets >
+ExportFullVaccinatedCSV "1" -- "1" VaccinatedSNSUserStore
+
+@enduml

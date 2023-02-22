@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="450px" preserveAspectRatio="none" style="width:600px;height:450px;background:#FFFFFF;" version="1.1" viewBox="0 0 600 450" width="600px" zoomAndPan="magnify"><defs/><g><rect height="27.6094" style="stroke:#00000000;stroke-width:1.0;fill:none;" width="177" x="212" y="10"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" text-decoration="underline" textLength="167" x="217" y="29.5332">SD_Change_Sort_Order</text><rect fill="#FFFFFF" height="260.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="330.5" y="126.1797"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="164.5313"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="263.2344"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="336.5859"/><rect height="165.0547" style="stroke:#000000;stroke-width:1.5;fill:none;" width="348" x="244" y="214.5313"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="124" x2="124" y1="93.8281" y2="396.5859"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="335" x2="335" y1="93.8281" y2="396.5859"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="510" x2="510" y1="93.8281" y2="396.5859"/><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="239" x="5" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="122.5" y="65.1426">:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="12" y="82.752">ImportManageCenterDataController</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="239" x="5" y="395.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="122.5" y="417.1191">:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="225" x="12" y="434.7285">ImportManageCenterDataController</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="163" x="254" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="306" y="65.1426">lSFStore:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="261" y="82.752">LegacySystemFileStore</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="163" x="254" y="395.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="59" x="306" y="417.1191">lSFStore:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="149" x="261" y="434.7285">LegacySystemFileStore</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="167" x="427" y="43.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="487" y="65.1426">lSFList:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="434" y="82.752">List&lt;LegacySystemFile&gt;</text><rect fill="#E2E2F0" height="49.2188" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="167" x="427" y="395.5859"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="47" x="487" y="417.1191">lSFList:</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="153" x="434" y="434.7285">List&lt;LegacySystemFile&gt;</text><rect fill="#FFFFFF" height="260.4063" style="stroke:#181818;stroke-width:1.0;" width="10" x="330.5" y="126.1797"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="164.5313"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="263.2344"/><rect fill="#FFFFFF" height="28" style="stroke:#181818;stroke-width:1.0;" width="10" x="335.5" y="336.5859"/><ellipse cx="7.5" cy="125.4297" fill="none" rx="4" ry="4" style="stroke:#181818;stroke-width:1.5;"/><polygon fill="#181818" points="318.5,122.1797,328.5,126.1797,318.5,130.1797,322.5,126.1797" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="12" x2="324.5" y1="126.1797" y2="126.1797"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="15" y="121.3232">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="135" x="26" y="121.3232">changeSortOrder(order)</text><line style="stroke:#181818;stroke-width:1.0;" x1="345.5" x2="387.5" y1="156.5313" y2="156.5313"/><line style="stroke:#181818;stroke-width:1.0;" x1="387.5" x2="387.5" y1="156.5313" y2="169.5313"/><line style="stroke:#181818;stroke-width:1.0;" x1="346.5" x2="387.5" y1="169.5313" y2="169.5313"/><polygon fill="#181818" points="356.5,165.5313,346.5,169.5313,356.5,173.5313,352.5,169.5313" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="352.5" y="151.6748">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="112" x="363.5" y="151.6748">validateOrder(order)</text><path d="M244,214.5313 L309,214.5313 L309,222.8828 L299,232.8828 L244,232.8828 L244,214.5313 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="165.0547" style="stroke:#000000;stroke-width:1.5;" width="348" x="244" y="214.5313"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="20" x="259" y="229.0264">opt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="263" x="324" y="227.9502">[In case the chosen order isn't the actual order]</text><line style="stroke:#181818;stroke-width:1.0;" x1="345.5" x2="387.5" y1="255.2344" y2="255.2344"/><line style="stroke:#181818;stroke-width:1.0;" x1="387.5" x2="387.5" y1="255.2344" y2="268.2344"/><line style="stroke:#181818;stroke-width:1.0;" x1="346.5" x2="387.5" y1="268.2344" y2="268.2344"/><polygon fill="#181818" points="356.5,264.2344,346.5,268.2344,356.5,272.2344,352.5,268.2344" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="352.5" y="250.3779">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="87" x="363.5" y="250.3779">setOrder(order)</text><line style="stroke:#181818;stroke-width:1.0;" x1="345.5" x2="387.5" y1="328.5859" y2="328.5859"/><line style="stroke:#181818;stroke-width:1.0;" x1="387.5" x2="387.5" y1="328.5859" y2="341.5859"/><line style="stroke:#181818;stroke-width:1.0;" x1="346.5" x2="387.5" y1="341.5859" y2="341.5859"/><polygon fill="#181818" points="356.5,337.5859,346.5,341.5859,356.5,345.5859,352.5,341.5859" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="352.5" y="323.7295">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="90" x="363.5" y="323.7295">reverse(lSFList)</text><!--MD5=[8ebca3932567adbcb351869f75e045c8]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_Change_Sort_Order</u>
+end title
+
+participant ":\nImportManageCenterDataController" as controller
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+
+[o-> lSFStore : changeSortOrder(order)
+activate lSFStore
+    lSFStore -> lSFStore : validateOrder(order)
+    activate lSFStore
+    deactivate lSFStore
+    opt In case the chosen order isn't the actual order
+        lSFStore -> lSFStore : setOrder(order)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : reverse(lSFList)
+        activate lSFStore
+        deactivate lSFStore
+    end
+deactivate lSFStore
+
+
+@enduml
+
+@startuml
+
+autonumber
+
+title
+<u>SD_Change_Sort_Order</u>
+end title
+
+participant ":\nImportManageCenterDataController" as controller
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+
+[o-> lSFStore : changeSortOrder(order)
+activate lSFStore
+    lSFStore -> lSFStore : validateOrder(order)
+    activate lSFStore
+    deactivate lSFStore
+    opt In case the chosen order isn't the actual order
+        lSFStore -> lSFStore : setOrder(order)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : reverse(lSFList)
+        activate lSFStore
+        deactivate lSFStore
+    end
+deactivate lSFStore
+
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

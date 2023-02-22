@@ -1,0 +1,35 @@
+@startuml
+autonumber
+actor "SNSUser" as SNSUser
+
+activate SNSUser
+SNSUser -> ":System" : Starts by scheduling the vaccine
+activate ":System"
+":System" --> SNSUser : Request data (SNS_User_number)
+deactivate ":System"
+
+SNSUser -> ":System" : Types requested data
+activate ":System"
+":System" --> SNSUser : Shows vaccination center list and ask to select one
+deactivate ":System"
+SNSUser -> ":System" : Selects a vaccination center
+activate ":System"
+":System" --> SNSUser : Request data (date and time)
+deactivate ":System"
+SNSUser -> ":System" : Types requested data
+activate ":System"
+":System" --> SNSUser : Shows vaccine type list and ask to select one
+deactivate ":System"
+SNSUser -> ":System" : Selects a vaccine type
+activate ":System"
+":System" --> SNSUser : Shows the data and requests a confirmation
+deactivate ":System"
+
+SNSUser -> ":System" : Confirms the data
+activate ":System"
+":System" --> SNSUser : Informs operation success
+deactivate ":System"
+
+deactivate SNSUser
+
+@enduml

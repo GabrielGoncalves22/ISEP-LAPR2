@@ -1,0 +1,65 @@
+@startuml
+autonumber
+actor "Nurse" as N
+
+participant ": ListArrivalSNSUserUI" as UI
+participant ": ListArrivalSNSUserController" as CTRL
+participant ": Company" as CMP
+participant "vcStore: VaccinationCenterStore" as VCS
+participant "vc: VaccinationCenter" as VC
+participant "auStore: ArrivalSNSUserStore" as ASS
+participant "au: ArrivalSNSUser" as AU
+participant "auMapper: ArrivalSNSUserMapper" as AUM
+participant "listArrivalSNSUser: List<ArrivalSNSUser>" as LAU
+participant "listArrivalSNSUserDto: List<ArrivalSNSUserDto>" as LAUD
+participant "auDto: ArrivalSNSUserDTO" as AUD
+
+
+activate N
+N -> UI : Start to consult the users in the waiting room of a vacination center
+note left UI: **vcId** is obtained immediately after\n user login to avoid being repeatedly selecting\n the vaccination center user is working on\n cf. SD_Select_VC
+activate UI
+
+UI --> CTRL** : create (vcId)
+activate CTRL
+CTRL -> CMP : vcStore = getVaccinationCenterStore()
+activate CMP
+deactivate CMP
+CTRL -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate VCS
+
+CTRL -> ASS : vcStore = getArrivalSNSUserStore()
+activate ASS
+deactivate ASS
+
+CTRL -> CMP : getListOfArrivalSNSUser
+activate CMP
+CMP --> LAU** : create()
+CMP --> CTRL : listArrivalSNSUser
+CTRL-> AUM : toDTO(listArrivalSNSUser)
+
+activate AUM
+AUM --> LAUD** : create()
+loop for each object in listArrivalSNSUser
+
+AUM -> LAU : au = get(i)
+AUM -> AUM : auDto = toDTO(au)
+activate AUM
+deactivate AUM
+AUM --> AUD** : create()
+AUM -> LAUD : add(auDto)
+activate LAUD
+deactivate LAUD
+end
+
+AUM --> CTRL : listArrivalSNSUserDto
+deactivate AUM
+
+CTRL --> UI : listArrivalSNSUserDto
+UI --> N : shows list of Arrival SNS User
+deactivate CTRL
+deactivate N
+
+
+@enduml

@@ -1,0 +1,84 @@
+@startuml
+autonumber
+actor "Administrator" as ADM
+
+participant ":RegisterEmployeeUI" as UI
+participant ":RegisterEmployeeController" as CTRL
+participant ":Company" as CMPN
+participant "employeeStore: EmployeeStore" as ES
+participant "employee: Employee" as E
+participant "employeeRoleStore: EmployeeRoleStore" as ERS
+participant "employeeRole: EmployeeRole" as ER
+activate ADM
+
+ADM -> UI : register an "Organization Employee"
+activate UI
+
+UI --> ADM : requests data (name, address, phone number,\n e-mail,  Citizen Card number)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+
+UI -> CTRL : registerEmployee(name, address, phone number,\n e-mail, Citizen Card number)
+activate CTRL
+
+CTRL -> CMPN : store = getEmployeeStore()
+
+activate CMPN
+deactivate CMPN
+
+CTRL -> ES : employee = registerEmployee(name, address, phone number,\n e-mail, Citizen Card number)
+activate ES
+
+ES -> E** : create(name, address, phone number,\n e-mail, Citizen Card number)
+deactivate ES
+CTRL -> ES : validateRegisterEmployee(employee)
+activate ES
+deactivate ES
+deactivate CTRL
+
+UI --> ADM : shows employee role list and ask to select one
+deactivate ES
+
+deactivate UI
+
+ADM -> UI : selects an employee role
+activate UI
+
+UI -> CTRL : employeeRoles = getEmployeeRoles()
+activate CTRL
+
+CTRL -> ES : employeeRoleStore = getEmployeeRolesStore()
+activate ES
+deactivate ES
+
+CTRL -> ERS : getEmployeeRoles()
+
+deactivate CTRL
+deactivate UI
+
+ADM -> UI : confirms the data
+activate UI
+
+UI -> CTRL : saveEmployee()
+activate CTRL
+
+CTRL -> ES : saveEmployee(employee)
+activate ES
+
+ES -> ES: validateEmployee(employee)
+activate ES
+deactivate ES
+ES -> ES: addEmployee(employee)
+activate ES
+deactivate ES
+CTRL --> UI: result
+UI --> ADM : informs operation success
+
+deactivate ES
+deactivate CTRL
+deactivate UI
+deactivate ADM
+
+@enduml

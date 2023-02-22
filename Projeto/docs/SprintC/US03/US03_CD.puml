@@ -1,0 +1,43 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class Company {
+    -designation
+    -getSNSUserStore()
+}
+
+class SNSUser {
+    -code
+    -description
+    -technology
+    +SNSUser(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+    -checkCodeRules(code)
+    -checkDescriptionRules(description)
+    +toString()
+}
+
+class SpecifyNewSNSUserUI {
+}
+
+class SpecifyNewSNSUserController {
+    +createSNSUser(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+    +saveSNSUser()
+}
+
+class SNSUserStore {
+    +createSNSUser(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+    +validateSNSUser(su)
+    +saveSNSUser(su)
+    -addSNSUser(su)
+}
+
+Company "1" --> "*" SNSUser : promotes administration >
+Company "1" --> "1" SNSUserStore : uses >
+SpecifyNewSNSUserController ..> Company
+SpecifyNewSNSUserController ..> SNSUser
+SpecifyNewSNSUserUI ..> SpecifyNewSNSUserController
+SpecifyNewSNSUserController ..> SNSUserStore
+
+
+@enduml

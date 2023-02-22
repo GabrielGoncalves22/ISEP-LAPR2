@@ -1,0 +1,56 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class ListEmployeeUI {
+}
+
+class ListEmployeeController {
+    +getEmployeeRoles()
+    +getEmployeeListByRole(roleId)
+}
+
+class EmployeeStore {
+    +getEmployeesByRole(eRole)
+}
+
+class Employee {
+    -id
+    -name
+    -phoneNumber
+    -email
+    -citizenCardNumber
+    +compareRoleWithOtherEmployeeRole(e)
+}
+
+class EmployeeRoleStore {
+    +getEmployeeRoles()
+    +checkIfRoleExists(role)
+}
+
+class EmployeeRole {
+    -id
+    -designation
+    +compareTo(otherEmployeeRole)
+}
+
+class Company {
+    -designation
+    +getEmployeeStore()
+    +getEmployeeRolesStore()
+}
+
+ListEmployeeUI ..> ListEmployeeController
+ListEmployeeController ..> Company
+ListEmployeeController ..> EmployeeStore
+ListEmployeeController ..> Employee
+ListEmployeeController ..> EmployeeRoleStore
+ListEmployeeController ..> EmployeeRole
+Company "1" --> "1" EmployeeStore : adopts >
+Company "1" --> "*" EmployeeRoleStore : adopts >
+EmployeeStore "1" --> "*" Employee : stores >
+EmployeeRoleStore "1" --> "*" EmployeeRole : stores >
+Employee o-- EmployeeRole
+
+
+@enduml

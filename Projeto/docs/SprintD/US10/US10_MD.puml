@@ -1,0 +1,48 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+  -designation
+}
+
+class Administrator {
+}
+
+class Employee {
+ -name
+ -address
+ -phoneNumber
+ -citizenCardNumber
+ -role
+}
+
+
+class Nurse {
+}
+
+class Receptcionist {
+}
+
+class CenterCoordinater {
+}
+
+class User {
+-email
+-password
+}
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" Employee : knows >
+Administrator "1" -- "*" Employee : creates >
+
+'---------------Generalization---------------
+
+Nurse --|> Employee
+Receptcionist --|> Employee
+CenterCoordinater --|> Employee
+Employee --|> User
+Administrator --|> User
+
+@enduml

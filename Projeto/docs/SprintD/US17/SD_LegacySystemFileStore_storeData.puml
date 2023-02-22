@@ -1,0 +1,91 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_LegacySystemFileStore_storeData</u>
+end title
+
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+participant "fileData:\nList<List<String>>" as fileData
+participant "sUDto:\nSNSUserDTO" as sUDto
+participant "vDto:\nVaccineDTO" as vDto
+
+[o-> lSFStore : storeData(fileData, sUListDto, listVDto)
+activate lSFStore
+    lSFStore -> lSFList** : create()
+    loop Foreach list in the fileData list
+        lSFStore -> fileData : snsUserNumber = get(0)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : sUDto = findSUBySUNumber(snsUserNumber, sUListDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : vName = get(1)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : vDto = findVaccineByName(vName, listVDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : dose = get(2)
+        activate fileData
+        deactivate fileData
+        lSFStore -> fileData : lotNumber = get(3)
+        activate fileData
+        deactivate fileData
+
+        lSFStore -> fileData : scheduledData = get(4)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : scheduledDate = transformDate(scheduledData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : scheduledTime = transformTime(scheduledData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : arrivalData = get(5)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : arrivalDate = transformDate(arrivalData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : arrivalTime = transformTime(arrivalData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : nurseAdministrationData = get(6)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : nurseAdministrationDate = transformDate(nurseAdministrationData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : nurseAdministrationTime = transformTime(nurseAdministrationData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : leavingDT = get(7)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : leavingDate = transformDate(leavingDT[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : leavingTime = transformTime(leavingDT[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : lsF = createLegacySystemFile(sUDto, vDto, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : saveLegacySystemFile(lsF)
+        activate lSFStore
+        deactivate lSFStore
+    end
+    <-- lSFStore : data stored
+deactivate lSFStore
+
+
+@enduml

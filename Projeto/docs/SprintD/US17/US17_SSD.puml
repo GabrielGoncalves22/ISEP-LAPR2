@@ -1,0 +1,49 @@
+@startuml
+autonumber
+actor "Center Coordinator" as cc
+participant ":System" as sys
+
+activate cc
+    cc -> sys : start asking to import data present in a file from a legacy system
+
+    activate sys
+        sys --> cc : asks to insert the path of the file to be imported
+    deactivate sys
+
+    cc -> sys : insert the path to the file
+
+    activate sys
+        sys --> cc : show the actual list of data to be imported and asks to select the sort criteria
+
+        note right
+        The **sort criteria** is the
+        data field used to sort
+        all the information
+        end note
+    deactivate sys
+
+    cc -> sys : selects the sort criteria
+
+    activate sys
+        sys --> cc : show the data ordered by the chosen criteria and asks to select the sort order
+        note right
+        The **sort order** refers
+        to the ascending or
+        descending order
+        end note
+    deactivate sys
+
+    cc -> sys : selects the sort order
+
+    activate sys
+        sys --> cc : show the chosen file path, the sort criteria, the sort order, and the data to be imported\n ordered by the chosen criteria and order, and asks confirmation
+    deactivate sys
+
+    cc -> sys : confirms the data to be imported
+    activate sys
+        sys --> cc : informs operation success
+    deactivate sys
+
+deactivate cc
+
+@enduml

@@ -1,0 +1,57 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Administrator {
+}
+
+class CommunityMassVaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class CenterCoordinator {
+}
+
+
+class Address{
+    -country
+    -city
+    -county
+    -parish
+    -street
+    -portNumber
+    -postalCode
+    -floor
+    -observation
+}
+
+class Schedule  {
+    -openingHours
+    -closingHours
+}
+
+Administrator "1" -- "*" CommunityMassVaccinationCenter : create >
+VaccinationCenter --|> CommunityMassVaccinationCenter
+
+CenterCoordinator "1" -- "1" VaccinationCenter : manage >
+
+Schedule "1" -- "1" CommunityMassVaccinationCenter : has <
+
+
+Address "1" -- "1" CommunityMassVaccinationCenter : has <
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+
+@enduml

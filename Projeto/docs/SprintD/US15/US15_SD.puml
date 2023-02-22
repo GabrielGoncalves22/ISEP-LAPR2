@@ -1,0 +1,77 @@
+@startuml
+autonumber
+actor "Center Coordinator" as CC
+
+participant ":\n VaccinationStatisticsUI" as UI
+participant ":\n VaccinationStatisticsController" as CTRL
+participant ":\n Company" as CMPN
+participant "vaccinationStatistics: \n VaccinationStatistics" as VS
+participant "wtfHandler: \n WriteToFileHandler" as WTFH
+participant "wtf: \n WriteToFile" as WTF
+participant "vaccineAdministrationStore: \n VaccineAdministrationStore" as VAS
+participant "snsUserStore: \n SnsUserStore" as SUS
+participant "vaccineStore: \n VaccineStore" as VST
+
+activate CC
+
+CC -> UI : Asks to check and export vaccination statistics.
+activate UI
+UI --> CC : Requests data (fileName, date1, date2)
+deactivate UI
+CC -> UI : Types requested data
+activate UI
+
+
+
+UI --> CC : Shows data
+deactivate UI
+
+CC -> UI : Confirms the data
+activate UI
+
+UI -> VS : verifyDateInterval()
+activate VS
+deactivate VS
+
+UI -> CTRL : totalNumberFullyVaccinatedInInterval(date1Date, date2Date)
+activate CTRL
+CTRL -> CMPN : snsUserStore = getSNSUserStore()
+activate CMPN
+deactivate CMPN
+CTRL -> SUS : suList = getSNSUserList()
+activate SUS
+deactivate SUS
+
+CTRL -> CMPN : vaccineStore = getVaccineStore()
+activate CMPN
+deactivate CMPN
+CTRL -> VST : vList = getVaccineList()
+activate VST
+deactivate VST
+
+CTRL -> CMPN : vaccineAdministrationStore = getVaccineAdministrationStore()
+activate CMPN
+deactivate CMPN
+CTRL -> VAS : totalNumberFullyVaccinatedInInterval(suList, vList, date1, date2, vaccinationCenter)
+activate VAS
+deactivate VAS
+deactivate CTRL
+
+UI -> WTFH** : wtfHandler = createWriteToFileHandler
+activate WTFH
+
+WTFH -> WTF : writeToFile(date1, fileName, numberOfVaccinated)
+activate WTF
+
+WTF -> WTF : writeToFile(date1, fileName, numberOfVaccinated)
+activate WTF
+deactivate WTF
+deactivate WTF
+deactivate WTFH
+
+
+UI --> CC : Show graphic and exports csv file
+deactivate UI
+
+deactivate CC
+@enduml

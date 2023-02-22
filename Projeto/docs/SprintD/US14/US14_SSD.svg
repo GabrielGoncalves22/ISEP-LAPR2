@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="429px" preserveAspectRatio="none" style="width:468px;height:429px;background:#FFFFFF;" version="1.1" viewBox="0 0 468 429" width="468px" zoomAndPan="magnify"><defs/><g><rect fill="#FFFFFF" height="236.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="59.5" y="92.6094"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="114.9609"/><rect fill="#FFFFFF" height="55.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="190.6641"/><rect fill="#FFFFFF" height="37.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="291.7188"/><rect height="94.0547" style="stroke:#000000;stroke-width:1.5;fill:none;" width="452.5" x="10" y="205.6641"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="64" x2="64" y1="82.6094" y2="347.0703"/><line style="stroke:#181818;stroke-width:0.5;fill:none;stroke-dasharray:5.0,5.0;" x1="420.5" x2="420.5" y1="82.6094" y2="347.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="20" y="79.5332">Administrator</text><ellipse cx="64.5" cy="13.5" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.5,21.5 L64.5,48.5 M51.5,29.5 L77.5,29.5 M64.5,48.5 L51.5,63.5 M64.5,48.5 L77.5,63.5 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="20" y="360.6035">Administrator</text><ellipse cx="64.5" cy="372.1797" fill="#E2E2F0" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><path d="M64.5,380.1797 L64.5,407.1797 M51.5,388.1797 L77.5,388.1797 M64.5,407.1797 L51.5,422.1797 M64.5,407.1797 L77.5,422.1797 " fill="none" style="stroke:#181818;stroke-width:0.5;"/><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="388.5" y="50"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="395.5" y="71.5332">:System</text><rect fill="#E2E2F0" height="31.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="64" x="388.5" y="346.0703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="50" x="395.5" y="367.6035">:System</text><rect fill="#FFFFFF" height="236.4609" style="stroke:#181818;stroke-width:1.0;" width="10" x="59.5" y="92.6094"/><rect fill="#FFFFFF" height="30.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="114.9609"/><rect fill="#FFFFFF" height="55.7031" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="190.6641"/><rect fill="#FFFFFF" height="37.3516" style="stroke:#181818;stroke-width:1.0;" width="10" x="415.5" y="291.7188"/><polygon fill="#181818" points="403.5,110.9609,413.5,114.9609,403.5,118.9609,407.5,114.9609" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69.5" x2="409.5" y1="114.9609" y2="114.9609"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="76.5" y="110.1045">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="293" x="87.5" y="110.1045">start ordering to load a set of users from a CSV file</text><polygon fill="#181818" points="80.5,141.3125,70.5,145.3125,80.5,149.3125,76.5,145.3125" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74.5" x2="419.5" y1="145.3125" y2="145.3125"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="86.5" y="140.4561">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="270" x="97.5" y="140.4561">asks to insert the path of CSV file to be loaded</text><polygon fill="#181818" points="403.5,186.6641,413.5,190.6641,403.5,194.6641,407.5,190.6641" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69.5" x2="409.5" y1="190.6641" y2="190.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="76.5" y="185.8076">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="227" x="87.5" y="185.8076">insert the path for CSV file to be loaded</text><path d="M10,205.6641 L71,205.6641 L71,214.0156 L61,224.0156 L10,224.0156 L10,205.6641 " fill="#EEEEEE" style="stroke:#000000;stroke-width:1.5;"/><rect fill="none" height="94.0547" style="stroke:#000000;stroke-width:1.5;" width="452.5" x="10" y="205.6641"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="16" x="25" y="220.1592">alt</text><text fill="#000000" font-family="sans-serif" font-size="11" font-weight="bold" lengthAdjust="spacing" textLength="76" x="86" y="219.083">[if file is valid]</text><polygon fill="#181818" points="80.5,242.3672,70.5,246.3672,80.5,250.3672,76.5,246.3672" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="74.5" x2="419.5" y1="246.3672" y2="246.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="86.5" y="241.5107">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="311" x="97.5" y="241.5107">requests confirmation to start loading the specified file</text><polygon fill="#181818" points="403.5,287.7188,413.5,291.7188,403.5,295.7188,407.5,291.7188" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;" x1="69.5" x2="409.5" y1="291.7188" y2="291.7188"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="76.5" y="286.8623">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="166" x="87.5" y="286.8623">confirms the file to be loaded</text><polygon fill="#181818" points="75.5,325.0703,65.5,329.0703,75.5,333.0703,71.5,329.0703" style="stroke:#181818;stroke-width:1.0;"/><line style="stroke:#181818;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="69.5" x2="419.5" y1="329.0703" y2="329.0703"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="81.5" y="324.2139">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="152" x="92.5" y="324.2139">informs operation success</text><!--MD5=[235896ec76033660dc5c0d43ef2179e8]
+@startuml
+autonumber
+actor "Administrator" as admin
+participant ":System" as sys
+
+activate admin
+admin -> sys : start ordering to load a set of users from a CSV file
+activate sys
+sys - -> admin : asks to insert the path of CSV file to be loaded
+deactivate sys
+
+||15|
+
+admin -> sys : insert the path for CSV file to be loaded
+activate sys
+
+alt if file is valid
+    sys - -> admin : requests confirmation to start loading the specified file
+    deactivate sys
+
+    ||15|
+
+    admin -> sys : confirms the file to be loaded
+    activate sys
+end
+
+sys - -> admin : informs operation success
+deactivate sys
+
+deactivate admin
+
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

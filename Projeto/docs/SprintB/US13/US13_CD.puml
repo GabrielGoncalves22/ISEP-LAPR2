@@ -1,0 +1,103 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class Company {
+    -designation
+    +getVaccineStore()
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+    +Vaccine(name, brand, vaccineType)
+    -checkNameRules(name)
+    -checkBrandRules(brand)
+    -checkVaccineTypeRules(vaccineType)
+    +addAgeGroup(ag)
+    +getAgList()
+    +toString()
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+    +VaccineType(code, description, technology)
+    -checkCodeRules(code)
+    -checkDescriptionRules(description)
+    +toString()
+}
+
+class AgeGroup {
+    -minimumAge
+    -maximumAge
+    -dosesAdministered
+    +AgeGroup(minimumAge, maximumAge, dosesAdministered)
+    -checkAgeRules(minimumAge, maximumAge);
+    -checkDosesAdministered(dosesAdministered)
+    +addAdministrationProcess(ap)
+    +getAdministrationProcessList()
+    +toString()
+}
+
+class AdministrationProcess {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+    +AdministrationProcess(doseNumber, dosage, timeIntervalBetweenLastDose)
+    -checkDoseNumber(doseNumber)
+    -checkDosage(dosage)
+    -checkIntervalBetweenLastDose(timeIntervalBetweenLastDose)
+    +toString()
+}
+
+class SpecifyNewVaccineUI {
+}
+
+class SpecifyNewVaccineController {
+    +createVaccine(name, brand, vt)
+    +createAgeGroup(minimumAge, maximumAge, dosesAdministered)
+    +createAdministrationProcess(doseNumber, dosage, timeIntervalBetweenLastDose)
+    +saveVaccine()
+    +getVaccineType()
+}
+
+class SpecifyNewVaccineTypeController {
+    +getVaccineTypeList()
+}
+
+
+class VaccineStore {
+    +createVaccine(name, brand, vt)
+    +validateVaccine(v)
+    +createAgeGroup(minimumAge, maximumAge, dosesAdministered)
+    +addAgeGroup(v, ag)
+    +validateAgeGroup(agList, ag)
+    +createAdministrationProcess(doseNumber, dosage, timeIntervalBetweenLastDose)
+    +addAdministrationProcess(ag, ap)
+    +validateAdministrationProcess(apList, ap)
+    +saveVaccine(v)
+    -addVaccine(v)
+}
+
+class VaccineTypeStore {
+    +getVaccineTypeList()
+}
+
+Vaccine o-- VaccineType
+Vaccine *-- AgeGroup
+AgeGroup *-- AdministrationProcess
+SpecifyNewVaccineUI ..> SpecifyNewVaccineController
+SpecifyNewVaccineController ..> Company
+SpecifyNewVaccineController ..> Vaccine
+SpecifyNewVaccineController ..> VaccineStore
+SpecifyNewVaccineTypeController ..> Company
+SpecifyNewVaccineTypeController ..> VaccineType
+SpecifyNewVaccineTypeController ..> VaccineTypeStore
+Company "1" -- "*" Vaccine : applies >
+Company "1" -- "1" VaccineStore : uses >
+Company "1" -- "1" VaccineTypeStore : uses >
+
+@enduml

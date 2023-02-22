@@ -1,0 +1,38 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+package ui{
+class VaccinationStatisticsUI{
+}
+}
+
+package core{
+
+package controller{
+class VaccinationStatisticsController{
+}
+}
+
+package domain{
+
+package store{
+class VaccinationStatisticsStore{
+}
+}
+
+package model{
+class Company{
+}
+}
+
+
+}
+
+
+VaccinationStatisticsUI ..> VaccinationStatisticsController
+controller ..> domain
+
+Company "1" -- "1" VaccinationStatisticsStore : uses >
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+left to right direction
+
+() "CTRL API" as CTRL
+
+[Pandemic Vaccination Management System]
+
+[Business Logic] as BusinessLogic
+
+[Console UI] as ConsoleUI
+[JavaFx UI] as JavaFxUI
+
+CTRL - BusinessLogic
+
+CTRL -(0- JavaFxUI
+CTRL -(0- ConsoleUI
+@enduml

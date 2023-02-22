@@ -1,0 +1,169 @@
+@startuml
+autonumber
+'hide footbox
+
+actor "Center Coordinator" as cc
+
+participant ":\nAnalyzePerformaceUI" as ui
+participant ":\nAnalyzePerformaceController " as controller
+participant ":\nCompany" as company
+participant "vaccineCenter:\nVaccineCenter" as vaccineCenter
+participant ":\nTime" as time
+participant "vcStore: VaccinationCenterStore" as VCS
+participant "arrivalStore:\nRegisterArrivalStore" as arrivalStore
+participant "vaccineAdiministrationStore:\nVaccineAdiministrationStore" as vaccineAdiministrationStore
+
+
+activate cc
+cc -> ui : Requests to analyze the performance of the center
+
+
+activate ui
+ui -->controller** : create (vcId)
+controller -> company : vcStore = getVaccinationCenterStore()
+activate company
+deactivate company
+controller -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate VCS
+
+
+ui --> cc : Requests data (i.e date)
+deactivate ui
+
+cc -> ui : Types the requested  data
+activate ui
+
+ui -> controller : validateDate(date)
+
+activate controller
+ui -> controller : checkDate(date)
+
+controller -> arrivalStore : getArrayList()
+activate arrivalStore
+arrivalStore --> controller : return an arraylist with arrivals
+deactivate arrivalStore
+
+deactivate controller
+    ui --> cc : requests confirmation to start loading the specified file
+    deactivate ui
+    deactivate arrivalStore
+    deactivate controller
+
+
+
+cc -> ui : Types the requested  data
+activate ui
+ui -> controller : checkTime(time)
+activate controller
+controller --> ui : returns if it is possible to use the time entered
+deactivate controller
+
+ui -> controller : validateTimeIntervalAnalyze (m)
+activate controller
+controller -> time : calculateTimeDifferenceMinute(time1, time2)
+activate time
+deactivate time
+deactivate controller
+
+
+ ui --> cc : present the list with the diference, the sum and the time interval
+
+deactivate ui
+deactivate cc
+
+
+autonumber
+
+actor CenterCoordinator as CC
+
+participant ":\nAnalyzePerformanceUI" as UI
+participant ":\nAnalyzePerformanceController" as CTRL
+participant "analyzer:\nAnalyzePerformance" as PA
+participant ":\nCompany" as C
+participant "vaccinationCenter:\nVaccinationCenter" as VC
+participant "vcStore: VaccinationCenterStore" as VCS
+participant "asuStore: ArrivalSNSUserStore" as AUS
+
+
+activate CC
+CC -> UI :  requests to analyze the performance of the center
+activate UI
+UI --> CTRL** : create (vcId)
+activate CTRL
+CTRL -> C : vcStore = getVaccinationCenterStore()
+activate C
+deactivate C
+CTRL -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate VCS
+deactivate CTRL
+UI --> CC : requests data (i.e date)
+deactivate UI
+CC-> UI : types the requested  data
+activate UI
+UI -> CTRL : setSelectedDate(event)
+activate CTRL
+deactivate CTRL
+UI --> CC : requests data (i.e time interval)
+deactivate UI
+CC -> UI : confirms the selection of the date and of the time interval
+activate UI
+UI -> CTRL : validateTimeIntervalAnalyze(m)
+activate CTRL
+CTRL --> UI : returns true if the time interval is valid
+deactivate CTRL
+UI -> CTRL : setTimeIntervalAnalyze(m)
+activate CTRL
+deactivate CTRL
+UI -> CTRL : differenceList = getTheDifferenceDailyList()
+activate CTRL
+CTRL -> PA : createDifferenceList( listAU, listVA, m)
+activate PA
+PA -> PA : list = formatListToBeAnalyzed(date,m)
+activate PA
+loop while there are Arrivals and Departures
+PA -> PA : countEntries( listVA, startTime, endTime)
+PA -> PA : countDepartures( listVA, startTime, endTime)
+PA -> AUS : getListArrivalSNSUser(vc)
+activate AUS
+AUS --> PA : returns the list of arrivals
+deactivate AUS
+deactivate PA
+end loop
+PA --> CTRL : returns the statistics daily list
+deactivate PA
+deactivate CTRL
+UI -> CTRL : maxSumSubList = getMaxSumSubList(m)
+activate CTRL
+CTRL -> PA : getMaxSumSubList(m)
+activate PA
+PA -> PA : differenceList = createDifferenceList(listAU, listVA, m)
+activate PA
+deactivate PA
+PA -> PA : maxSumSubList = getMaxSumSubList(differenceList)
+activate PA
+deactivate PA
+PA --> CTRL : returns the max sum sub list
+deactivate PA
+CTRL --> UI : returns the max sum sub list
+deactivate CTRL
+UI -> CTRL : getMaxSum()
+activate CTRL
+CTRL -> PA : getMaximumSum()
+activate PA
+PA --> CTRL : returns the max sum
+deactivate PA
+CTRL --> UI : returns the max sum
+deactivate CTRL
+UI -> CTRL : timeInterval = timeIntervalMaxSumSubList(date, m)
+activate CTRL
+CTRL -> PA : timeInterval(intendedDate, m)
+activate PA
+PA --> CTRL : returns the max sum
+deactivate PA
+CTRL --> UI : returns the time interval
+UI --> CC : presents the list with the difference between the  number clients \n arriving and the number of clients leaving the center
+deactivate UI
+deactivate CC
+@enduml

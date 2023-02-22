@@ -1,0 +1,153 @@
+@startuml
+autonumber
+actor "Receptionist" as RCPT
+
+participant ":\n ScheduleVaccinationUI" as UI
+participant ":\n ScheduleVaccinationController" as CTRL
+participant ":\n Company" as CMPN
+participant "suStore:\nSNSUserStore" as SUS
+participant "su:\nSNSUser" as SU
+participant "vcStore: \n VaccinationCenterStore" as VCS
+participant "vc:\n VaccinationCenter" as VC
+participant "vtStore:\n VaccineTypeStore" as VTS
+participant "vt: \n VaccineType" as VT
+participant "svStore:\n ScheduleVaccineStore" as SVS
+participant "sv: \n ScheduleVaccine" as SV
+participant "svMapper:\n ScheduleVaccineMapper" as SVMP
+participant "svDTO: \n ScheduleVaccineDTO" as SVDTO
+
+activate RCPT
+
+RCPT -> UI : starts by scheduling the vaccine
+activate UI
+
+UI --> RCPT : requests data (SNS user number)
+deactivate UI
+
+RCPT -> UI : types requested data
+activate UI
+
+UI -> CTRL : createSNSUser (snsUserNumber)
+activate CTRL
+
+CTRL -> CMPN : suStore = getSNSUserStore()
+activate CMPN
+deactivate CMPN
+
+CTRL -> SUS : su = getSNSUser(snsUserNumber)
+activate SUS
+deactivate CMPN
+deactivate SUS
+deactivate CTRL
+
+UI -> CTRL : vcI=getVaccinationCenterList()
+activate CTRL
+
+CTRL -> CMPN : vcStore = getVaccinationCenterStore()
+activate CMPN
+deactivate CMPN
+
+CTRL -> VCS :  getVaccinationCenterList()
+activate VCS
+deactivate VCS
+deactivate CTRL
+
+UI --> RCPT : shows the vaccine centers list and ask to select one
+deactivate UI
+
+RCPT -> UI : selects one
+activate UI
+
+UI --> RCPT : requests data (date and time)
+deactivate UI
+
+RCPT -> UI : types requested data
+activate UI
+
+UI -> CTRL : verifySlotAvailability(date , time)
+activate CTRL
+deactivate CTRL
+|||
+
+UI -> CTRL : vtI = getVaccineTypeList()
+activate CTRL
+
+CTRL -> CMPN : vtStore = getVaccineTypeStore()
+activate CMPN
+deactivate CMPN
+CTRL -> VTS :   getVaccineTypeList()
+activate VTS
+deactivate VTS
+deactivate CTRL
+
+UI --> RCPT : shows the vaccine type list and ask to select one
+deactivate UI
+RCPT -> UI : selects one
+activate UI
+
+UI -> CTRL : createScheduleVaccine(svDto)
+activate CTRL
+
+CTRL -> CMPN : svStore = getScheduleVaccineStore()
+activate CMPN
+deactivate CMPN
+CTRL -> SVS : sv = createScheduleVaccine(svDto)
+
+activate SVS
+SVS -> SVMP : sv=toModel(svDto)
+activate SVMP
+SVMP -> SVDTO : snsUser = getSNSUser()
+activate SVDTO
+deactivate SVDTO
+
+SVMP -> SVDTO : date = getDate()
+activate SVDTO
+deactivate SVDTO
+
+SVMP -> SVDTO : time = getTime()
+activate SVDTO
+deactivate SVDTO
+
+SVMP -> SVDTO : vaccinationCenter = getVaccinationCenter()
+activate SVDTO
+deactivate SVDTO
+
+SVMP -> SVDTO : vaccineType = getVaccineType()
+activate SVDTO
+deactivate SVDTO
+
+create VaccineSchedule
+SVMP --> VaccineSchedule : create(snsUser, vaccinationCenter,date, time, vaccineType)
+'note over VaccineSchedule, VCDTO : several interactions to extract data from DTO
+deactivate SVMP
+deactivate SVS
+
+CTRL -> SVS : validateScheduleVaccine(sv)
+activate SVS
+deactivate SVS
+deactivate CTRL
+
+UI --> RCPT : shows all the data and requests a confirmation
+deactivate UI
+
+RCPT -> UI : confirms the data
+activate UI
+
+UI -> CTRL : saveScheduleVaccine()
+activate CTRL
+
+CTRL -> SVS : saveScheduleVaccine(vs)
+activate SVS
+
+SVS -> SVS : saveScheduleVaccine(vs)
+activate SVS
+deactivate SVS
+
+SVS -> SVS : addScheduleVaccine(vs)
+activate SVS
+deactivate SVS
+
+UI --> RCPT : informs operation success
+deactivate UI
+deactivate RCPT
+@enduml

@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_ArrivalSNSUser_Save_Temporary_Data</u>
+end title
+
+participant "aSUStore:\nArrivalSNSUserStore" as aSUStore
+participant "aSU:\nArrivalSNSUser" as asu
+participant "tempListASU:\nList<ArrivalSNSUser>" as tempListASU
+
+[o-> aSUStore : saveLegacySystemTemporaryData()
+activate aSUStore
+
+    loop foreach asu in the tempListASU
+        aSUStore -> aSUStore : saveArrivalSNSUser(asu)
+        activate aSUStore
+        deactivate aSUStore
+    end
+
+    aSUStore -> aSUStore : saveArrivalSNSUserListInFile()
+    activate aSUStore
+    deactivate aSUStore
+
+    aSUStore -> aSUStore : cleanTempList()
+    activate aSUStore
+    deactivate aSUStore
+
+    <-- aSUStore : date saved
+deactivate aSUStore
+
+
+@enduml

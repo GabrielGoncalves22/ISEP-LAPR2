@@ -1,0 +1,38 @@
+@startuml
+autonumber
+
+title
+<u>SD_DOSE_MAPPER_TOLISTDTO</u>
+end title
+
+participant ":\nDoseMapper" as DM
+participant "listD:\nList<Dose>" as LD
+participant "listDDto:\nList<DoseDTO>" as LDD
+participant "d:\nDose" as D
+participant "dDto:\nDoseDTO" as DD
+
+[o-> DM : toListDTO(listD)
+activate DM
+DM --> LDD** : create()
+
+loop foreach object in listD
+
+DM -> LD : d = get(i)
+activate LD
+deactivate LD
+
+DM -> DM : dDto = toDTO(d)
+activate DM
+DM --> DD** : create()
+
+deactivate DM
+
+DM -> LDD : add(dDto)
+activate LDD
+deactivate LDD
+
+end loop
+
+<-- DM : listDDto
+deactivate DM
+@enduml

@@ -1,0 +1,106 @@
+@startuml
+autonumber
+'hide footbox
+
+actor "Administrator" as admin
+
+participant ":\nLoadFileUI" as ui
+participant ":\nLoadFileController " as controller
+participant ":\nCompany" as company
+participant "fHandler:\nFileHandler" as fileHandler
+participant ":\nFileUtils" as fUtils
+participant "store:\nSNSUserStore" as store
+participant ":\nSNSUserMapper" as mapper
+participant "dto:\nSNSUserDTO" as dto
+participant "snsUser:\nSNSUser" as snsUser
+participant "lSUDto:\nList<SNSUserDTO>" as lSUDto
+participant "lSU:\nList<SNSUser>" as lSU
+
+activate admin
+admin -> ui : start ordering to load a set of users from a CSV file
+activate ui
+ui --> admin : asks to insert the path of CSV file to be loaded
+deactivate ui
+
+admin -> ui : insert the path for CSV file to be loaded
+activate ui
+
+'Validate file (if file exists in the given path and check if it has a valid extension)
+ui -> controller : getDataFromFile(filePath)
+activate controller
+loop every file type possible
+    controller --> fileHandler** : fHandler = createFileHandler(filePath)
+    activate fileHandler
+    fileHandler -> fUtils : message = validateFile(file, supportedExtensions)
+    activate fUtils
+    fUtils -> fUtils : fileExists(file)
+    activate fUtils
+    deactivate fUtils
+    fUtils -> fUtils : hasSupportedExtension(file, supportedExtensions)
+    activate fUtils
+    deactivate fUtils
+    deactivate fUtils
+    deactivate fileHandler
+
+    alt if file is valid
+        controller -> fileHandler : lSUDto = readDataToSNSUserDTO()
+        activate fileHandler
+        deactivate fileHandler
+    end
+    deactivate controller
+end
+
+alt if file is valid
+    ui --> admin : requests confirmation to start loading the specified file
+    deactivate ui
+
+    admin -> ui : confirms the file to be loaded
+    activate ui
+
+    'Read the file and register the data
+    ui -> controller : loadSNSUsers(lUSDto)
+    activate controller
+
+    controller -> company : store = getSNSUserStore()
+    activate company
+    deactivate company
+
+
+    controller -> store : lSU = lSUDtoToModelList(lSUDto)
+    activate store
+    store -> mapper : toModelList(lSUDto)
+    activate mapper
+    'todo
+    |||
+    ref over mapper
+        SD_SNSUserMapper_toModelList_list
+    end ref
+    |||
+    mapper --> store : lSU
+
+    deactivate mapper
+    deactivate store
+
+    loop for each object in lSU
+        controller -> lSU : snsUser = get(i)
+        activate lSU
+        deactivate lSU
+        controller -> store : saveSNSUser(snsUser)
+        activate store
+        store -> store : validateSNSUser(snsUser)
+        activate store
+        store -> store : checkDuplicates(snsUser)
+        activate store
+        deactivate store
+        deactivate store
+        deactivate store
+    end
+    deactivate controller
+end
+
+ui --> admin : informs operation success
+deactivate ui
+
+deactivate admin
+
+@enduml

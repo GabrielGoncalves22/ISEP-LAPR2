@@ -1,0 +1,154 @@
+@startuml
+autonumber
+actor "Receptionist" as R
+
+participant ":\nRegister ArrivalSNSUserUI" as UI
+participant ":\nRegister ArrivalSNSUserController" as CTRL
+participant ":\nCompany" as CMP
+participant "vcStore:\nVaccinationCenterStore" as VCS
+participant "vc:\nVaccinationCenter" as VC
+participant "suStore:\nSNSUserStore" as SUS
+participant "su:\nSNSUser" as SU
+participant "svStore:\nScheduleVaccineStore" as SVS
+participant "sv:\nScheduleVaccine" as SV
+participant "svMapper:\nScheduleVaccineMapper" as SVM
+participant "listSV:\nList<ScheduleVaccine>" as LSV
+participant "listSVDto:\nList<ScheduleVaccineDto>" as LSVD
+participant "auStore:\nArrivalSNSUserStore" as AUS
+participant "auMapper:\nArrivalSNSUserMapper" as AUM
+participant "auDto:\nArrivalSNSUserDto" as AUD
+participant "au:\nArrivalSNSUser" as AU
+
+activate R
+R -> UI : starts register the arrival of a SNS user to take the vaccine
+note left UI: **vcId** is obtained immediately after\n user login to avoid being repeatedly selecting\n the vaccination center user is working on\n cf. SD_Select_VC
+activate UI
+
+UI --> CTRL** : create (vcId)
+activate CTRL
+CTRL -> CMP : vcStore = getVaccinationCenterStore()
+activate CMP
+deactivate CMP
+CTRL -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate CTRL
+deactivate VCS
+
+UI --> R : requests data for the arrival (snsUserNumber)
+deactivate UI
+
+R -> UI : types requested data
+activate UI
+
+UI -> CTRL : createSNSUser (snsUserNumber)
+activate CTRL
+CTRL -> CMP : suStore = getSNSUserStore()
+activate CMP
+deactivate CMP
+
+CTRL -> SUS : su = getSNSUser(snsUserNumber)
+activate SUS
+deactivate CMP
+deactivate SUS
+
+alt if sns user exists
+
+UI -> CTRL : getListSNSUserVaccinationSchedule()
+CTRL -> CMP : svStore = getVaccinationSchedule()
+activate CMP
+deactivate CMP
+
+CTRL -> SVS : getListSNSUserVaccinationSchedule(su, vc)
+activate SVS
+SVS --> LSV** : create()
+SVS --> CTRL : listSV
+|||
+deactivate SVS
+
+CTRL -> SVM : toDTO(listSV)
+activate SVM
+
+ref over SVM
+SD_Schedule_Vaccine_Mapper_toDTO_List
+end ref
+
+SVM --> CTRL : listSVDto
+deactivate SVM
+
+CTRL --> UI : listSVDto
+deactivate CTRL
+
+UI --> R : shows list of vaccines scheduled for that SNS user
+deactivate UI
+
+R -> UI : accept the arrival of the SNS user
+activate UI
+
+UI -> CTRL : createArrivalSNSUser()
+activate CTRL
+
+CTRL -> CMP : auStore = getArrivalSNSUserStore()
+activate CMP
+deactivate CMP
+
+CTRL -> AUS : au = createArrivalSNSUser(auDTO)
+activate AUS
+AUS -> AUM : au = toModel(auDTO)
+activate AUM
+
+AUM -> AUD : snsUser = getSnsUser()
+activate AUD
+deactivate AUD
+
+AUM -> AUD : arrivalDate = getArrivalDate()
+activate AUD
+deactivate AUD
+
+AUM -> AUD : arrivalTime = getArrivalTime()
+activate AUD
+deactivate AUD
+
+AUM -> AUD : vaccinationCenter = getvaccinationCenter()
+activate AUD
+
+deactivate AUD
+AUM --> AU** : create(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+deactivate AUM
+deactivate AUS
+
+CTRL -> AUS : validateArrivalSNSUser(arrivalSNSUser)
+activate AUS
+
+AUS -> AUS: checkDuplicates(au)
+activate AUS
+deactivate AUS
+
+deactivate CTRL
+deactivate AUS
+
+UI --> R: shows all data and requests confirmation
+
+deactivate UI
+R -> UI : confirms the user is ready to take the vaccine
+activate UI
+UI -> CTRL : saveArrivalSNSUser()
+activate CTRL
+
+CTRL -> AUS : saveArrivalSNSUser(au)
+activate AUS
+AUS -> AUS: validateArrivalSNSUser(au)
+activate AUS
+deactivate AUS
+
+AUS -> AUS: addArrivalSNSUser(au)
+activate AUS
+deactivate AUS
+deactivate CTRL
+deactivate AUS
+end alt
+
+UI --> R : informs operation success
+deactivate UI
+deactivate R
+
+@enduml

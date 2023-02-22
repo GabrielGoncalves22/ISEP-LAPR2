@@ -1,0 +1,66 @@
+@startuml
+autonumber
+actor "<<automatic>> \n Timer/Clock" as A
+
+
+participant ":\nApp" as P
+participant ": \n Date" as D
+
+participant "timer: \nTimer" as T
+participant "task: \nExportFullVaccinatedCSV" as E
+
+participant ":\nCompany" as CMP
+
+'Vaccination Center
+participant "vcStore:\nVaccinationCenterStore" as VCS
+participant "vc:\nVaccinationCenterStore" as VC
+
+'Vaccinated SNS User
+participant "vuStore:\nVaccinatedSNSUserStore" as VUS
+participant "ListVU:\nList<VaccinatedSNSUser>" as NLNU
+
+
+
+A -> P : start schedule
+activate A
+activate P
+
+P -> D : date = currentDate()
+activate D
+deactivate D
+
+P --> E** : create(date)
+activate E
+E -> CMP : vcStore = getVaccinationCenterStore()
+activate CMP
+deactivate CMP
+E -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate VCS
+
+
+P -> E : getListOfVaccinatedSNSUser()
+E -> CMP : auStore = getVaccinatedSNSUserStore()
+activate CMP
+deactivate CMP
+E -> VUS : getListOfVaccinatedSNSUser(vc)
+activate VUS
+deactivate VUS
+
+P -> T** : create()
+activate T
+P -> T : schedule(task, delay, interval)
+deactivate P
+
+|||
+T -> E : run()
+note over T: After the time specified by "delay" has elapsed
+
+|||
+T -> E : run()
+note over T: After the time specified by "interval" has elapsed
+
+E --> A : print information to a csv file
+deactivate A
+
+@enduml

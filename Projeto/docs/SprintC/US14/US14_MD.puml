@@ -1,0 +1,35 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Administrator {
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -address
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class File {
+    -file
+}
+
+'------------ Relations ------------
+Company "1" -- "*" SNSUser : owns >
+SNSUser "*" -- "1" Administrator: created by >
+Company "1" -- "*" Administrator : knows >
+File "*" -- "1" Administrator : can load <
+File "1" -- "*" SNSUser : contains information about >
+
+@enduml

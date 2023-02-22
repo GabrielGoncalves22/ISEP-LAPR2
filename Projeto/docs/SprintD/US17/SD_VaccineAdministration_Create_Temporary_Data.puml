@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_VaccineAdministration_Create_Temporary_Data</u>
+end title
+
+participant "vaStore:\nVaccineAdministrationStore" as vaStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant "tempListVA:\nList<VaccineAdministration>" as tempListVA
+participant "va:\nVaccineAdministration" as va
+participant "sU:\nSNSUser" as sU
+participant "v:\nVaccine" as v
+participant "dose:\nDose" as dose
+participant "vc:\nVaccineCenter" as vc
+
+[o-> vaStore : createLegacySystemTemporaryData(sU, v, dose, lSF, vc)
+activate vaStore
+
+    vaStore -> lSF : nADate = getNurseAdministrationDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : nATime = getNurseAdministrationTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingDate = getLeavingDate()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : leavingTime = getLeavingTime()
+    activate lSF
+    deactivate lSF
+    vaStore -> lSF : lotNumber = getLotNumber()
+    activate lSF
+    deactivate lSF
+
+    vaStore -> vaStore : va = instantiateVaccineAdministration(snsUser, vaccine, dose, nADate, nATime, leavingDate, leavingTime, vCenter, lotNumber)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> vaStore : validateVaccineAdministration(va)
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> tempListVA : add(va)
+    activate tempListVA
+    deactivate tempListVA
+
+    <-- vaStore : success
+deactivate vaStore
+
+
+@enduml

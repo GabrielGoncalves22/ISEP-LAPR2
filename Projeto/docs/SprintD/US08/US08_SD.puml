@@ -1,0 +1,376 @@
+@startuml
+autonumber
+actor "Nurse" as N
+
+participant ":\nRecordVaccineAdministrationUI" as UI
+participant ":\nRecordVaccineAdministrationController" as CTRL
+participant ":\nCompany" as CMP
+
+'Vaccination Center
+participant "vcStore:\nVaccinationCenterStore" as VCS
+participant "vc:\nVaccinationCenter" as VC
+
+'Arrival SNS User
+participant "auStore:\nArrivalSNSUserStore" as AUS
+participant ":\nList<ArrivalSNSUser>" as LAU
+participant "au:\nArrivalSNSUser" as AU
+participant "ListAU:\nList<ArrivalSNSUser>" as NLAU
+participant ":\nArrivalSNSUserMapper" as AUM
+
+'SNS User
+participant "suStore:\nSNSUserStore" as SUS
+participant ":\nSNSUserMapper" as SUM
+
+'Schedule Vaccine
+participant "svStore:\nScheduleVaccineStore" as SVS
+
+'Vaccine
+participant "listV:\nList<Vaccine>" as LV
+participant "vStore:\nVaccineStore" as VS
+participant ":\nVaccineMapper" as VM
+
+'Dose
+participant ":\nDoseMapper" as DM
+
+'Administration Vaccine
+participant "vaStore:\nVaccineAdministrationStore" as AVS
+participant ":\nVaccineAdministrationMapper" as AVM
+participant "listVA:\nList<VaccineAdministration>" as LAV
+participant "vaDto:\nVaccineAdministrationDto" as AVD
+participant "va:\nVaccineAdministration" as AV
+
+'---------------------
+participant "su:\nSNSUser" as SU
+participant "sv:\nScheduleVaccine" as SV
+participant "vt:\nVaccineType" as VT
+participant "v:\nVaccine" as V
+participant ":\n Date" as D
+participant "listD:\nList<Dose>" as LD
+participant "listAUDto:\nList<ArrivalSNSUser>" as LAUD
+
+activate N
+N -> UI : starts record the administration of a vaccine to a SNS user
+note left UI: **vcId** is obtained immediately after\n user login to avoid being repeatedly selecting\n the vaccination center user is working on\n cf. SD_Select_VC
+activate UI
+
+UI --> CTRL** : create (vcId)
+activate CTRL
+CTRL -> CMP : vcStore = getVaccinationCenterStore()
+activate CMP
+deactivate CMP
+CTRL -> VCS : vc = getVaccinationCenter(vcId)
+activate VCS
+deactivate CTRL
+deactivate VCS
+
+UI -> CTRL : getListArrivalSNSUser()
+activate CTRL
+CTRL -> CMP : auStore = getArrivalSNSUserStore()
+activate CMP
+deactivate CMP
+CTRL -> AUS : getListArrivalSNSUser(vc)
+activate AUS
+AUS --> NLAU** : create()
+
+loop for each known ArrivalSNSUser
+
+AUS -> LAU : au = get(i)
+activate LAU
+deactivate LAU
+
+AUS -> AU : b = criteriaVaccinationCenter(au, vc)
+activate AU
+deactivate AU
+
+opt b == true
+AUS -> NLAU : add(au)
+activate NLAU
+deactivate NLAU
+end opt
+
+end loop
+
+AUS --> CTRL : listAU
+deactivate AUS
+
+|||
+CTRL -> AUM : toListDTO(listAU)
+activate AUM
+
+ref over AUM
+SD_Arrival_SNSUser_Mapper_toListDTO
+end ref
+
+AUM --> CTRL : listAUDto
+deactivate AUM
+
+CTRL --> UI : listAUDto
+deactivate CTRL
+UI --> N : show list of users that are in the center to take the vaccine and ask to select one
+deactivate UI
+
+N -> UI : select the SNS user
+activate UI
+
+UI -> CTRL : searchSNSUser(snsUserNumber)
+activate CTRL
+CTRL -> CMP : suStore = getSNSUserStore()
+activate CMP
+deactivate CMP
+
+CTRL -> SUS : su = getSNSUser(snsUserNumber)
+activate SUS
+deactivate SUS
+
+CTRL -> SUM : toDto(su)
+activate SUM
+|||
+SUM -> CTRL : suDto
+deactivate SUM
+
+CTRL --> UI: suDto
+deactivate CTRL
+
+UI --> N : show the user info
+deactivate UI
+
+N -> UI : asks for a vaccine suggestion to be administered
+activate UI
+UI -> CTRL : getListSuggestedVaccineAdminister()
+activate CTRL
+
+CTRL -> CTRL : vt = checkTypeVaccineMarked()
+activate CTRL
+
+CTRL -> D : date = currentDate()
+activate D
+deactivate D
+
+CTRL -> CMP : svStore = getScheduleVaccineStore()
+activate CMP
+deactivate CMP
+
+CTRL -> SVS : getTypeVaccineMarked(su, vc, date)
+activate SVS
+deactivate CTRL
+deactivate SVS
+
+CTRL -> CTRL : v = checkSNSUserTakingAnyVaccine(vt)
+activate CTRL
+
+CTRL -> CMP : vaStore = getVaccineAdministrationStore()
+activate CMP
+deactivate CMP
+
+CTRL -> AVS : currentVaccine(su, vt)
+activate AVS
+deactivate CTRL
+deactivate AVS
+
+CTRL --> LV** : create()
+
+alt v != null
+    CTRL -> LV : add(v)
+    activate LV
+    deactivate LV
+
+else
+    CTRL -> CTRL : listV = checkListSuggestedVaccines()
+    activate CTRL
+
+    CTRL -> SUS : age = currentAge(su)
+    activate SUS
+    deactivate SUS
+
+    CTRL -> CMP : vStore = getVaccineStore()
+    activate CMP
+    deactivate CMP
+
+    CTRL -> VS : getListSuggestedVaccines(vt, age)
+    activate VS
+    deactivate CTRL
+    deactivate VS
+
+end alt
+
+CTRL -> VM : toListDTO(listV)
+activate VM
+
+ref over VM
+SD_Vaccine_Mapper_toListDTO
+end ref
+
+VM --> CTRL : listVDto
+deactivate VM
+
+CTRL --> UI : listVDto
+deactivate CTRL
+
+UI --> N : shows the list of suggested vaccines and ask to select one
+deactivate UI
+
+N -> UI : select the vaccine
+activate UI
+
+UI -> CTRL : getListSuggestedDoseAdminister(v)
+activate CTRL
+
+CTRL -> CTRL : listD = checkListDoses(v)
+activate CTRL
+
+CTRL -> SUS : age = currentAge(su)
+activate SUS
+deactivate SUS
+
+CTRL -> CMP : vStore = getVaccineStore()
+activate CMP
+deactivate CMP
+
+CTRL -> VS : getListDose(v, age)
+activate VS
+deactivate CTRL
+deactivate VS
+
+CTRL -> CTRL : listD = withdrawAdministeredDoses(v, listD)
+activate CTRL
+
+CTRL -> CMP : vaStore = getVaccineAdministrationStore()
+activate CMP
+deactivate CMP
+
+CTRL -> AVS : missingDoses(su, v, listD)
+activate AVS
+deactivate CTRL
+deactivate AVS
+
+
+CTRL -> DM : toListDTO(listD)
+activate DM
+
+ref over DM
+SD_Dose_Mapper_toDTO_List
+end ref
+
+DM --> CTRL : listDDto
+deactivate DM
+
+CTRL --> UI : listDDto
+deactivate CTRL
+
+UI --> N : shows the list of suggested dose numbers to administer and ask to select one
+
+deactivate CTRL
+deactivate UI
+
+N -> UI : select the number of the administered dose
+activate UI
+UI --> N : requests data for administration of a vaccine (lot number)
+
+deactivate UI
+
+N -> UI : types requested data
+activate UI
+
+UI -> CTRL : createAdministrationVaccine(vaDto)
+activate CTRL
+
+CTRL -> CMP : avStore = getAdministrationVaccineStore()
+activate CMP
+deactivate CMP
+
+CTRL -> AVS : av = createAdministrationVaccine(vaDto)
+activate AVS
+AVS -> AVM : av = toModel(vaDto)
+activate AVM
+
+AVM -> AVD : snsUser = getSnsUser()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : vaccine = getVaccine()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : dose = getDose()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : administrationDate = getAdministrationDate()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : administrationTime = getAdministrationTime()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : leavingDate = getLeavingDate()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : leavingTime = getLeavingTime()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : vaccinationCenter = getVaccinationCenter()
+activate AVD
+deactivate AVD
+
+AVM -> AVD : lotNumber = getLotNumber()
+activate AVD
+deactivate AVD
+
+AVM --> AV** : create(snsUser, vaccine, dose, administrationDate, administrationTime, leavingDate, leavingTime, vaccinationCenter, lotNumber)
+deactivate AVM
+deactivate AVS
+
+CTRL -> AVS : validateAdministrationVaccine(va)
+activate AVS
+
+AVS -> AVS: checkDuplicates(va)
+activate AVS
+deactivate AVS
+
+deactivate CTRL
+deactivate AVS
+
+UI --> N: shows all data and requests confirmation
+
+deactivate UI
+N -> UI : confirms the data
+activate UI
+
+
+UI -> CTRL : saveAdministrationVaccine()
+activate CTRL
+
+CTRL -> AUS : removeWaitingRoom(su)
+activate AUS
+deactivate AUS
+
+CTRL -> AVS : saveAdministrationVaccine(va)
+activate AVS
+AVS -> AVS: validateAdministrationVaccine(va)
+activate AVS
+deactivate AVS
+
+AVS -> AVS: addAdministrationVaccine(va)
+activate AVS
+deactivate AVS
+deactivate CTRL
+deactivate AVS
+
+UI -> CTRL : sendMessage(phoneNumber, message, delay)
+activate CTRL
+CTRL -> AVS : sendMessage(phoneNumber, message, delay)
+activate AVS
+ref over AVS
+SD_Executing_Task_Once
+end ref
+deactivate CTRL
+
+UI --> N : informs operation success and sent SMS message informing the end of the recovery period
+deactivate AVS
+deactivate UI
+deactivate N
+
+@enduml

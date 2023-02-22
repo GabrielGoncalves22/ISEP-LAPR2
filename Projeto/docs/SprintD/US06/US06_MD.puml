@@ -1,0 +1,30 @@
+@startuml
+
+class Company
+
+class App
+
+class ExportFullVaccinatedCSV{
+
+}
+
+class Date{
+-date
+}
+
+class VaccinationCenterStore{
+-List<VaccinationCenter>
+}
+
+class VaccinatedSNSUserStore{
+-List<VaccinatedSNSUser>
+}
+
+
+Company "1" -- "1" App : has >
+App "1" -- "1" ExportFullVaccinatedCSV : has >
+ExportFullVaccinatedCSV "1" -- "1" VaccinationCenterStore : gets list from >
+VaccinationCenterStore "1" -- "1" VaccinatedSNSUserStore : gets list from >
+ExportFullVaccinatedCSV "1" -- "1" Date : gets date from >
+
+@enduml

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="196px" preserveAspectRatio="none" style="width:496px;height:196px;background:#FFFFFF;" version="1.1" viewBox="0 0 496 196" width="496px" zoomAndPan="magnify"><defs/><g><!--MD5=[aa33919f6aea5790bca91aa1fa7cb365]
+entity CTRL--><g id="elem_CTRL"><ellipse cx="164.5" cy="99" fill="#F1F1F1" rx="8" ry="8" style="stroke:#181818;stroke-width:0.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="62" x="133.5" y="130.5332">CTRL API</text></g><!--MD5=[11ade1df214f66e5818e67194117ce6a]
+entity Pandemic Vaccination Management System--><g id="elem_Pandemic Vaccination Management System"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="315" x="7" y="7"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="302" y="12"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="300" y="14"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="300" y="18"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="275" x="22" y="41.5332">Pandemic Vaccination Management System</text></g><!--MD5=[c74a98954e9ea47a4d31897c9094f7bb]
+entity BusinessLogic--><g id="elem_BusinessLogic"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="135" x="97" y="143"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="212" y="148"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="210" y="150"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="210" y="154"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="95" x="112" y="177.5332">Business Logic</text></g><!--MD5=[6f86aeeeccc62d90819f75f03d219ec6]
+entity ConsoleUI--><g id="elem_ConsoleUI"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="108" x="382" y="34"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="470" y="39"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="468" y="41"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="468" y="45"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="68" x="397" y="68.5332">Console UI</text></g><!--MD5=[64e4bd07ba8dfd06e2fe1614b7845817]
+entity JavaFxUI--><g id="elem_JavaFxUI"><rect fill="#F1F1F1" height="47.6094" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="100" x="386" y="117"/><rect fill="#F1F1F1" height="10" style="stroke:#181818;stroke-width:0.5;" width="15" x="466" y="122"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="464" y="124"/><rect fill="#F1F1F1" height="2" style="stroke:#181818;stroke-width:0.5;" width="4" x="464" y="128"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="60" x="401" y="151.5332">JavaFx UI</text></g><!--MD5=[9ce107ec084226362a864e0e26b4880c]
+link CTRL to BusinessLogic--><g id="link_CTRL_BusinessLogic"><path d="M164.5,108.24 C164.5,119.77 164.5,131.3 164.5,142.83 " fill="none" id="CTRL-BusinessLogic" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[a7a4fab79c4fa95fab8690c7d28b0fab]
+link CTRL to JavaFxUI--><g id="link_CTRL_JavaFxUI"><path d="M173.57,100.26 C204.79,105.12 319.28,122.97 385.94,133.35 " fill="none" id="CTRL-JavaFxUI" style="stroke:#181818;stroke-width:1.0;"/><path d="M260.5671,106.6594 A10,10 0 0 0 258.3894 120.6329" fill="none" style="stroke:#181818;stroke-width:1.5;"/><ellipse cx="266.465" cy="114.735" fill="#FFFFFF" rx="6" ry="6" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[9321c4a58102d8404e65b5c2d63aa3c8]
+link CTRL to ConsoleUI--><g id="link_CTRL_ConsoleUI"><path d="M173.57,97.77 C204.18,93.12 314.82,76.28 381.96,66.07 " fill="none" id="CTRL-ConsoleUI" style="stroke:#181818;stroke-width:1.0;"/><path d="M256.012,78.078 A10,10 0 0 0 258.1392 92.0592" fill="none" style="stroke:#181818;stroke-width:1.5;"/><ellipse cx="264.0662" cy="84.005" fill="#FFFFFF" rx="6" ry="6" style="stroke:#181818;stroke-width:1.5;"/></g><!--MD5=[389e2620db32a318f05e73325fead033]
+@startuml
+left to right direction
+
+() "CTRL API" as CTRL
+
+[Pandemic Vaccination Management System]
+
+[Business Logic] as BusinessLogic
+
+[Console UI] as ConsoleUI
+[JavaFx UI] as JavaFxUI
+
+CTRL - BusinessLogic
+
+CTRL -(0- JavaFxUI
+CTRL -(0- ConsoleUI
+@enduml
+
+PlantUML version 1.2022.4(Sat Apr 09 14:29:17 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

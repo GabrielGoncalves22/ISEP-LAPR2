@@ -1,0 +1,64 @@
+@startuml
+autonumber
+actor "Receptionist" as receptionist
+
+participant ":SpecifyNew \n SNSUserUI" as UI
+participant ":SpecifyNew \n SNSUserController" as CTRL
+participant ":Company" as CMP
+participant "store: SNSUserStore" as SUS
+participant "su:SNSUser" as SU
+
+activate receptionist
+receptionist -> UI : starts specifying a new SNS User
+activate UI
+UI --> receptionist : request data(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+deactivate UI
+
+receptionist -> UI : types requested data
+activate UI
+
+UI -> CTRL : createSNSUser(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+activate CTRL
+
+CTRL -> CMP : store = getSNSUserStore()
+activate CMP
+deactivate CMP
+
+CTRL -> SUS : su = createSNSUser(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+activate SUS
+SUS --> SU** : create(name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+deactivate SUS
+
+CTRL -> SUS : validateSNSUser(su)
+activate SUS
+deactivate SUS
+
+deactivate CMP
+deactivate CTRL
+
+UI --> receptionist : shows the data and requests a confirmation
+deactivate UI
+
+receptionist -> UI : confirms the data
+activate UI
+UI -> CTRL : saveSNSUser()
+activate CTRL
+
+CTRL -> SUS : saveSNSUser(su)
+activate SUS
+
+SUS -> SUS: validateSNSUser(su)
+activate SUS
+deactivate SUS
+|||
+SUS -> SUS: addSNSUser(su)
+activate SUS
+deactivate SUS
+
+deactivate SUS
+deactivate CTRL
+UI --> receptionist : informs operation success
+deactivate UI
+deactivate receptionist
+
+@enduml

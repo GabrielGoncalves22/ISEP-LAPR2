@@ -1,0 +1,59 @@
+@startuml
+autonumber
+'hide footbox
+
+actor "Administrator" as admin
+
+participant ":ListEmployeeUI" as ui
+participant ":ListEmployeeController " as controller
+participant ":Company" as company
+participant "employeeStore: EmployeeStore" as eStore
+participant "employeeRoleStore: EmployeeRoleStore" as eRoleStore
+participant "employee: Employee" as e
+participant "employeeRole: EmployeeRole" as er
+
+activate admin
+admin --> ui : Start ordering the list of employees
+
+activate ui
+ui --> controller : employeeRolesList = getEmployeeRoles()
+
+activate controller
+controller --> company : employeeRoleStore = getEmployeeRolesStore()
+activate company
+deactivate company
+
+controller --> eRoleStore : getEmployeeRoles()
+activate eRoleStore
+deactivate eRoleStore
+
+deactivate controller
+
+ui --> admin : shows employee function/role list and requests to select one
+deactivate ui
+
+admin --> ui : selects a employee function/role
+
+activate ui
+ui --> controller : employeeListByRole = getEmployeeListByRole(role)
+
+activate controller
+controller --> eRoleStore : valid = checkIfRoleExists(role)
+activate eRoleStore
+deactivate eRoleStore
+
+controller --> company : employeeStore = getEmployeeStore()
+activate company
+deactivate company
+
+controller --> eStore : getEmployeesByRole(role)
+activate eStore
+deactivate eStore
+
+deactivate controller
+
+ui --> admin : shows a list of employees with the selected function/role
+deactivate ui
+deactivate admin
+
+@enduml

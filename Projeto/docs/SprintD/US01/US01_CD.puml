@@ -1,0 +1,123 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+package ui {
+class ScheduleVaccineUI {
+
+}
+}
+
+package core {
+
+package controller {
+
+class ScheduleVaccineController {
++scheduleVaccine(SNS user number, vaccination center, date, time, type of vaccine)
++saveScheduleVaccine()
+
+}
+}
+
+
+
+package domain {
+
+package model {
+class ScheduleVaccine {
+}
+
+class Company {
+
+}
+class SNSUser {
+    -name
+    -address
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -snsUserNumber
+    -citizenCardNumber
+    +SNSUser(name, address, sex, phoneNumber, email, \nbirthDate, snsUserNumber, citizenCardNumber)
+}
+
+class Date {
+    -year
+    -month
+    -day
+    -Date(year, month, day)
+}
+
+class Time {
+    -hours
+    -minutes
+    -seconds
+    +Time(hours, minutes, seconds)
+}
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -openingHours
+    -closingHours
+    -slotDuration
+    -slotVaccineLimit
+    +VaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+}
+}
+package store{
+
+class ScheduleVaccineStore {
+  +scheduleVaccine(SNS user number, vaccination center, date, time, type of vaccine)
+  +saveScheduleVaccine(scheduleVaccine)
+  +validateScheduleVaccine(scheduleVaccine)
+  +addScheduleVaccine(scheduleVaccine)
+
+}
+}
+}
+
+
+
+
+package mapper{
+
+class ScheduleVaccineMapper {
+
+   - toModel(svDto)
+}
+}
+
+package dto {
+
+class ScheduleVaccineDTO {
+   -snsUser;
+   -vaccinationCenter;
+   -date;
+   -time;
+   -vaccineType;
+   +ScheduleVaccineDTO(Date date, Time time)
+}
+}
+}
+
+
+ScheduleVaccine o-- SNSUser
+ScheduleVaccine o-- Date
+ScheduleVaccine o-- Time
+ScheduleVaccine o-- VaccinationCenter
+ScheduleVaccineUI ..> ScheduleVaccineController
+controller ..> mapper
+controller ..> domain
+controller ..> dto
+mapper ..> dto
+mapper ..> domain
+domain ..> dto
+Company "1" -- "1" ScheduleVaccineStore : uses >
+
+@enduml

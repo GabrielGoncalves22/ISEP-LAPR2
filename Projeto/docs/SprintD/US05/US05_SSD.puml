@@ -1,0 +1,11 @@
+@startuml
+autonumber
+actor "Nurse" as admin
+activate admin
+admin -> ":System" : Start to consult the users in the waiting room of a vacination center
+
+":System" --> admin : shows a list in order of arrival of SNS users ready to take the vaccine
+deactivate ":System"
+
+deactivate admin
+@enduml

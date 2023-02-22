@@ -1,0 +1,25 @@
+@startuml
+autonumber
+actor "Receptionist" as receptionist
+
+activate receptionist
+receptionist -> ":System" : starts register the arrival of a SNS user to take the vaccine
+activate ":System"
+":System" --> receptionist : requests data for the arrival (SNS user number)
+deactivate ":System"
+receptionist -> ":System" : types requested data
+activate ":System"
+":System" --> receptionist : shows list of vaccines scheduled for that SNS user
+deactivate ":System"
+receptionist -> ":System" : accept the arrival of the SNS user
+activate ":System"
+":System" --> receptionist : shows all data and requests confirmation
+deactivate ":System"
+receptionist -> ":System" : confirms the user is ready to take the vaccine
+activate ":System"
+":System" --> receptionist : informs operation success
+deactivate ":System"
+
+deactivate receptionist
+
+@enduml

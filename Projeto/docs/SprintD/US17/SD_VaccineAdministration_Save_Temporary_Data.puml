@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_VaccineAdministration_Save_Temporary_Data</u>
+end title
+
+participant "vaStore:\nVaccineAdministrationStore" as vaStore
+participant "tempListVA:\nList<VaccineAdministration>" as tempListVA
+participant "va:\nVaccineAdministration" as va
+
+[o-> vaStore : saveLegacySystemTemporaryData()
+activate vaStore
+
+    loop foreach va in the tempListVA
+        vaStore -> vaStore : saveVaccineAdministration(va)
+        activate vaStore
+        deactivate vaStore
+    end
+
+    vaStore -> vaStore : saveVaccineAdministrationListInFile()
+    activate vaStore
+    deactivate vaStore
+
+    vaStore -> vaStore : cleanTempList()
+    activate vaStore
+    deactivate vaStore
+
+    <-- vaStore : date saved
+deactivate vaStore
+
+
+@enduml

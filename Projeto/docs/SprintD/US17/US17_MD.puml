@@ -1,0 +1,157 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class CenterCoordinator {
+}
+
+class Employee {
+    -id
+    -name
+    -address
+    -phoneNumber
+    -citizenCardNumber
+    -role
+}
+
+class EmployeeRole {
+    -id
+    -designation
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -address
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class VaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -address
+    -faxNumber
+    -website
+}
+
+class CommunityMassVaccinationCenter {
+}
+
+class HealthCareCenter {
+}
+
+class ScheduleVaccine {
+    -date
+    -time
+}
+
+class ArrivalSNSUser {
+    -date
+    -time
+}
+
+class VaccineAdministration {
+    -lotNumber
+    -administrationDate
+    -administrationTime
+    -leavingDate
+    -leavingTime
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+}
+
+class Dose {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class AgeGroup {
+    -minAge
+    -maxAge
+    -dosesAdministered
+}
+
+class LegacySystemFile {
+}
+
+class SortAlgorithm {
+}
+
+'----- Generalization -----
+
+CommunityMassVaccinationCenter --|> VaccinationCenter
+HealthCareCenter --|> VaccinationCenter
+CenterCoordinator --|> Employee
+
+'--------------------------
+
+'-------- Relations --------
+
+AgeGroup "1" -- "1..*" Dose : has >
+ArrivalSNSUser "1" -- "*" SNSUser : have >
+
+CenterCoordinator "1" -- "1" CommunityMassVaccinationCenter : manage >
+CenterCoordinator "1" -- "*" LegacySystemFile : imported by <
+
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" VaccinationCenter : manage >
+Company "1" -- "*" Vaccine : applies >
+Company "1" -- "*" VaccineAdministration : applies >
+
+Employee "*" -- "1" Company : employs <
+
+HealthCareCenter "1" -- "*" VaccineType : can administer >
+
+LegacySystemFile "*" -- "*" ScheduleVaccine : has information about >
+LegacySystemFile "*" -- "*" ArrivalSNSUser : has information about >
+LegacySystemFile "*" -- "*" VaccineAdministration : has information about >
+LegacySystemFile "*" -- "*" SNSUser : knows >
+
+ScheduleVaccine "*" -- "1" VaccinationCenter : has <
+ScheduleVaccine "*" -- "1" VaccineType : for taking >
+
+SortAlgorithm "1" -- "*" LegacySystemFile : sort the information from >
+
+Vaccine "1" -- "1..*" AgeGroup : constituted >
+Vaccine "*" -- "*" LegacySystemFile : has information about <
+Vaccine "*" -- "1" VaccineType : is of >
+
+VaccineAdministration "*" -- "1" SNSUser : administered on >
+VaccineAdministration "*" -- "1" Vaccine : is administrated <
+VaccineAdministration "*" -- "1" Dose : has >
+VaccineAdministration "1" -- "1" ScheduleVaccine : fulfilling >
+
+VaccineType "1" -- "*" CommunityMassVaccinationCenter : administered by >
+VaccineType "*" -- "1" Company : promotes administration <
+VaccinationCenter "1" -- "*" ArrivalSNSUser : has >
+
+'--------------------------
+
+'------- Aggregation ------
+
+Employee o-- EmployeeRole
+
+'--------------------------
+
+@enduml

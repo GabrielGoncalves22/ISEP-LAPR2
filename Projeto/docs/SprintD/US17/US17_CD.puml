@@ -1,0 +1,502 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+package core {
+
+    package controller {
+        class ImportManageCenterDataController {
+            -company
+            -SUPPORTED_EXTENSIONS
+            -vcStore
+            -vc
+            +ImportManageCenterDataController(vcId)
+            +ImportManageCenterDataController(company)
+            +validateFile(filePath)
+            +readFileData(filePath)
+            +sortDataByCriteria(sortingCriteria)
+            +changeSortOrder(order)
+            +importDataToTheSystem()
+            -throwExceptionIfNotSuccess(success, fileLine, message)
+        }
+    }
+
+    package mapper {
+        class SNSUserMapper {
+            +toListDTO(sUList)
+            +toDto(su)
+        }
+
+        class VaccineMapper {
+            +toListDTO(listV)
+            +toDTO(v)
+        }
+
+        class VaccineTypeMapper {
+            +toDTO(vt)
+        }
+    }
+
+    package dto {
+        class SNSUserDTO {
+            -name
+            -address
+            -sex
+            -phoneNumber
+            -email
+            -birthDate
+            -snsNumber
+            -citizenCardNumber
+            +SNSUserDTO(name, address, sex, phoneNumber, email, birthdate, snsUserNumber, citizenCardNumber)
+            +getName()
+            +getSex()
+            +getBirthDate()
+            +getAddress()
+            +getPhoneNumber()
+            +getEmail()
+            +getSNSNumber()
+            +getCitizenCardNumber()
+        }
+
+        class VaccineDTO {
+            -id
+            -name
+            -brand
+            -vt
+            -agList
+            +VaccineDTO(id, name, brand, vt, agList)
+            +getId()
+            +getName()
+            +getBrand()
+            +getVtDto()
+            +getAgList()
+        }
+
+        class VaccineTypeDTO {
+            -code
+            -description
+            -technology
+            +VaccineTypeDTO(code, description, technology)
+            +getCode()
+            +getDescription()
+            +getTechnology()
+        }
+    }
+
+    package domain {
+
+        package algorithms {
+            interface SortDataAlgorithm <<interface>> {
+                +sortData(lSF)
+            }
+
+            class BubbleSortAlgorithm implements SortDataAlgorithm {
+                -sortDataCriteria
+                +BubbleSortAlgorithm(sortCriteria)
+                +sortData(lSFList)
+                -bubbleSort(lSFList)
+                -swap(lSFList, i, j)
+            }
+
+            class QuickSortAlgorithm implements SortDataAlgorithm {
+                -sortDataCriteria
+                +QuickSortAlgorithm(sortCriteria)
+                +sortData(lSFList)
+                -quicksort(lSFList, low, high)
+                -swap(lSFList, i, j)
+                -partition(lSFList, low, high)
+            }
+
+        }
+
+        package store {
+
+            class SNSUserStore {
+                -snsUserList
+                +getSNSUserList()
+                +validateSNSUser(snsUser)
+                +checkDuplicates(snsUser)
+                +saveSNSUser(snsUser)
+                +addSNSUser(snsUser)
+                +getSNSUser(snsUserNumber)
+            }
+
+            class VaccineStore {
+                -listV
+                +getListV()
+                +getVaccine(id)
+                +getDose(v, age, doseNumber)
+            }
+
+            class VaccineTypeStore {
+                -vtList
+                +getVaccineTypeByCode(code)
+            }
+
+            class VaccinationCenterStore {
+                -listVC
+                +getVaccinationCenter(vcId)
+                +getVaccinationCenterIdCenterCoordinator(centerCoordinatorId)
+            }
+
+            class VaccineAdministrationStore {
+                -listVA
+                -tempListVA
+                +instantiateVaccineAdministration(snsUser, vaccine, dose, administrationDate, administrationTime, leavingDate, leavingTime, vCenter, lotNumber)
+                +validateVaccineAdministration(av)
+                +checkDuplicates(av)
+                +saveVaccineAdministration(av)
+                +addAdministrationVaccine(av)
+                +saveVaccineAdministrationListInFile()
+                +loadVaccineAdministrationListFromFile()
+                +createLegacySystemTemporaryData(snsUser, vaccine, dose, lSF, vCenter)
+                +saveLegacySystemTemporaryData()
+                +cleanTempList()
+            }
+
+            class ScheduleVaccineStore {
+                -listSV
+                -tempListSV
+                +saveScheduleVaccine(scheduleVaccine)
+                +createScheduleVaccine(snsUser, vaccinationCenter, date, time, vaccineType)
+                +saveSVListInFile()
+                +loadSVFromFile()
+                +validateScheduleVaccine(scheduleVaccine)
+                +addScheduleVaccine(scheduleVaccine)
+                +createLegacySystemTemporaryData(lSF, snsUser, vCenter, vType)
+                +saveLegacySystemTemporaryData()
+                +cleanTempList()
+            }
+
+            class ArrivalSNSUserStore {
+                -listAU
+                -tempListASU
+                +instantiateArrivalSNSUser(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+                +validateArrivalSNSUser(au)
+                +checkDuplicates(au)
+                +saveArrivalSNSUser(au)
+                +saveArrivalSNSUserListInFile()
+                +loadSNSUsersArrivalsListFromFile()
+                -addArrivalSNSUser(arrivalSNSUser)
+                +createLegacySystemTemporaryData(snsUser, lSF, vCenter)
+                +saveLegacySystemTemporaryData()
+                +cleanTempList()
+            }
+
+            class LegacySystemFileStore {
+                -lSFList
+                -{static}ORDER_ASC
+                -{static}ORDER_DESC
+                -{static}ORDER
+                +storeData()
+                +transformDate(dateString)
+                +transformTime(timeString)
+                +getlSFList()
+                -findSUBySUNumber(snsUserNumber, sUListDto)
+                -findVaccineByName(vName, listVDto)
+                +createLegacySystemFile(sUDto, vDto, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)
+                +saveLegacySystemFile(lSF)
+                +changeSortOrder(order)
+                -validateOrder(order)
+                +setOrder(order)
+            }
+
+        }
+
+        package model {
+            class Company {
+                -vaccinationCenterStore
+                -vaccineTypeStore
+                -vaccineStore
+                -snsUserStore
+                -scheduleVaccineStore
+                -arrivalSNSUserStore
+                -vaccineAdministrationStore
+                -legacySystemFileStore
+                -sortDataAlgorithm
+                +getVaccinationCenterStore()
+                +getVaccineTypeStore()
+                +getVaccineStore()
+                +getSNSUserStore()
+                +getScheduleVaccineStore()
+                +getArrivalSNSUserStore()
+                +getVaccineAdministrationStore()
+                +getLegacySystemFileStore()
+                +getSortDataAlgorithm(sortingCriteria)
+            }
+
+            class LegacySystemFile {
+                -dose
+                -lotNumber
+                -scheduledDate
+                -scheduledTime
+                -arrivalDate
+                -arrivalTime
+                -nurseAdministrationDate
+                -nurseAdministrationTime
+                -leavingDate
+                -leavingTime
+                +LegacySystemFile(snsUserDTO, vaccineDTO, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)
+                +getSnsUserDTO()
+                +getVaccineDTO()
+                +getDose()
+                +getLotNumber()
+                +getScheduledDate()
+                +getScheduledTime()
+                +getArrivalDate()
+                +getArrivalTime()
+                +getNurseAdministrationDate()
+                +getNurseAdministrationTime()
+                +getLeavingDate()
+                +getLeavingTime()
+            }
+
+            class SNSUser {
+                -name
+                -address
+                -sex
+                -phoneNumber
+                -snsNumber
+                -citizenCardNumber
+                +getName()
+                +getAddress()
+                +getSex()
+                +getPhoneNumber()
+                +getEmail()
+                +getBirthdate()
+                +getSnsUserNumber()
+                +getCitizenCardNumber()
+            }
+
+            class VaccinationCenter {
+                -id
+                -centerCoordinatorId
+                +getCenterCoordinatorId()
+                +getId()
+            }
+
+            class Vaccine {
+                -id
+                -name
+                -brand
+                -{static}numberVaccines
+                +getId()
+                +getName()
+                +getBrand()
+                +getAgList()
+                +getVt()
+            }
+
+            class VaccineType {
+                -code
+                -description
+                -technology
+                +VaccineType(code, description, technology)
+                +getCode()
+                +getDescription()
+                +getTechnology()
+            }
+
+            class AgeGroup {
+                -minimumAge
+                -maximumAge
+                -dList
+            }
+
+            class Dose {
+                -doseNumber
+                -dosage
+                -timeIntervalBetweenLastDose
+                -{static}FIRST_DOSE_STRING
+                -{static}SECOND_DOSE_STRING
+                -{static}THIRD_DOSE_STRING
+                -{static}FOURTH_DOSE_STRING
+                -{static}FIFTH_DOSE_STRING
+                +{static}mapDoseValue(dose)
+            }
+
+            class VaccineAdministration {
+                -lotNumber
+                +VaccineAdministration(snsUser, vaccine, dose, administrationDate, administrationTime, leavingDate, leavingTime, vaccinationCenter, lotNumber)
+                -checkAllNull(snsUser, vaccine, dose, administrationDate, administrationTime, leavingDate, leavingTime, vaccinationCenter)
+                -checkTime(administrationTime, leavingTime)
+                -checkLotNumber(lotNumber)
+                +{static}correctFormatLotNumber(lotNumber)
+                +compareTo(otherVaccineAdministration)
+            }
+
+            class ScheduleVaccine {
+                -snsUser
+                -vaccinationCenter
+                -date
+                -time
+                -vaccineType
+                +ScheduleVaccine(snsUser, vaccinationCenter, date, time, vaccineType)
+                +checkFields(snsUser, vaccinationCenter, date, time, vaccineType)
+                +compareTo(otherScheduleVaccine)
+            }
+
+            class ArrivalSNSUser {
+                +ArrivalSNSUser(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+                -checkSNSUser(snsUser)
+                -checkArrivalDate(arrivalDate)
+                -checkArrivalTime(arrivalTime)
+                -checkVaccinationCenter(vaccinationCenter)
+                +compareTo(otherArrivalSNSUser)
+            }
+
+            class Date {
+                +Date(year, month, day)
+                +compareTo(otherDate)
+                +{static}yearsBetweenTwoDates(dateOne, dateTwo)
+                +{static}validateDateFormat(stringDate)
+                +{static}validateDateMeaning(stringDate)
+                +{static}convertStringToDate(stringDate)
+            }
+
+            class Time {
+                -hours
+                -minutes
+                -seconds
+                -SECONDS_DEFAULT
+                +Time(hours, minutes)
+                -checkHours(hours)
+                -checkMinutes(minutes)
+                +toStringHHMM()
+                +compareTo(otherTime)
+            }
+
+        }
+
+        package shared {
+            interface LegacySysFileReader <<interface>> {
+                +readDataToStringList()
+            }
+
+            class LegacySysFileReaderType1 implements LegacySysFileReader {
+                +readDataToStringList()
+                -validHeader(header)
+            }
+
+            class SortDataCriteria {
+                +{static}ARRIVAL_CRITERIA
+                +{static}LEAVING_CRITERIA
+                -sortCriteria
+                +SortDataCriteria(sortCriteria)
+                -validateSortCriteria(sortCriteria)
+                +getDateValue(lSF)
+                +getTimeValue(lSF)
+            }
+        }
+    }
+
+}
+
+package ui {
+    package console {
+
+        package utils {
+            class FileUtils {
+                +{static}validateFile(file, supportedExtensions)
+                +{static}fileExists(file)
+                +{static}hasSupportedExtension(file, supportedExtensions)
+            }
+        }
+    }
+
+    package gui {
+        class ImportManageCenterDataUI {
+        }
+
+        package table {
+            class LegacySystemFileTable {
+            }
+        }
+    }
+}
+
+package pt.isep.lei.esoft.auth.domain.model.Email {
+    class Email {
+        -email
+        +Email(email)
+        -validate(email)
+        -checkFormat(email)
+        +getEmail()
+        +equals(o)
+    }
+}
+
+'Dependencies
+ui ..> controller
+
+controller ..> mapper
+controller ..> domain
+controller ..> dto
+
+mapper ..> domain
+mapper ..> dto
+
+domain ..> dto
+
+
+'Relations
+Company "1" --> "1" SNSUserStore : contains
+Company "1" --> "1" VaccineStore : contains
+Company "1" --> "1" VaccineTypeStore : contains
+Company "1" --> "1" VaccineAdministrationStore : contains
+Company "1" --> "1" ScheduleVaccineStore : contains
+Company "1" --> "1" ArrivalSNSUserStore : contains
+Company "1" --> "1" LegacySystemFileStore : contains
+
+Company "1" --> "1" SortDataAlgorithm : implements
+
+SNSUserStore "1" --> "*" SNSUser : own
+VaccineStore "1" --> "*" Vaccine : own
+VaccineTypeStore "1" --> "*" VaccineType : own
+VaccineAdministrationStore "1" --> "*" VaccineAdministration : own
+ScheduleVaccineStore "1" --> "*" ScheduleVaccine : own
+ArrivalSNSUserStore "1" --> "*" ArrivalSNSUser : own
+LegacySystemFileStore "1" --> "*" LegacySystemFile : own
+
+SortDataAlgorithm "1" -- "*" LegacySystemFile : sort data from >
+
+
+'Aggregation
+Vaccine "1" o-- "1" VaccineType
+Vaccine "1" o-- "*" AgeGroup
+
+VaccineAdministration "1" o-- "1" SNSUser
+VaccineAdministration "1" o-- "1" Vaccine
+VaccineAdministration "1" o-- "1" Dose
+VaccineAdministration "1" o-- "1" VaccinationCenter
+
+ScheduleVaccine "1" o-- "1" SNSUser
+ScheduleVaccine "1" o-- "1" VaccinationCenter
+ScheduleVaccine "1" o-- "1" VaccineType
+
+ArrivalSNSUser "1" o-- "1" SNSUser
+ArrivalSNSUser "1" o-- "1" VaccinationCenter
+
+
+'Composition
+LegacySystemFile "1" *-- "1" SNSUserDTO
+LegacySystemFile "1" *-- "1" VaccineDTO
+
+SNSUser "1" *-- "1" Email
+SNSUser "1" *-- "1" Date : birthdate
+
+SNSUserDTO "1" *-- "1" Email
+SNSUserDTO "1" *-- "1" Date : birthdate
+
+VaccineDTO "1" *-- "1" VaccineTypeDTO
+
+VaccineAdministration "1" -- "2" Date
+VaccineAdministration "1" -- "2" Time
+
+ScheduleVaccine "1" -- "1" Date
+ScheduleVaccine "1" -- "1" Time
+
+ArrivalSNSUser "1" -- "1" Date
+ArrivalSNSUser "1" -- "1" Time
+
+@enduml

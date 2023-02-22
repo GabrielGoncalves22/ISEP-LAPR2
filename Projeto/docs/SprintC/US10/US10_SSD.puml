@@ -1,0 +1,28 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : asks to register a new employee
+activate ":System"
+":System" --> OE : requests data (name, address, phone number,\n e-mail, Citizen Card number)
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows role categories list and ask to select one
+deactivate ":System"
+
+OE -> ":System" : selects a role category
+activate ":System"
+":System" --> OE : shows all data and requests confirmation
+deactivate ":System"
+
+OE -> ":System" : confirms the data
+activate ":System"
+":System" --> OE : informs operation success
+deactivate ":System"
+
+deactivate OE
+
+@enduml

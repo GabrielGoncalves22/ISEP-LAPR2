@@ -1,0 +1,28 @@
+@startuml
+autonumber
+
+title
+<u>SD_EXECUTING_TASK_ONCE</u>
+end title
+
+participant "vaStore:\nVaccineAdministrationStore" as AVS
+participant "task:\nSMSMessageTask" as SMT
+participant "timer:\nTimer" as T
+
+[o-> AVS : sendMessage(phoneNumber, message, delay)
+activate AVS
+AVS --> SMT** : create(phoneNumber, message)
+
+AVS --> T** : create()
+AVS -> T : schedule(task, delay)
+activate T
+deactivate T
+
+note left T: After the time specified by "delay" has elapsed
+
+T -> SMT : run
+activate T
+deactivate T
+activate SMT
+deactivate SMT
+@enduml

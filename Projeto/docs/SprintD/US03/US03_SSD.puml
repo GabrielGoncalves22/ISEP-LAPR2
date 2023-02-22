@@ -1,0 +1,23 @@
+@startuml
+autonumber
+actor "Receptionist" as receptionist
+
+activate receptionist
+receptionist -> ":System" : Starts specifying a new SNS user
+activate ":System"
+":System" --> receptionist : Request data (name, adress, sex, phone_number, e-mail, birth_date, SNS_User_number and Citizen_Card_number)
+deactivate ":System"
+
+receptionist -> ":System" : Types requested data
+activate ":System"
+":System" --> receptionist : Shows the data and requests a confirmation
+deactivate ":System"
+
+receptionist -> ":System" : Confirms the data
+activate ":System"
+":System" --> receptionist : Informs operation success
+deactivate ":System"
+
+deactivate receptionist
+
+@enduml

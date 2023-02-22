@@ -1,0 +1,53 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+
+class RegisterEmployeeUI {
+}
+
+class RegisterEmployeeController {
+  +getEmployeeRoles()
+  +registerEmployee(name, address, phone number, e-mail, Citizen Card number)
+  +setRole(role)
+  +saveEmployee()
+}
+
+class EmployeeStore {
+  +registerEmployee(name, address, phone number, e-mail, Citizen Card number)
+  +setRole(role)
+  +saveEmployee(employee)
+  +validateEmployee(employee)
+  +addEmployee(employee)
+}
+
+class Employee {
+  -name
+  -address
+  -phoneNumber
+  -email
+  -citizenCardNumber
+  -role
+  +getName
+  +getAddress
+  +getPhoneNumber
+  +getEmail
+  +getCitizenCardNumber
+  +getRole
+  +setName
+  +setAddress
+  +setPhoneNumber
+  +setEmail
+  +setCitizenCardNumber
+  +setRole
+}
+
+class Company {
+}
+
+RegisterEmployeeUI ..> RegisterEmployeeController
+RegisterEmployeeController ..> Company
+RegisterEmployeeController ..> Employee
+Company "1"--"1" EmployeeStore : uses >
+
+
+@enduml

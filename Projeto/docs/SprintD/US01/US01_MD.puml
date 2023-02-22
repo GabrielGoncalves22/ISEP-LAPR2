@@ -1,0 +1,71 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+  -designation
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class Address {
+    -country
+    -city
+    -county
+    -parish
+    -street
+    -portNumber
+    -postalCode
+    -floor
+    -observation
+}
+
+class ScheduleVaccine {
+    -date
+    -time
+}
+
+class CommunityMassVaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+}
+
+class Message {
+    -date
+    -time
+    -textMessage
+}
+
+
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+Address "1" -- "1" SNSUser : has <
+ScheduleVaccine "*" -- "1" CommunityMassVaccinationCenter : has <
+ScheduleVaccine "*" -- "1" VaccineType : for taking >
+ScheduleVaccine "*" -- "1" SNSUser : requested by >
+VaccineType "*" -- "1" Company : promotes administration <
+Message "0..1" -- "1" ScheduleVaccine : emitted on >
+Company "1" -- "*" Message : send >
+SNSUser "1" -- "*" Message : receive >
+
+@enduml

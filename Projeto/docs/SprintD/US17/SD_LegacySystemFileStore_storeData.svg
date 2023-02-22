@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1010.4px" preserveAspectRatio="none" style="width:1131px;height:1010px;background:#FFFFFF;" version="1.1" viewBox="0 0 1131 1010" width="1131px" zoomAndPan="magnify"><defs/><g><rect height="16.5656" style="stroke:#00000000;stroke-width:0.6;fill:none;" width="165.6" x="482.25" y="6"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-weight="bold" lengthAdjust="spacing" text-decoration="underline" textLength="159.6" x="485.25" y="17.7199">SD_LegacySystemFileStore_storeData</text><rect fill="#FFFFFF" height="891.5719" style="stroke:#181818;stroke-width:0.6;" width="6" x="158.4" y="75.7078"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="186.2719"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="266.4938"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="419.1375"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="463.1484"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="543.3703"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="587.3813"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="667.6031"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="711.6141"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="791.8359"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="835.8469"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="879.8578"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="923.8688"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="145.2609"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="225.4828"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="305.7047"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="341.9156"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="378.1266"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="502.3594"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="626.5922"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="750.825"/><rect height="828.8297" style="stroke:#000000;stroke-width:0.8999999999999999;fill:none;" width="898.8" x="106.5" y="120.8391"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="161.1" x2="161.1" y1="56.2969" y2="978.0797"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="866.7" x2="866.7" y1="104.5734" y2="978.0797"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="960.9" x2="960.9" y1="56.2969" y2="978.0797"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="1035.3" x2="1035.3" y1="56.2969" y2="978.0797"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="1099.5" x2="1099.5" y1="56.2969" y2="978.0797"/><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="97.8" x="112.5" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="35.4" x="143.7" y="39.0855">lSFStore:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="89.4" x="116.7" y="49.6512">LegacySystemFileStore</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="97.8" x="112.5" y="977.4797"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="35.4" x="143.7" y="990.3996">lSFStore:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="89.4" x="116.7" y="1000.9652">LegacySystemFileStore</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="100.2" x="816.9" y="977.4797"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="28.2" x="852.9" y="990.3996">lSFList:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="91.8" x="821.1" y="1000.9652">List&lt;LegacySystemFile&gt;</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="76.2" x="923.1" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="31.2" x="945.6" y="39.0855">fileData:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="67.8" x="927.3" y="49.6512">List&lt;List&lt;String&gt;&gt;</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="76.2" x="923.1" y="977.4797"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="31.2" x="945.6" y="990.3996">fileData:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="67.8" x="927.3" y="1000.9652">List&lt;List&lt;String&gt;&gt;</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="60" x="1005.3" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="25.2" x="1022.7" y="39.0855">sUDto:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="51.6" x="1009.5" y="49.6512">SNSUserDTO</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="60" x="1005.3" y="977.4797"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="25.2" x="1022.7" y="990.3996">sUDto:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="51.6" x="1009.5" y="1000.9652">SNSUserDTO</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="56.4" x="1071.3" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="19.8" x="1089.6" y="39.0855">vDto:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="48" x="1075.5" y="49.6512">VaccineDTO</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="56.4" x="1071.3" y="977.4797"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="19.8" x="1089.6" y="990.3996">vDto:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="48" x="1075.5" y="1000.9652">VaccineDTO</text><rect fill="#FFFFFF" height="891.5719" style="stroke:#181818;stroke-width:0.6;" width="6" x="158.4" y="75.7078"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="186.2719"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="266.4938"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="419.1375"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="463.1484"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="543.3703"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="587.3813"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="667.6031"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="711.6141"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="791.8359"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="835.8469"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="879.8578"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="161.4" y="923.8688"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="145.2609"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="225.4828"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="305.7047"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="341.9156"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="378.1266"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="502.3594"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="626.5922"/><rect fill="#FFFFFF" height="18" style="stroke:#181818;stroke-width:0.6;" width="6" x="958.2" y="750.825"/><ellipse cx="4.5" cy="75.2578" fill="none" rx="2.4" ry="2.4" style="stroke:#181818;stroke-width:0.8999999999999999;"/><polygon fill="#181818" points="151.2,73.3078,157.2,75.7078,151.2,78.1078,153.6,75.7078" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="7.2" x2="154.8" y1="75.7078" y2="75.7078"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="9" y="72.7939">1</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="135.6" x="15.6" y="72.7939">storeData(fileData, sUListDto, listVDto)</text><polygon fill="#181818" points="809.7,91.5188,815.7,93.9188,809.7,96.3188,812.1,93.9188" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="813.3" y1="93.9188" y2="93.9188"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="91.0049">2</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="26.4" x="175.2" y="91.0049">create()</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="100.2" x="816.9" y="80.5078"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="28.2" x="852.9" y="93.4277">lSFList:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="91.8" x="821.1" y="103.9934">List&lt;LegacySystemFile&gt;</text><path d="M106.5,120.8391 L150.3,120.8391 L150.3,125.85 L144.3,131.85 L106.5,131.85 L106.5,120.8391 " fill="#EEEEEE" style="stroke:#000000;stroke-width:0.8999999999999999;"/><rect fill="none" height="828.8297" style="stroke:#000000;stroke-width:0.8999999999999999;" width="898.8" x="106.5" y="120.8391"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="16.8" x="115.5" y="129.5361">loop</text><text fill="#000000" font-family="sans-serif" font-size="6.6" font-weight="bold" lengthAdjust="spacing" textLength="101.4" x="159.3" y="128.8904">[Foreach list in the fileData list]</text><polygon fill="#181818" points="951,142.8609,957,145.2609,951,147.6609,953.4,145.2609" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="145.2609" y2="145.2609"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="142.3471">3</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="85.2" x="175.2" y="142.3471">snsUserNumber = get(0)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="181.4719" y2="181.4719"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="181.4719" y2="189.2719"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="189.2719" y2="189.2719"/><polygon fill="#181818" points="174,186.8719,168,189.2719,174,191.6719,171.6,189.2719" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="171.6" y="178.558">4</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="201" x="178.2" y="178.558">sUDto = findSUBySUNumber(snsUserNumber, sUListDto)</text><polygon fill="#181818" points="951,223.0828,957,225.4828,951,227.8828,953.4,225.4828" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="225.4828" y2="225.4828"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="222.5689">5</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="52.8" x="175.2" y="222.5689">vName = get(1)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="261.6937" y2="261.6937"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="261.6937" y2="269.4938"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="269.4938" y2="269.4938"/><polygon fill="#181818" points="174,267.0938,168,269.4938,174,271.8938,171.6,269.4938" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="171.6" y="258.7799">6</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="155.4" x="178.2" y="258.7799">vDto = findVaccineByName(vName, listVDto)</text><polygon fill="#181818" points="951,303.3047,957,305.7047,951,308.1047,953.4,305.7047" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="305.7047" y2="305.7047"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="302.7908">7</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="46.2" x="175.2" y="302.7908">dose = get(2)</text><polygon fill="#181818" points="951,339.5156,957,341.9156,951,344.3156,953.4,341.9156" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="341.9156" y2="341.9156"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="339.0018">8</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="64.8" x="175.2" y="339.0018">lotNumber = get(3)</text><polygon fill="#181818" points="951,375.7266,957,378.1266,951,380.5266,953.4,378.1266" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="378.1266" y2="378.1266"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="168.6" y="375.2127">9</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="81" x="175.2" y="375.2127">scheduledData = get(4)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="414.3375" y2="414.3375"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="414.3375" y2="422.1375"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="422.1375" y2="422.1375"/><polygon fill="#181818" points="174,419.7375,168,422.1375,174,424.5375,171.6,422.1375" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="411.4236">10</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="175.2" x="182.4" y="411.4236">scheduledDate = transformDate(scheduledData[0])</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="458.3484" y2="458.3484"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="458.3484" y2="466.1484"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="466.1484" y2="466.1484"/><polygon fill="#181818" points="174,463.7484,168,466.1484,174,468.5484,171.6,466.1484" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="455.4346">11</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="176.4" x="182.4" y="455.4346">scheduledTime = transformTime(scheduledData[1])</text><polygon fill="#181818" points="951,499.9594,957,502.3594,951,504.7594,953.4,502.3594" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="502.3594" y2="502.3594"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="168.6" y="499.4455">12</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="65.4" x="179.4" y="499.4455">arrivalData = get(5)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="538.5703" y2="538.5703"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="538.5703" y2="546.3703"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="546.3703" y2="546.3703"/><polygon fill="#181818" points="174,543.9703,168,546.3703,174,548.7703,171.6,546.3703" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="535.6564">13</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="144" x="182.4" y="535.6564">arrivalDate = transformDate(arrivalData[0])</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="582.5813" y2="582.5813"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="582.5813" y2="590.3813"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="590.3813" y2="590.3813"/><polygon fill="#181818" points="174,587.9812,168,590.3813,174,592.7813,171.6,590.3813" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="579.6674">14</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="145.2" x="182.4" y="579.6674">arrivalTime = transformTime(arrivalData[1])</text><polygon fill="#181818" points="951,624.1922,957,626.5922,951,628.9922,953.4,626.5922" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="626.5922" y2="626.5922"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="168.6" y="623.6783">15</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="114.6" x="179.4" y="623.6783">nurseAdministrationData = get(6)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="662.8031" y2="662.8031"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="662.8031" y2="670.6031"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="670.6031" y2="670.6031"/><polygon fill="#181818" points="174,668.2031,168,670.6031,174,673.0031,171.6,670.6031" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="659.8893">16</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="242.4" x="182.4" y="659.8893">nurseAdministrationDate = transformDate(nurseAdministrationData[0])</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="706.8141" y2="706.8141"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="706.8141" y2="714.6141"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="714.6141" y2="714.6141"/><polygon fill="#181818" points="174,712.2141,168,714.6141,174,717.0141,171.6,714.6141" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="703.9002">17</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="243.6" x="182.4" y="703.9002">nurseAdministrationTime = transformTime(nurseAdministrationData[1])</text><polygon fill="#181818" points="951,748.425,957,750.825,951,753.225,953.4,750.825" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="164.4" x2="954.6" y1="750.825" y2="750.825"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="168.6" y="747.9111">18</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="62.4" x="179.4" y="747.9111">leavingDT = get(7)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="787.0359" y2="787.0359"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="787.0359" y2="794.8359"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="794.8359" y2="794.8359"/><polygon fill="#181818" points="174,792.4359,168,794.8359,174,797.2359,171.6,794.8359" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="784.1221">19</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="144.6" x="182.4" y="784.1221">leavingDate = transformDate(leavingDT[0])</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="831.0469" y2="831.0469"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="831.0469" y2="838.8469"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="838.8469" y2="838.8469"/><polygon fill="#181818" points="174,836.4469,168,838.8469,174,841.2469,171.6,838.8469" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="828.133">20</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="145.8" x="182.4" y="828.133">leavingTime = transformTime(leavingDT[1])</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="875.0578" y2="875.0578"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="875.0578" y2="882.8578"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="882.8578" y2="882.8578"/><polygon fill="#181818" points="174,880.4578,168,882.8578,174,885.2578,171.6,882.8578" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="872.1439">21</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="680.4" x="182.4" y="872.1439">lsF = createLegacySystemFile(sUDto, vDto, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)</text><line style="stroke:#181818;stroke-width:0.6;" x1="167.4" x2="192.6" y1="919.0688" y2="919.0688"/><line style="stroke:#181818;stroke-width:0.6;" x1="192.6" x2="192.6" y1="919.0688" y2="926.8688"/><line style="stroke:#181818;stroke-width:0.6;" x1="168" x2="192.6" y1="926.8688" y2="926.8688"/><polygon fill="#181818" points="174,924.4688,168,926.8688,174,929.2688,171.6,926.8688" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="171.6" y="916.1549">22</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="96" x="182.4" y="916.1549">saveLegacySystemFile(lsF)</text><polygon fill="#181818" points="6.6,964.8797,0.6,967.2797,6.6,969.6797,4.2,967.2797" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;stroke-dasharray:2.0,2.0;" x1="3" x2="160.8" y1="967.2797" y2="967.2797"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="8.4" x="10.2" y="964.3658">23</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="39" x="21" y="964.3658">data stored</text><!--MD5=[1ac0b7aa9e65691462be88f1ef86d29a]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_LegacySystemFileStore_storeData</u>
+end title
+
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+participant "fileData:\nList<List<String>>" as fileData
+participant "sUDto:\nSNSUserDTO" as sUDto
+participant "vDto:\nVaccineDTO" as vDto
+
+[o-> lSFStore : storeData(fileData, sUListDto, listVDto)
+activate lSFStore
+    lSFStore -> lSFList** : create()
+    loop Foreach list in the fileData list
+        lSFStore -> fileData : snsUserNumber = get(0)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : sUDto = findSUBySUNumber(snsUserNumber, sUListDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : vName = get(1)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : vDto = findVaccineByName(vName, listVDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : dose = get(2)
+        activate fileData
+        deactivate fileData
+        lSFStore -> fileData : lotNumber = get(3)
+        activate fileData
+        deactivate fileData
+
+        lSFStore -> fileData : scheduledData = get(4)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : scheduledDate = transformDate(scheduledData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : scheduledTime = transformTime(scheduledData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : arrivalData = get(5)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : arrivalDate = transformDate(arrivalData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : arrivalTime = transformTime(arrivalData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : nurseAdministrationData = get(6)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : nurseAdministrationDate = transformDate(nurseAdministrationData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : nurseAdministrationTime = transformTime(nurseAdministrationData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : leavingDT = get(7)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : leavingDate = transformDate(leavingDT[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : leavingTime = transformTime(leavingDT[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : lsF = createLegacySystemFile(sUDto, vDto, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : saveLegacySystemFile(lsF)
+        activate lSFStore
+        deactivate lSFStore
+    end
+    <- - lSFStore : data stored
+deactivate lSFStore
+
+
+@enduml
+
+@startuml
+
+autonumber
+
+title
+<u>SD_LegacySystemFileStore_storeData</u>
+end title
+
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+participant "fileData:\nList<List<String>>" as fileData
+participant "sUDto:\nSNSUserDTO" as sUDto
+participant "vDto:\nVaccineDTO" as vDto
+
+[o-> lSFStore : storeData(fileData, sUListDto, listVDto)
+activate lSFStore
+    lSFStore -> lSFList** : create()
+    loop Foreach list in the fileData list
+        lSFStore -> fileData : snsUserNumber = get(0)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : sUDto = findSUBySUNumber(snsUserNumber, sUListDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : vName = get(1)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : vDto = findVaccineByName(vName, listVDto)
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> fileData : dose = get(2)
+        activate fileData
+        deactivate fileData
+        lSFStore -> fileData : lotNumber = get(3)
+        activate fileData
+        deactivate fileData
+
+        lSFStore -> fileData : scheduledData = get(4)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : scheduledDate = transformDate(scheduledData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : scheduledTime = transformTime(scheduledData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : arrivalData = get(5)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : arrivalDate = transformDate(arrivalData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : arrivalTime = transformTime(arrivalData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : nurseAdministrationData = get(6)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : nurseAdministrationDate = transformDate(nurseAdministrationData[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : nurseAdministrationTime = transformTime(nurseAdministrationData[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> fileData : leavingDT = get(7)
+        activate fileData
+        deactivate fileData
+        lSFStore -> lSFStore : leavingDate = transformDate(leavingDT[0])
+        activate lSFStore
+        deactivate lSFStore
+        lSFStore -> lSFStore : leavingTime = transformTime(leavingDT[1])
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : lsF = createLegacySystemFile(sUDto, vDto, dose, lotNumber, scheduledDate, scheduledTime, arrivalDate, arrivalTime, nurseAdministrationDate, nurseAdministrationTime, leavingDate, leavingTime)
+        activate lSFStore
+        deactivate lSFStore
+
+        lSFStore -> lSFStore : saveLegacySystemFile(lsF)
+        activate lSFStore
+        deactivate lSFStore
+    end
+    <- - lSFStore : data stored
+deactivate lSFStore
+
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

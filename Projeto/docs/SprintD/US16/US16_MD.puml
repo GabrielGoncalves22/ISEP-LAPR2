@@ -1,0 +1,68 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Employee {
+    -name
+    -address
+    -phoneNumber
+    -citizenCardNumber
+    -role
+}
+
+class CommunityMassVaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -address
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class CenterCoordinator {
+}
+
+class User {
+    -email
+    -password
+}
+
+class VaccinationCenter {
+}
+
+class VaccinationStatistics {
+}
+
+class DailyPerformance {
+class AnalyzePerformace {
+}
+class VaccinationQueue {
+    -SNSUser
+    -date
+    -entryTime
+    -exitTime
+}
+
+'------------ Relations ------------
+CenterCoordinator --|> Employee
+CenterCoordinator "1" -- "1" VaccinationCenter : manage >
+VaccinationCenter --|> CommunityMassVaccinationCenter
+Employee --|> User
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+CommunityMassVaccinationCenter "1" -- "1" VaccinationQueue : has >
+CommunityMassVaccinationCenter "1" -- "*" VaccinationStatistics : has >
+CenterCoordinator "1" -- "0..*" DailyPerformance : evaluate >
+CommunityMassVaccinationCenter "1" -- "0..*" DailyPerformance : has >
+VaccinationQueue "1" -- "*" DailyPerformance : based on <
+CenterCoordinator "1" -- "0..*" AnalyzePerformace : evaluate >
+CommunityMassVaccinationCenter "1" -- "0..*" AnalyzePerformace : has >
+VaccinationQueue "1" -- "*" AnalyzePerformace : based on <
+Company "1" -- "*" Employee : knows >
+@enduml

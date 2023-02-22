@@ -1,0 +1,27 @@
+@startuml
+autonumber
+actor "Center Coordinator" as CC
+participant ":System" as SST
+
+activate CC
+
+CC -> SST : Asks to check and export vaccination statistics.
+activate SST
+
+SST --> CC : Requests data (fileName, date1, date2)
+deactivate SST
+
+CC -> SST : Types requested data
+activate SST
+
+SST --> CC : Shows data
+deactivate SST
+
+CC -> SST : Confirms the data
+activate SST
+
+SST --> CC : Show graphic and exports csv file
+deactivate SST
+
+deactivate CC
+@enduml

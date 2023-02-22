@@ -1,0 +1,57 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class ScheduleVaccine {
+    -date
+    -time
+}
+
+
+class CommunityMassVaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class VaccinationCenter {
+}
+
+
+class Nurse {
+}
+
+class VaccinationQueue {
+    -date
+    -entryTime
+    -exitTime
+}
+
+VaccinationCenter --|> CommunityMassVaccinationCenter
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+Company "1" -- "*" SNSUser : owns >
+ScheduleVaccine "1" -- "1" CommunityMassVaccinationCenter : has <
+Nurse "1" -- "*" ScheduleVaccine : view >
+Nurse "1"-- "*" CommunityMassVaccinationCenter : work >
+VaccinationQueue "1" -- "1..*" Nurse : seen by >
+VaccinationQueue "1" -- "*" SNSUser : have >
+@enduml

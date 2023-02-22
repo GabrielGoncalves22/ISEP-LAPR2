@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="288.6px" preserveAspectRatio="none" style="width:403px;height:288px;background:#FFFFFF;" version="1.1" viewBox="0 0 403 288" width="403.2px" zoomAndPan="magnify"><defs/><g><rect height="16.5656" style="stroke:#00000000;stroke-width:0.6;fill:none;" width="193.2" x="104.55" y="6"/><text fill="#000000" font-family="sans-serif" font-size="8.4" font-weight="bold" lengthAdjust="spacing" text-decoration="underline" textLength="187.2" x="107.55" y="17.7199">SD_ScheduleVaccine_Save_Temporary_Data</text><rect fill="#FFFFFF" height="169.6547" style="stroke:#181818;stroke-width:0.6;" width="6" x="148.2" y="75.7078"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="113.9297"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="162.1406"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="206.1516"/><rect height="55.0219" style="stroke:#000000;stroke-width:0.8999999999999999;fill:none;" width="165.3" x="98.1" y="84.7078"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="150.9" x2="150.9" y1="56.2969" y2="256.1625"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="260.1" x2="260.1" y1="56.2969" y2="256.1625"/><line style="stroke:#181818;stroke-width:0.3;fill:none;stroke-dasharray:5.0,5.0;" x1="351.3" x2="351.3" y1="56.2969" y2="256.1625"/><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="94.2" x="104.1" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="32.4" x="135" y="39.0855">sVStore:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="85.8" x="108.3" y="49.6512">ScheduleVaccineStore</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="94.2" x="104.1" y="255.5625"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="32.4" x="135" y="268.4824">sVStore:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="85.8" x="108.3" y="279.048">ScheduleVaccineStore</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="73.8" x="223.5" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="10.8" x="255" y="39.0855">sv:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="65.4" x="227.7" y="49.6512">ScheduleVaccine</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="73.8" x="223.5" y="255.5625"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="10.8" x="255" y="268.4824">sv:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="65.4" x="227.7" y="279.048">ScheduleVaccine</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="96.6" x="303.3" y="26.1656"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="45" x="329.1" y="39.0855">tempListSV:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="88.2" x="307.5" y="49.6512">List&lt;ScheduleVaccine&gt;</text><rect fill="#E2E2F0" height="29.5313" rx="1.5" ry="1.5" style="stroke:#181818;stroke-width:0.3;" width="96.6" x="303.3" y="255.5625"/><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="45" x="329.1" y="268.4824">tempListSV:</text><text fill="#000000" font-family="sans-serif" font-size="8.4" lengthAdjust="spacing" textLength="88.2" x="307.5" y="279.048">List&lt;ScheduleVaccine&gt;</text><rect fill="#FFFFFF" height="169.6547" style="stroke:#181818;stroke-width:0.6;" width="6" x="148.2" y="75.7078"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="113.9297"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="162.1406"/><rect fill="#FFFFFF" height="16.8" style="stroke:#181818;stroke-width:0.6;" width="6" x="151.2" y="206.1516"/><ellipse cx="4.5" cy="75.2578" fill="none" rx="2.4" ry="2.4" style="stroke:#181818;stroke-width:0.8999999999999999;"/><polygon fill="#181818" points="141,73.3078,147,75.7078,141,78.1078,143.4,75.7078" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;" x1="7.2" x2="144.6" y1="75.7078" y2="75.7078"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="9" y="72.7939">1</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="125.4" x="15.6" y="72.7939">saveLegacySystemTemporaryData()</text><path d="M98.1,84.7078 L141.9,84.7078 L141.9,89.7188 L135.9,95.7188 L98.1,95.7188 L98.1,84.7078 " fill="#EEEEEE" style="stroke:#000000;stroke-width:0.8999999999999999;"/><rect fill="none" height="55.0219" style="stroke:#000000;stroke-width:0.8999999999999999;" width="165.3" x="98.1" y="84.7078"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="16.8" x="107.1" y="93.4049">loop</text><text fill="#000000" font-family="sans-serif" font-size="6.6" font-weight="bold" lengthAdjust="spacing" textLength="100.8" x="150.9" y="92.7592">[foreach sv in the tempListSV]</text><line style="stroke:#181818;stroke-width:0.6;" x1="157.2" x2="182.4" y1="109.1297" y2="109.1297"/><line style="stroke:#181818;stroke-width:0.6;" x1="182.4" x2="182.4" y1="109.1297" y2="116.9297"/><line style="stroke:#181818;stroke-width:0.6;" x1="157.8" x2="182.4" y1="116.9297" y2="116.9297"/><polygon fill="#181818" points="163.8,114.5297,157.8,116.9297,163.8,119.3297,161.4,116.9297" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="161.4" y="106.2158">2</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="88.2" x="168" y="106.2158">saveScheduleVaccine(sv)</text><line style="stroke:#181818;stroke-width:0.6;" x1="157.2" x2="182.4" y1="157.3406" y2="157.3406"/><line style="stroke:#181818;stroke-width:0.6;" x1="182.4" x2="182.4" y1="157.3406" y2="165.1406"/><line style="stroke:#181818;stroke-width:0.6;" x1="157.8" x2="182.4" y1="165.1406" y2="165.1406"/><polygon fill="#181818" points="163.8,162.7406,157.8,165.1406,163.8,167.5406,161.4,165.1406" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="161.4" y="154.4268">3</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="62.4" x="168" y="154.4268">saveSVListInFile()</text><line style="stroke:#181818;stroke-width:0.6;" x1="157.2" x2="182.4" y1="201.3516" y2="201.3516"/><line style="stroke:#181818;stroke-width:0.6;" x1="182.4" x2="182.4" y1="201.3516" y2="209.1516"/><line style="stroke:#181818;stroke-width:0.6;" x1="157.8" x2="182.4" y1="209.1516" y2="209.1516"/><polygon fill="#181818" points="163.8,206.7516,157.8,209.1516,163.8,211.5516,161.4,209.1516" style="stroke:#181818;stroke-width:0.6;"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="161.4" y="198.4377">4</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="55.2" x="168" y="198.4377">cleanTempList()</text><polygon fill="#181818" points="6.6,242.9625,0.6,245.3625,6.6,247.7625,4.2,245.3625" style="stroke:#181818;stroke-width:0.6;"/><line style="stroke:#181818;stroke-width:0.6;stroke-dasharray:2.0,2.0;" x1="3" x2="150.6" y1="245.3625" y2="245.3625"/><text fill="#000000" font-family="sans-serif" font-size="7.8" font-weight="bold" lengthAdjust="spacing" textLength="4.2" x="10.2" y="242.4486">5</text><text fill="#000000" font-family="sans-serif" font-size="7.8" lengthAdjust="spacing" textLength="37.2" x="16.8" y="242.4486">date saved</text><!--MD5=[d0b57ddb9d2a9f0b1d601668eab7dbd1]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_ScheduleVaccine_Save_Temporary_Data</u>
+end title
+
+participant "sVStore:\nScheduleVaccineStore" as sVStore
+participant "sv:\nScheduleVaccine" as sv
+participant "tempListSV:\nList<ScheduleVaccine>" as tempListSV
+
+[o-> sVStore : saveLegacySystemTemporaryData()
+activate sVStore
+
+    loop foreach sv in the tempListSV
+        sVStore -> sVStore : saveScheduleVaccine(sv)
+        activate sVStore
+        deactivate sVStore
+    end
+
+    sVStore -> sVStore : saveSVListInFile()
+    activate sVStore
+    deactivate sVStore
+
+    sVStore -> sVStore : cleanTempList()
+    activate sVStore
+    deactivate sVStore
+
+    <- - sVStore : date saved
+deactivate sVStore
+
+
+@enduml
+
+@startuml
+
+autonumber
+
+title
+<u>SD_ScheduleVaccine_Save_Temporary_Data</u>
+end title
+
+participant "sVStore:\nScheduleVaccineStore" as sVStore
+participant "sv:\nScheduleVaccine" as sv
+participant "tempListSV:\nList<ScheduleVaccine>" as tempListSV
+
+[o-> sVStore : saveLegacySystemTemporaryData()
+activate sVStore
+
+    loop foreach sv in the tempListSV
+        sVStore -> sVStore : saveScheduleVaccine(sv)
+        activate sVStore
+        deactivate sVStore
+    end
+
+    sVStore -> sVStore : saveSVListInFile()
+    activate sVStore
+    deactivate sVStore
+
+    sVStore -> sVStore : cleanTempList()
+    activate sVStore
+    deactivate sVStore
+
+    <- - sVStore : date saved
+deactivate sVStore
+
+
+@enduml
+
+PlantUML version 1.2022.5(Sat Apr 30 11:55:52 BST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

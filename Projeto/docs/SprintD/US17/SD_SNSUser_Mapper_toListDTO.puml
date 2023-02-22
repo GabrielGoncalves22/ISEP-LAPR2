@@ -1,0 +1,37 @@
+@startuml
+autonumber
+
+title
+<u>SD_SNSUser_Mapper_toListDTO</u>
+end title
+
+participant ":\nSNSUserMapper" as sUMapper
+participant "sUList:\nList<SNSUser>" as sUList
+participant "sUListDto:\nList<SNSUserDTO>" as sUListDto
+participant "sU:\nSNSUser" as sU
+participant "sUDto:\nSNSUserDTO" as sUDto
+
+[o-> sUMapper : toListDTO(sUList)
+activate sUMapper
+    sUMapper --> sUListDto** : create()
+
+    loop foreach object in sUList
+
+        sUMapper -> sUList : sU = get(i)
+        activate sUList
+        deactivate sUList
+
+        sUMapper -> sUMapper : sUDto = toDTO(sU)
+        activate sUMapper
+            sUMapper --> sUDto** : create()
+        deactivate sUMapper
+
+        sUMapper -> sUListDto : add(sUDto)
+        activate sUListDto
+        deactivate sUListDto
+
+    end loop
+
+    <-- sUMapper : sUListDto
+deactivate sUMapper
+@enduml

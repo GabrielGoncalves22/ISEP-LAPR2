@@ -1,0 +1,177 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+package core {
+
+    package controller {
+        class LoadFileController {
+            -company
+            -store
+            -fileHandlerClasses
+            +LoadFileController()
+            +LoadFileController(company)
+            +getDataFromFile(filePath)
+            +createFileHandler(filePath, classReflection)
+            +loadSNSUsers(lUSDto)
+        }
+    }
+
+    package mapper {
+        class SNSUserMapper {
+            -create(name, address, sex, phoneNumber, email, birthDate, snsNumber, citizenCardNumber)
+            +toModelList(lSUDto)
+        }
+    }
+
+    package dto {
+        class SNSUserDTO {
+            -name
+            -address
+            -sex
+            -phoneNumber
+            -email
+            -birthDate
+            -snsNumber
+            -citizenCardNumber
+            +SNSUserDTO(name, sex, phoneNumber, birthdate, snsUserNumber)
+            +SNSUserDTO(name, address, sex, phoneNumber, email, birthdate, snsUserNumber, citizenCardNumber)
+            +getName()
+            +getSex()
+            +getBirthDate()
+            +getAddress()
+            +getPhoneNumber()
+            +getEmail()
+            +getSNSNumber()
+            +getCitizenCardNumber()
+            +toString()
+        }
+    }
+
+    package domain {
+        package store {
+            class SNSUserStore {
+                -snsUserList
+                +validateSNSUser(snsUser)
+                +checkDuplicates(snsUser)
+                +saveSNSUser(snsUser)
+                +addSNSUser(snsUser)
+                +lSUDtoToModelList(lSUDto)
+            }
+        }
+
+        package model {
+            class Company {
+                -snsUserStore
+                +getSNSUserStore()
+            }
+
+            class SNSUser {
+                -name
+                -address
+                -sex
+                -phoneNumber
+                -email
+                -birthDate
+                -snsNumber
+                -citizenCardNumber
+                +SNSUser(name, address, sex, phoneNumber, email, birthdate, snsUserNumber, citizenCardNumber)
+                -validateAttributes()
+                -checkName(name)
+                -checkAddress(address)
+                -checkPhoneNumber(phoneNumber)
+                -checkSnsUserNumber(snsUserNumber)
+                -checkCitizenCardNumber(citizenCardNumber)
+                +toString()
+            }
+
+            class Date {
+                +Date(year, month, day)
+                +{static}validateDateFormat(stringDate)
+                +{static}validateDateMeaning(stringDate)
+                +{static}convertStringToDate(stringDate)
+            }
+
+            class FileHandlerType1 implements FileHandler {
+                -file
+                -SUPPORTED_EXTENSIONS
+                -DATA_SEPARATOR_SNSUSER
+                +FileHandlerType1(filePath)
+                +readDataToSNSUserDTO()
+            }
+
+            class FileHandlerType2 implements FileHandler {
+                -file
+                -SUPPORTED_EXTENSIONS
+                -DATA_SEPARATOR_SNSUSER
+                +FileHandlerType2(filePath)
+                +readDataToSNSUserDTO()
+            }
+
+        }
+
+        package shared {
+            interface FileHandler <<interface>> {
+                +NUMBER_DATA_SNSUSER
+                +readDataToSNSUserDTO()
+            }
+        }
+    }
+
+}
+
+package ui {
+    package console {
+        class LoadFileUI {
+        }
+
+        package utils {
+            class FileUtils {
+                +{static}validateFile(file, supportedExtensions)
+                +{static}fileExists(file)
+                +{static}hasSupportedExtension(file, supportedExtensions)
+            }
+        }
+    }
+}
+
+package pt.isep.lei.esoft.auth.domain.model.Email {
+    class Email {
+        -email
+        +Email(email)
+        -validate(email)
+        -checkFormat(email)
+        +getEmail()
+        +equals(o)
+    }
+}
+
+'Dependencies
+LoadFileUI ..> LoadFileController
+
+LoadFileController ..> FileHandler
+LoadFileController ..> Company
+LoadFileController ..> SNSUserStore
+LoadFileController ..> SNSUserMapper
+LoadFileController ..> SNSUserDTO
+LoadFileController ..> SNSUser
+
+SNSUserMapper ..> SNSUserDTO
+SNSUserMapper ..> SNSUser
+
+FileHandler ..> SNSUserDTO
+
+'Relations
+Company "1" --> "1" SNSUserStore : adopts >
+Company "1" --> "*" SNSUser : owns >
+SNSUserStore "1" --> "*" SNSUser : adopts >
+
+'Composition
+SNSUser *-- Email
+SNSUser *-- Date
+
+SNSUserDTO *-- Email
+SNSUserDTO *-- Date
+
+
+@enduml

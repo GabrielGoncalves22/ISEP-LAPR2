@@ -1,0 +1,55 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+participant ":\nSNSUserMapper" as mapper
+participant "lSUDto:\nList<SNSUserDTO>" as lSUDto
+participant "lSU:\nList<SNSUser>" as lSU
+participant "dto:\nSNSUserDTO" as dto
+participant "snsUser:\nSNSUser" as snsUser
+
+
+[o-> mapper : toModelList(lSUDto)
+activate mapper
+
+    mapper --> lSU** : create()
+
+    loop for each object in lSUDto
+        mapper -> lSUDto : dto = get(i)
+        activate lSUDto
+        deactivate lSUDto
+        mapper -> dto : name = getName()
+        activate dto
+        deactivate dto
+        mapper -> dto : address = getAddress()
+        activate dto
+        deactivate dto
+        mapper -> dto : sex = getSex()
+        activate dto
+        deactivate dto
+        mapper -> dto : phoneNumber = getPhoneNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : email = getEmail()
+        activate dto
+        deactivate dto
+        mapper -> dto : birthDate = getBirthDate()
+        activate dto
+        deactivate dto
+        mapper -> dto : snsNumber = getSNSNumber()
+        activate dto
+        deactivate dto
+        mapper -> dto : citizenCardNumber = getCitizenCardNumber()
+        activate dto
+        deactivate dto
+        mapper --> snsUser** : create(name, sex, birthDate, address, phoneNumber, email, snsNumber, citizenCardNumber)
+        mapper -> lSU : add(snsUser)
+        activate lSU
+        deactivate lSU
+    end
+
+    [<-- mapper : lSU
+
+
+deactivate mapper
+
+@enduml

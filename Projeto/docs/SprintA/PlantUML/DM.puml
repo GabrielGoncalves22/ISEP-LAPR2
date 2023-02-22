@@ -1,0 +1,183 @@
+@startuml
+
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class SNSUser {
+    -name
+    -birthDate
+    -SNSNumber
+}
+
+class Vaccine {
+    -name
+    -vaccineType
+}
+
+class VaccineType {
+    -code
+    -diseaseName
+    -whoId
+}
+
+class VacineAdministration {
+    -vaccineType
+    -vaccineName
+    -lotNumber
+}
+
+class VaccineSchedule {
+    -SNSUserNumber
+    -vaccinationCenter
+    -date
+    -time
+    -vaccineType
+}
+
+class HealthCareCenter {
+    -name
+    -address
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -openingHours
+    -closingHours
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class CommunityMassVaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -openingHours
+    -closingHours
+    -slotDuration
+    -slotVaccineLimit
+}
+
+class Administrator {
+}
+
+class Nurse {
+    -name
+}
+
+class Receptionist {
+    -name
+}
+
+class CenterCoordinator {
+    -name
+}
+
+class VaccinationCertificate {
+}
+
+class AdverseReactions {
+    -SNSUser
+    -reactions
+}
+
+class VaccinationProgram {
+}
+
+class Report {
+}
+
+class DailyPerformance {
+}
+
+class AdministrationProcess {
+    -doseNumber
+    -ageGroup
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class VaccinationQueue {
+    -SNSUser
+    -date
+    -entryTime
+    -exitTime
+}
+
+class Message {
+    -information
+    -type
+}
+
+Administrator "1" -- "*" CenterCoordinator : create >
+Administrator "1" -- "*" CommunityMassVaccinationCenter : create >
+Administrator "1" -- "*" Nurse : create >
+
+CenterCoordinator "1" -- "0..*" DailyPerformance : evaluate >
+CenterCoordinator "1" -- "0..*" Report : generate >
+CenterCoordinator "1" -- "1" CommunityMassVaccinationCenter : manage >
+
+CommunityMassVaccinationCenter "1" -- "0..*" DailyPerformance : has >
+CommunityMassVaccinationCenter "1" -- "0..*" Report : has >
+CommunityMassVaccinationCenter "1" -- "1" VaccinationQueue : has >
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" CommunityMassVaccinationCenter : manage >
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" Vaccine : applies >
+
+HealthCareCenter "*" -- "*" VaccineType : can administer >
+HealthCareCenter "*" -- "1" Administrator : create <
+HealthCareCenter "*" -- "1" Company : manage <
+HealthCareCenter "*" -- "1" Nurse : work <
+
+Message "0..1" -- "1" VaccineAdministration : is issued within a period of time after >
+Message "0..1" -- "1" VaccineSchedule : emitted on >
+
+Nurse "1" -- "*" VaccineSchedule : view >
+Nurse "1"-- "*" AdverseReactions : register >
+Nurse "1"-- "*" CommunityMassVaccinationCenter : work >
+Nurse "1"-- "*" VacineAdministration : view and register >
+
+Receptionist "*" -- "1" Administrator: created by >
+Receptionist "1" -- "1" VaccinationQueue : manage >
+Receptionist "1"-- "*" CommunityMassVaccinationCenter : work >
+Receptionist "1"-- "*" HealthCareCenter : work >
+
+SNSUser "*" -- "1" Administrator: created by >
+SNSUser "1" -- "0..*" AdverseReactions : have >
+SNSUser "1" -- "0..*" Message : receive >
+
+VaccinationCertificate "*" -- "1" Nurse : requested by >
+VaccinationCertificate "*" -- "1" SNSUser : requested by >
+
+VaccinationProgram "0..*" -- "1" Company : contains <
+
+VaccinationQueue "1" -- "0..*" SNSUser : have >
+VaccinationQueue "1" -- "1..*" Nurse : seen by >
+VaccinationQueue "1" -- "*" DailyPerformance : based on <
+
+Vaccine "*" -- "1" Administrator: created by >
+Vaccine "*" -- "1" VaccineType : is of >
+Vaccine "1" -- "1..*" AdministrationProcess : has >
+
+VaccineSchedule "*" -- "1" Receptionist : requested by >
+VaccineSchedule "*" -- "1" SNSUser : requested by >
+VaccineSchedule "*" -- "1" VaccineType : for taking >
+
+VaccineType "*" -- "1" Administrator: created by >
+VaccineType "*" -- "1" Company : promotes administration <
+VaccineType "1" -- "*" CommunityMassVaccinationCenter : can administer <
+
+VacineAdministration "*" -- "1" SNSUser : administered on >
+VacineAdministration "*" -- "1" Vaccine : of >
+VacineAdministration "0..1" -- "0..1" VaccineSchedule : fulfilling >
+
+@enduml

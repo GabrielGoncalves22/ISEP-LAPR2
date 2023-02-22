@@ -1,0 +1,26 @@
+@startuml
+autonumber
+
+title
+<u>SD_Read_Legacy_System_Data_File</u>
+end title
+
+participant ":\nLegacySysFileReader" as lSFReader
+participant ":\nSNSUserMapper" as sUMapper
+participant "fileData:\nList<String>" as fileData
+
+[o-> lSFReader : readFileData(filePath)
+activate lSFReader
+    lSFReader --> fileData** : create()
+
+    loop foreach line in the file
+
+        lSFReader -> sUList : sU = get(i)
+        activate sUList
+        deactivate sUList
+
+    end loop
+
+    <-- lSFReader : fileData
+deactivate lSFReader
+@enduml

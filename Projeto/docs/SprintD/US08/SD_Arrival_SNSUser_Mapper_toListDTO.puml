@@ -1,0 +1,38 @@
+@startuml
+autonumber
+
+title
+<u>SD_ARRIVAL_SNSUSER_MAPPER_TOLISTDTO</u>
+end title
+
+participant "auMapper:\nArrivalSNSUserMapper" as AUM
+participant "listAU:\nList<ArrivalSNSUser>" as LAU
+participant "listAUDto:\nList<ArrivalSNSUserDTO>" as LAUD
+participant "au:\nArrivalSNSUser" as AU
+participant "auDto:\nArrivalSNSUserDTO" as AUD
+
+[o-> AUM : toListDTO(listAU)
+activate AUM
+AUM --> LAUD** : create()
+
+loop foreach object in listAU
+
+AUM -> LAU : au = get(i)
+activate LAU
+deactivate LAU
+
+AUM -> AUM : auDto = toDTO(au)
+activate AUM
+AUM --> AUD** : create()
+
+deactivate AUM
+
+AUM -> LAUD : add(auDto)
+activate LAUD
+deactivate LAUD
+
+end loop
+
+<-- AUM : listAUDto
+deactivate AUM
+@enduml

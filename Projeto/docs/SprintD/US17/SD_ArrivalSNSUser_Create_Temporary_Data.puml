@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_ArrivalSNSUser_Create_Temporary_Data</u>
+end title
+
+participant "aSUStore:\nArrivalSNSUserStore" as aSUStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant "aSU:\nArrivalSNSUser" as asu
+participant "sU:\nSNSUser" as sU
+participant "vc:\nVaccineCenter" as vc
+participant "tempListASU:\nList<ArrivalSNSUser>" as tempListASU
+
+[o-> aSUStore : createLegacySystemTemporaryData(sU, lSF, vc)
+activate aSUStore
+
+    aSUStore -> lSF : arrivalDate = getArrivalDate()
+    activate lSF
+    deactivate lSF
+    aSUStore -> lSF : arrivalTime = getArrivalTime()
+    activate lSF
+    deactivate lSF
+
+    aSUStore -> aSUStore : asu = instantiateArrivalSNSUser(sU, arrivalDate, arrivalTime, vc)
+    activate aSUStore
+    deactivate aSUStore
+
+    aSUStore -> aSUStore : validateArrivalSNSUser(asu)
+    activate aSUStore
+    deactivate aSUStore
+
+    aSUStore -> tempListASU : add(asu)
+    activate tempListASU
+    deactivate tempListASU
+
+    <-- aSUStore : success
+deactivate aSUStore
+
+
+@enduml

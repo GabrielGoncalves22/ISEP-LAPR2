@@ -1,0 +1,311 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+package core {
+    package domain {
+        package model {
+            class Company {
+                +getVaccinationCenterStore()
+                +getArrivalSNSUserStore()
+                +getSNSUserStore()
+                +getScheduleVaccineStore()
+                +getVaccineAdministrationStore()
+                +getVaccineStore()
+            }
+
+            class ArrivalSNSUser {
+                -waitingRoom
+                +ArrivalSNSUser(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+            }
+
+            class SNSUser {
+                -name
+                -address
+                -sex
+                -phoneNumber
+                -email
+                -birthDate
+                -snsUserNumber
+                -citizenCardNumber
+                +SNSUser(name, address, sex, phoneNumber, email, \nbirthDate, snsUserNumber, citizenCardNumber)
+            }
+
+            class VaccinationCenter {
+                -name
+                -address
+                -phoneNumber
+                -email
+                -faxNumber
+                -website
+                -openingHours
+                -closingHours
+                -slotDuration
+                -slotVaccineLimit
+                {static} -numberVaccinationCenters
+                +VaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+            }
+
+            class Date {
+                -year
+                -month
+                -day
+                +Date(year, month, day)
+                {static} +currentDate()
+            }
+
+            class Time {
+                -hours
+                -minutes
+                -seconds
+                +Time(hours, minutes, seconds)
+                -checkHours(hours)
+                -checkMinutes(minutes)
+                -checkSeconds(seconds)
+                {static} +currentTime()
+            }
+
+
+            class ScheduleVaccine {
+                +ScheduleVaccine(snsUser, vaccinationCenter, date, time, vaccineType)
+                +getDate()
+                +getTime()
+            }
+
+            class VaccineAdministration {
+                -administrationDate
+                -administrationTime
+                -leavingDate
+                -leavingTime
+                -lotNumber
+                +VaccineAdministration(snsUser, vaccine, dose, administrationDate, administrationTime,\n leavingDate, leavingTime, vaccinationCenter, lotNumber)
+                -checkAllNull(snsUser, vaccine, dose, administrationDate, administrationTime,\n leavingDate, leavingTime, vaccinationCenter)
+                -checkTime(administrationTime, leavingTime)
+                -checkLotNumber(lotNumber)
+            }
+
+            class Vaccine {
+                -id
+                -name
+                -brand
+                +Vaccine(name, brand, vt)
+            }
+
+            class AgeGroup {
+                -minimumAge
+                -maximumAge
+                +AgeGroup(minimumAge, maximumAge)
+            }
+
+            class Dose {
+                -doseNumber
+                -dosage
+                -timeIntervalBetweenLastDose
+                +Dose(doseNumber, dosage, timeIntervalBetweenLastDose)
+            }
+
+            class SMSMessageTask {
+                -phoneNumber
+                -message
+                +SMSMessageTask(phoneNumber, message)
+                +run()
+            }
+
+            class FileSMSMessage {
+                +sendSMSMessage(phoneNumber, message)
+            }
+        }
+
+        package shared {
+            interface FileSMSMessageHandler <<interface>> {
+                +sendSMSMessage(phoneNumber, message)
+            }
+        }
+
+        package store {
+            class VaccinationCenterStore {
+                +getVaccinationCenter(vcId)
+            }
+
+            class ArrivalSNSUserStore {
+                +getListArrivalSNSUser(vc)
+                -criteriaVaccinationCenter(au, vc)
+                +removeWaitingRoom(snsUser)
+            }
+
+            class SNSUserStore {
+                +getSNSUser(snsUserNumber)
+                +currentAge(su)
+            }
+
+
+            class ScheduleVaccineStore {
+                +getTypeVaccineMarked(su, vc, date)
+            }
+
+            class VaccineStore {
+                +getListSuggestedVaccines(vt, age)
+                +getListDose(v, age)
+            }
+
+            class VaccineAdministrationStore {
+                +createAdministrationVaccine(vaDto)
+                +validateAdministrationVaccine(va)
+                +saveAdministrationVaccine(va)
+                -addAdministrationVaccine(va)
+                +currentVaccine(su, vt)
+                +missingDoses(su, v, listD)
+                +sendMessage(phoneNumber, message, delay)
+            }
+        }
+    }
+
+    package mapper {
+        class ArrivalSNSUserMapper {
+            +toListDTO(listAU)
+            +toDTO(au)
+        }
+
+        class SNSUserMapper {
+            +toDto(su)
+        }
+
+        class VaccineAdministrationMapper {
+            +toModel(avDTO)
+        }
+
+        class VaccineMapper {
+            +toListDTO(listV)
+            +toDTO(v)
+        }
+
+        class DoseMapper {
+            +toListDTO(listD)
+            +toDTO(d)
+        }
+    }
+
+    package dto {
+        class ArrivalSNSUserDTO {
+            -snsUser
+            -arrivalDate
+            -arrivalTime
+            -vaccinationCenter
+            -waitingRoom
+            +ArrivalSNSUserDTO(snsUser, arrivalDate, arrivalTime, vaccinationCenter)
+            +getSnsUser()
+            +getArrivalDate()
+            +getArrivalTime()
+            +getVaccinationCenter()
+        }
+
+        class VaccineAdministrationDTO {
+            -snsUser
+            -vaccine
+            -dose
+            -administrationDate
+            -administrationTime
+            -leavingDate
+            -leavingTime
+            -vaccinationCenter
+            -lotNumber
+            +VaccineAdministration(snsUser, vaccine, dose, administrationDate, administrationTime,\n leavingDate, leavingTime, vaccinationCenter, lotNumber)
+            +getSnsUser()
+            +getVaccine()
+            +getDose()
+            +getAdministrationDate()
+            +getAdministrationTime()
+            +getLeavingDate()
+            +getLeavingTime()
+            +getVaccinationCenter()
+            +getLotNumber()
+        }
+
+        class VaccineDTO {
+            -id
+            -name
+            -brand
+            -vaccineType
+            +VaccineDTO(id, name, brand)
+            +getId()
+            +getName()
+            +getBrand()
+        }
+
+        class DoseDTO {
+            -doseNumber
+            -dosage
+            -timeIntervalBetweenLastDose
+            +DoseDTO(doseNumber, dosage, timeIntervalBetweenLastDose)
+            +getDoseNumber()
+            +getDosage()
+            +getTimeIntervalBetweenLastDose()
+        }
+    }
+
+    package controller {
+        class RecordVaccineAdministrationController {
+            +RecordVaccineAdministrationController(vcId)
+            +getListArrivalSNSUser()
+            +searchSNSUser(snsUserNumber)
+            +getListSuggestedVaccineAdminister()
+            +getListSuggestedDoseAdminister(v)
+            +createAdministrationVaccine(vaDto)
+            +saveAdministrationVaccine()
+            +sendMessage(phoneNumber, message, delay)
+            -checkTypeVaccineMarked()
+            -checkSNSUserTakingAnyVaccine(vt)
+            -checkListSuggestedVaccines()
+            -checkListDoses(v)
+            -withdrawAdministeredDoses(v, listD)
+        }
+    }
+}
+
+package ui {
+    class RecordVaccineAdministrationUI {
+    }
+}
+
+package java.util {
+    class TimerTask {
+    }
+}
+
+ArrivalSNSUser o-- SNSUser
+ArrivalSNSUser o-- Date
+ArrivalSNSUser o-- Time
+ArrivalSNSUser o-- VaccinationCenter
+
+ScheduleVaccine o-- SNSUser
+ScheduleVaccine o-- Date
+ScheduleVaccine o-- Time
+ScheduleVaccine o-- VaccinationCenter
+
+VaccineAdministration o-- SNSUser
+VaccineAdministration o-- Vaccine
+VaccineAdministration o-- Dose
+VaccineAdministration o-- Date
+VaccineAdministration o-- Time
+VaccineAdministration o-- VaccinationCenter
+
+Vaccine *-- AgeGroup
+AgeGroup *-- Dose
+
+FileSMSMessageHandler <|.. FileSMSMessage
+TimerTask <|-- FileSMSMessage
+
+ui ..> controller
+
+controller ..> domain
+controller ..> dto
+controller ..> mapper
+
+mapper ..> domain
+mapper ..> dto
+
+domain ..> dto
+
+Company "1" -- "1" store : uses >
+
+@enduml

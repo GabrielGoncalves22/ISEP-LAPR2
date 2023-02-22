@@ -1,0 +1,126 @@
+@startuml
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class Nurse {
+}
+
+class VaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -address
+    -faxNumber
+    -website
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -address
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+}
+
+class AgeGroup {
+    -minAge
+    -maxAge
+    -dosesAdministered
+}
+
+class Dose {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+}
+
+class VaccineAdministration {
+    -lotNumber
+    -administrationDate
+    -administrationTime
+    -leavingDate
+    -leavingTime
+}
+
+class ArrivalSNSUser {
+    -date
+    -time
+}
+
+class ScheduleVaccine {
+    -date
+    -time
+}
+
+class Message {
+    -date
+    -time
+    -textMessage
+}
+
+class SMS {
+    -number
+}
+
+'----- Generalization -----
+
+SMS --|> Message
+
+'--------------------------
+
+'------- Relations --------
+
+AgeGroup "1" -- "1..*" Dose : has >
+
+ArrivalSNSUser "1" -- "*" SNSUser : have >
+ArrivalSNSUser "1" -- "1..*" Nurse : seen by >
+
+Company "1" -- "*" Message : send >
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" Vaccine : applies >
+
+Message "0..1" -- "1" VaccineAdministration : is issued within a period of time after >
+
+Nurse "1" -- "*" ScheduleVaccine : view >
+Nurse "1" -- "*" VaccinationCenter : work >
+Nurse "1"-- "*" VaccineAdministration : view and register >
+
+SNSUser "1" -- "*" Message : receive >
+
+ScheduleVaccine "*" -- "1" VaccinationCenter : has <
+ScheduleVaccine "*" -- "1" VaccineType : for taking >
+
+VaccinationCenter "1" -- "*" ArrivalSNSUser : has >
+
+Vaccine "*" -- "1" VaccineType : is of >
+Vaccine "1" -- "1..*" AgeGroup : constituted >
+
+VaccineAdministration "*" -- "1" SNSUser : administered on >
+VaccineAdministration "*" -- "1" Vaccine : of >
+VaccineAdministration "1" -- "1" ScheduleVaccine : fulfilling >
+
+VaccineType "*" -- "1" Company : promotes administration <
+
+'--------------------------
+
+@enduml

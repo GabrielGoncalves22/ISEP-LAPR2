@@ -1,0 +1,123 @@
+@startuml
+skinparam classAttributeIconSize 0
+'left to right direction
+
+package ui{
+class ListArrivalSNSUserUI {
+}
+}
+
+package core{
+package controller{
+class ArrivalSNSUserController {
+}
+}
+package domain{
+package store{
+class ArrivalSNSUserStore {
+    +getArrivalSNSUserList()
+    +getListArrivalSNSUser(vaccinationCenter)
+    +getSnsUser()
+    +getVaccinationCenter()
+    +getWaitingRoom()
+}
+}
+
+package model{
+class ArrivalSNSUser{
+    +toString()
+}
+class Company {
+}
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -snsUserNumber
+    -citizenCardNumber
+    +SNSUser(name, address, sex, phoneNumber, email, \nbirthDate, snsUserNumber, citizenCardNumber)
+}
+
+class Date {
+    -year
+    -month
+    -day
+    -Date(year, month, day)
+}
+
+class Time {
+    -hours
+    -minutes
+    -seconds
+    +Time(hours, minutes, seconds)
+}
+
+class VaccinationCenter {
+    -name
+    -address
+    -phoneNumber
+    -email
+    -faxNumber
+    -website
+    -openingHours
+    -closingHours
+    -slotDuration
+    -slotVaccineLimit
+    +VaccineCenter(name, address, phoneNumber,\n email, faxNumber, website, openingHours,\n closingHours, slotDuration, slotVaccineLimit)
+}
+}
+}
+
+package mapper{
+class ArrivalSNSUserMapper {
+    +toListDTO(listArrivalSNSUser)
+}
+}
+
+package dto{
+class ArrivalSNSUserDto {
+    -arrivalDate
+    -snsUser
+    -arrivalTime
+    -vaccinationCenter
+    -getWaitingRoom
+    +getSnsUser()
+    +getArrivalDate()
+    +getArrivalTime()
+    +getVaccinationCenter()
+}
+class SNSUserDto {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -birthDate
+    -snsUserNumber
+    -citizenCardNumber
+    +getName()
+    +getSex()
+    +getPhoneNumber()
+    +getBirthdate()
+    +getSnsUserNumber()
+    +toString()
+}
+}
+}
+
+controller ..> mapper
+controller ..> domain
+controller ..> dto
+mapper ..> dto
+mapper ..> domain
+domain ..> dto
+ui ..> controller
+
+ArrivalSNSUser o-- SNSUser
+ArrivalSNSUser o-- Date
+ArrivalSNSUser o-- Time
+ArrivalSNSUser o-- VaccinationCenter
+Company "1" --> "*" ArrivalSNSUser : contains >
+
+@enduml

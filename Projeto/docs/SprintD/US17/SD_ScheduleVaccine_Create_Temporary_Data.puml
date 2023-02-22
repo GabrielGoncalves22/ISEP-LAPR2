@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+title
+<u>SD_ScheduleVaccine_Create_Temporary_Data</u>
+end title
+
+participant "sVStore:\nScheduleVaccineStore" as sVStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant "sv:\nScheduleVaccine" as sv
+participant "sU:\nSNSUser" as sU
+participant "vc:\nVaccineCenter" as vc
+participant "vt:\nVaccineType" as vt
+participant "tempListSV:\nList<ScheduleVaccine>" as tempListSV
+
+[o-> sVStore : createLegacySystemTemporaryData(lSF, sU, vc, vt)
+activate sVStore
+
+    sVStore -> lSF : scheduledDate = getScheduledDate()
+    activate lSF
+    deactivate lSF
+    sVStore -> lSF : scheduledTime = getScheduledTime()
+    activate lSF
+    deactivate lSF
+
+    sVStore -> sVStore : sv = createScheduleVaccine(sU, vc, scheduledDate, scheduledTime, vT)
+    activate sVStore
+    deactivate sVStore
+
+    sVStore -> sVStore : validateScheduleVaccine(sv)
+    activate sVStore
+    deactivate sVStore
+
+    sVStore -> tempListSV : add(sv)
+    activate tempListSV
+    deactivate tempListSV
+
+    <-- sVStore : success
+deactivate sVStore
+
+
+@enduml

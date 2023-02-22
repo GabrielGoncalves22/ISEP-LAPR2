@@ -1,0 +1,24 @@
+@startuml
+autonumber
+actor "Administrator" as OE
+
+activate OE
+OE -> ":System" : starts register a vaccination center
+activate ":System"
+":System" --> OE : request data (i.e. name, address, phone number, e-mail address, fax number,  website address,\n opening and closing hours, slot duration and the maximum number of vaccines  )
+deactivate ":System"
+
+OE -> ":System" : types requested data
+activate ":System"
+":System" --> OE : shows the data and requests a confirmation
+deactivate ":System"
+
+OE -> ":System" : confirms the data
+activate ":System"
+":System" --> OE : informs operation success
+deactivate ":System"
+
+
+deactivate OE
+
+@enduml

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.ui.gui.CenterCoordinatorMenuUI">
+   <left>
+      <AnchorPane prefHeight="900.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="900.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/centercoordinatormenu.jpg" />
+               </image>
+            </ImageView>
+            <VBox layoutY="329.0" prefHeight="570.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#importManageCenterData" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #0060BF; -fx-border-width: 2px 2px 0px 2px;" text="Import data">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="27.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/upload.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#vaccinationStatistics" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #0060BF; -fx-border-width: 2px 2px 0px 2px;" text="Vaccination Statistics">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/statistics.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+
+                  <Button lineSpacing="2.0" mnemonicParsing="false" onAction="#analyzePerformance" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #0060BF; -fx-border-width: 2px 2px 0px 2px;" text="Analyze the Performance " textOverrun="CLIP">
+
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="33.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/perfomace.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#logoutProgram" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #0060BF; -fx-border-width: 2px 2px 0px 2px;" text="Logout">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#closeProgram" prefHeight="100.0" prefWidth="300.0" style="-fx-background-color: transparent; -fx-border-color: #0060BF; -fx-border-width: 2px 2px 2px 2px;" text="Exit">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <AnchorPane prefHeight="200.0" prefWidth="800.0" />
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane fx:id="anchorPane" prefHeight="900.0" prefWidth="800.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

@@ -1,0 +1,112 @@
+@startuml
+left to right direction
+
+:SNS User: as snsUser
+:Nurse: as nurse
+:Administrator: as admin
+:Receptionist: as receptionist
+:Center Coordinator: as centerCoordinator
+:<<automatic>> Timer/Clock: as timer
+
+package System {
+    'US1 - Sprint C
+    usecase "UC01: Schedule a vaccine" as UC1
+    'US2 - Sprint C
+    usecase "UC02: Schedule a vaccination" as UC2
+    'US3 - Sprint B
+    usecase "UC03: Register SNS user" as UC3
+    'US4 - Sprint C
+    usecase "UC04: Register the SNS user arrival" as UC4
+    'US5 - Sprint C
+    usecase "UC05: Consult the users in the waiting room" as UC5
+    'US6 - Sprint D
+    usecase "UC06: Record daily the total number of people vaccinated" as UC6
+    'US7 - Sprint D
+    usecase "UC07: Record adverse reactions of a SNS User" as UC7
+    'US8 - Sprint D
+    usecase "UC08: Record the administration of a vaccine to a SNS User" as UC8
+    'US9 - Sprint B
+    usecase "UC09: Register vaccination center" as UC9
+    'US10 - Sprint B
+    usecase "UC10: Register employee" as UC10
+    'US11 - Sprint B
+    usecase "UC11: List employees" as UC11
+    'US12 - Sprint B
+    usecase "UC12: Register vaccine type" as UC12
+    'US13 - Sprint B
+    usecase "UC13: Register vaccine and its administration process" as UC13
+    'US14 - Sprint C
+    usecase "UC14: Load a set of users from a CSV file" as UC14
+    'US15 - Sprint D
+    usecase "UC15: Check and export vaccination statistics" as UC15
+    'US16 - Sprint D
+    usecase "UC16: Analyze the performance of a center" as UC16
+    'US17 - Sprint D
+    usecase "UC17: Import data from a legacy system" as UC17
+    'US18 - Sprint C
+    usecase "UC18: List of all vaccines" as UC18
+    usecase "UC19: Consult the patient information sheet for instructions on the vaccine to be administered" as UC19
+    usecase "UC20: Request the issuance of the certificate" as UC20
+    usecase "UC21: Analyse the data from other centers" as UC21
+    usecase "UC22: Visualize the stats and graphs" as UC22
+    usecase "UC23: To generate reports" as UC23
+}
+
+'------- Project Requirements --------
+
+'US1 - Sprint C
+snsUser -- UC1
+
+'US2 - Sprint C
+receptionist -- UC2
+'US3 - Sprint B
+receptionist -- UC3
+'US4 - Sprint C
+receptionist -- UC4
+
+'US5 - Sprint C
+nurse -- UC5
+'US6 - Sprint D
+timer -- UC6
+'US7 - Sprint D
+nurse -- UC7
+'US8 - Sprint D
+nurse -- UC8
+
+'US9 - Sprint B
+admin -- UC9
+'US10 - Sprint B
+admin -- UC10
+'US11 - Sprint B
+admin -- UC11
+'US12 - Sprint B
+admin -- UC12
+'US13 - Sprint B
+admin -- UC13
+'US14 - Sprint C
+admin -- UC14
+
+'US15 - Sprint D
+centerCoordinator -- UC15
+'US16 - Sprint D
+centerCoordinator -- UC16
+'US17 - Sprint D
+centerCoordinator -- UC17
+'US18 - Sprint C
+centerCoordinator -- UC18
+
+'--------------------------
+
+'------- Other UCs identified --------
+
+nurse -- UC19
+
+snsUser -- UC20
+
+centerCoordinator -- UC21
+centerCoordinator -- UC22
+centerCoordinator -- UC23
+
+'--------------------------
+
+@enduml

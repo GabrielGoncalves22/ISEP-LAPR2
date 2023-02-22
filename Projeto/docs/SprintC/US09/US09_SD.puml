@@ -1,0 +1,67 @@
+@startuml
+autonumber
+actor "Administrator" as ADM
+
+participant "RegisterVaccinationCenterUI" as UI
+participant "RegisterVaccinationCenterController" as CTRL
+participant ":Company" as CMP
+participant "VaccineCenterStore" as VCS
+participant "VaccineCenter" as VC
+
+activate ADM
+ADM -> UI : starts create vaccine center
+activate UI
+UI --> ADM : request data(name,address, phoneNumber, email, \n faxNumber, website, openingHours, closingHours, \n slotDuration, slotVaccineLimit)
+deactivate UI
+
+ADM -> UI : types requested data
+activate UI
+
+UI -> CTRL : createVaccineCenter(name,address, phoneNumber, email, \n faxNumber, website, openingHours, closingHours, \n slotDuration, slotVaccineLimit)
+activate CTRL
+
+CTRL -> CMP : store = getVaccineCenterStore()
+activate CMP
+deactivate CMP
+
+CTRL -> VCS : vc = createVaccineCenter(name,address, phoneNumber, email, \n faxNumber, website, openingHours, closingHours, \n slotDuration, slotVaccineLimit)
+activate VCS
+VCS --> VC** : create(name,address, phoneNumber, email, \n faxNumber, website, openingHours, closingHours, \n slotDuration, slotVaccineLimit)
+
+deactivate VCS
+
+CTRL -> VCS : validateVaccineCenter(vc)
+activate VCS
+deactivate VCS
+
+deactivate CMP
+deactivate CTRL
+
+UI --> ADM : shows the data and requests a confirmation
+deactivate UI
+
+ADM -> UI : confirms the data
+activate UI
+UI -> CTRL : saveVaccineCenter()
+activate CTRL
+
+CTRL -> VCS : saveVaccineCenter(vc)
+activate VCS
+
+VCS -> VCS: validateVaccineCenter(vc)
+activate VCS
+deactivate VCS
+|||
+VCS -> VCS: addVaccineCenter(vc)
+activate VCS
+deactivate VCS
+
+deactivate VCS
+deactivate CTRL
+UI --> ADM : informs operation success
+deactivate UI
+deactivate ADM
+
+
+
+@enduml

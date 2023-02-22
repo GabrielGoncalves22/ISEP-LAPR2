@@ -1,0 +1,380 @@
+@startuml
+autonumber
+actor "Center Coordinator" as cc
+participant ":\nImportManageCenterDataUI" as ui
+participant ":\nImportManageCenterDataController" as controller
+participant ":\nCompany" as company
+participant ":\nFileUtils" as fUtils
+participant ":\nLegacySysFileReader" as lSFReader
+participant "lSFStore:\nLegacySystemFileStore" as lSFStore
+participant "sUStore:\nSNSUserStore" as sUStore
+participant "vStore:\nVaccineStore" as vStore
+participant "vTStore:\nVaccineTypeStore" as vTStore
+participant "vaStore:\nVaccineAdministrationStore" as vaStore
+participant "sVStore:\nScheduleVaccineStore" as sVStore
+participant "aSUStore:\nArrivalSNSUserStore" as aSUStore
+participant "vcStore:\nVaccineCenterStore" as vcStore
+participant "lSF:\nLegacySystemFile" as lSF
+participant ":\nSortDataAlgorithm" as sDAlgorithm
+participant ":\nSNSUserMapper" as sUMapper
+participant ":\nVaccineMapper" as VM
+participant "sUDto:\nSNSUserDTO" as sUDto
+participant "vDto:\nVaccineDTO" as vDto
+participant "vTDto:\nVaccineTypeDTO" as vTDto
+participant "lSFList:\nList<LegacySystemFile>" as lSFList
+participant "fileData:\nList<List<String>>" as fileData
+participant "sU:\nSNSUser" as sU
+participant "v:\nVaccine" as v
+participant "vt:\nVaccineType" as vt
+participant "va:\nVaccineAdministration" as va
+participant "date:\nDate" as date
+participant "dose:\nDose" as dose
+participant "vc:\nVaccineCenter" as vc
+participant "sv:\nScheduleVaccine" as sv
+participant "asu:\nArrivalSNSUser" as asu
+participant "tempListVA:\nList<VaccineAdministration>" as tempListVA
+participant "tempListSV:\nList<ScheduleVaccine>" as tempListSV
+participant "tempListASU:\nList<ArrivalSNSUser>" as tempListASU
+
+activate cc
+    cc -> ui : start asking to import data present in a file from a legacy system
+    note right
+        UI: **vcId** is obtained immediately after
+        user login. The center coordinator doesn't
+        need to select a vaccine center, since
+        it is connected to a unique center.
+    end note
+    activate ui
+        ui --> controller** : create(vcId)
+        activate controller
+            controller -> company : vcStore = getVaccinationCenterStore()
+            activate company
+            deactivate company
+            controller -> vcStore : vc = getVaccinationCenter(vcId)
+            activate vcStore
+            deactivate vcStore
+        deactivate controller
+        ui --> cc : asks to insert the path of the file to be imported
+    deactivate ui
+
+    cc -> ui : insert the path to the file
+
+    activate ui
+
+        ui -> controller : validateFile(filePath)
+        activate controller
+            controller -> fUtils : valid = validateFile(file, supportedExtensions)
+            activate fUtils
+                fUtils -> fUtils : fileExists(file)
+                activate fUtils
+                deactivate fUtils
+                fUtils -> fUtils : hasSupportedExtension(file, supportedExtensions)
+                activate fUtils
+                deactivate fUtils
+            fUtils --> controller : message
+            deactivate fUtils
+            controller --> ui : message
+        deactivate controller
+
+        ui -> controller : readFileData(filePath)
+        activate controller
+            controller -> lSFReader : fileData = readDataToStringList(filePath)
+            activate lSFReader
+            deactivate lSFReader
+
+            'Solve SNS User part
+            controller -> company : sUStore = getSNSUserStore()
+            activate company
+            deactivate company
+
+            controller -> sUStore : sUList = getSNSUserList()
+            activate sUStore
+            deactivate sUStore
+
+            controller -> sUMapper : toListDTO(sUList)
+            activate sUMapper
+                ref over sUMapper
+                SD_SNSUser_Mapper_toListDTO
+                end ref
+
+                sUMapper --> controller : sUListDto
+            deactivate sUMapper
+            '---------------------
+            |||
+            'Solve the vaccine part
+            controller -> company : vStore = getVaccineStore()
+            activate company
+            deactivate company
+
+            controller -> vStore : listV = getListV()
+            activate vStore
+            deactivate vStore
+
+            controller -> VM : toListDTO(listV)
+            activate VM
+                ref over VM
+                SD_Vaccine_Mapper_toListDTO
+                end ref
+
+                VM --> controller : listVDto
+            deactivate VM
+            '-------------------
+
+            |||
+
+            'Solve the store data part
+            controller -> company : lSFStore = getLegacySystemFileStore()
+            activate company
+            deactivate company
+
+            controller -> lSFStore : storeData(fileData, sUListDto, listVDto)
+            activate lSFStore
+                ref over lSFStore
+                    SD_LegacySystemFileStore_storeData
+                end ref
+                lSFStore --> controller : data stored
+            deactivate lSFStore
+            '-------
+            controller -> lSFStore : getlSFList()
+            activate lSFStore
+                lSFStore --> controller : lSFList
+            deactivate lSFStore
+            controller --> ui : lSFList
+        deactivate controller
+
+        ui --> cc : show the actual list of data to be imported and asks to select the sort criteria
+
+        note right
+        The **sort criteria** is the
+        data field used to sort
+        all the information
+        end note
+    deactivate ui
+
+    cc -> ui : selects the sort criteria
+
+    activate ui
+
+        ui -> controller : sortDataByCriteria(sortingCriteria)
+        activate controller
+            controller -> company : lSFStore = getLegacySystemFileStore()
+            activate company
+            deactivate company
+            controller -> lSFStore : getlSFList()
+            activate lSFStore
+                lSFStore --> controller : lSFList
+            deactivate lSFStore
+
+            controller -> company : sortDataAlgorithm = getSortDataAlgorithm(sortingCriteria)
+            activate company
+            deactivate company
+
+            controller -> lSFStore : changeSortOrder(order)
+            activate lSFStore
+                ref over lSFStore
+                    SD_Change_Sort_Order
+                end ref
+                lSFStore --> controller : order changed
+            deactivate lSFStore
+
+            controller -> sDAlgorithm : sortData(lSFList)
+            activate sDAlgorithm
+                sDAlgorithm --> controller : lSFList
+            deactivate sDAlgorithm
+            controller --> ui : lSFList
+        deactivate controller
+
+        ui --> cc : show the data ordered by the chosen criteria and asks to select the sort order
+        note right
+        The **sort order** refers
+        to the ascending or
+        descending order
+        end note
+    deactivate ui
+
+    cc -> ui : selects the sort order
+
+    activate ui
+
+        ui -> controller : changeSortOrder(order)
+        activate controller
+            controller -> company : getLegacySystemFileStore()
+            activate company
+            deactivate company
+            controller -> lSFStore : changeSortOrder(order)
+            activate lSFStore
+                ref over lSFStore
+                    SD_Change_Sort_Order
+                end ref
+                lSFStore --> controller : order changed
+            deactivate lSFStore
+
+            controller -> lSFStore : getlSFList()
+            activate lSFStore
+                lSFStore --> controller : lSFList
+            deactivate lSFStore
+            controller --> ui : lSFList
+        deactivate controller
+
+        ui --> cc : show the chosen file path, the sort criteria, the sort order, and the data to be imported\n ordered by the chosen criteria and order, and asks confirmation
+    deactivate ui
+
+    cc -> ui : confirms the data to be imported
+    activate ui
+
+        ui -> controller : importDataToSystem()
+        activate controller
+
+            controller -> company : lSFStore = getLegacySystemFileStore()
+            activate company
+            deactivate company
+
+            controller -> company : sUStore = getSNSUserStore()
+            activate company
+            deactivate company
+
+            controller -> company : vStore = getVaccineStore()
+            activate company
+            deactivate company
+
+            controller -> company : vTStore = getVaccineTypeStore()
+            activate company
+            deactivate company
+
+            controller -> company : vaStore = getVaccineAdministrationStore()
+            activate company
+            deactivate company
+
+            controller -> company : sVStore = getScheduleVaccineStore()
+            activate company
+            deactivate company
+
+            controller -> company : aSUStore = getArrivalSNSUserStore()
+            activate company
+            deactivate company
+
+            controller -> lSFStore : lSFList = getlSFList()
+            activate lSFStore
+            deactivate lSFStore
+
+            loop foreach object in lSFList
+
+                controller -> lSF : getSnsUserDTO()
+                activate lSF
+                    lSF -> sUDto : getSnsUserNumber()
+                    activate sUDto
+                        sUDto --> lSF : snsUserNumber
+                    deactivate sUDto
+                    lSF --> controller : snsUserNumber
+                deactivate lSF
+                controller -> sUStore : sU = getSNSUser(snsUserNumber)
+                activate sUStore
+                deactivate sUStore
+
+                controller -> lSF : getVaccineDTO()
+                activate lSF
+                    lSF -> vDto : getId()
+                    activate vDto
+                        vDto --> lSF : id
+                    deactivate vDto
+                    lSF --> controller : id
+                deactivate lSF
+                controller -> vStore : vaccine = getVaccine(id)
+                activate vStore
+                deactivate vStore
+
+                controller -> lSF : getVaccineDTO()
+                activate lSF
+                    lSF -> vDto : getVtDto()
+                    activate vDto
+                        vDto -> vTDto : getCode()
+                        activate vTDto
+                        vTDto --> vDto : code
+                        deactivate vTDto
+                        vDto --> lSF : code
+                    deactivate vDto
+                    lSF --> controller : code
+                deactivate lSF
+                controller -> vStore : vTStore = getVaccineTypeByCode(code)
+                activate vStore
+                deactivate vStore
+
+                controller -> sU : birthDate = getBirthDate()
+                activate sU
+                deactivate sU
+                controller -> lSF : scheduledDate = getScheduledDate()
+                activate lSF
+                deactivate lSF
+                controller -> date : age = yearsBetweenTwoDates(birthDate, scheduledDate)
+                activate date
+                deactivate date
+
+                controller -> lSF : doseString = getDose()
+                activate lSF
+                deactivate lSF
+                controller -> dose : doseNumber = mapDoseValue(doseString)
+                activate dose
+                deactivate dose
+                controller -> vStore : dose = getDose(v, age, doseNumber)
+                activate vStore
+                deactivate vStore
+
+                controller -> vaStore : createLegacySystemTemporaryData(sU, v, dose, lSF, vc)
+                activate vaStore
+                    ref over vaStore
+                        SD_VaccineAdministration_Create_Temporary_Data
+                    end ref
+                    vaStore --> controller : success
+                deactivate vaStore
+
+                controller -> sVStore : createLegacySystemTemporaryData(lSF, sU, vc, vT)
+                activate sVStore
+                    ref over sVStore
+                        SD_ScheduleVaccine_Create_Temporary_Data
+                    end ref
+                    sVStore --> controller : success
+                deactivate sVStore
+
+                controller -> aSUStore : createLegacySystemTemporaryData(sU, lSF, vc)
+                activate aSUStore
+                    ref over aSUStore
+                        SD_ArrivalSNSUser_Create_Temporary_Data
+                    end ref
+                    aSUStore --> controller : success
+                deactivate aSUStore
+            end
+
+            controller -> vaStore : saveLegacySystemTemporaryData()
+            activate vaStore
+                ref over vaStore
+                    SD_VaccineAdministration_Save_Temporary_Data
+                end ref
+                vaStore --> controller : data saved
+            deactivate vaStore
+
+            controller -> sVStore : saveLegacySystemTemporaryData()
+            activate sVStore
+                ref over sVStore
+                    SD_ScheduleVaccine_Save_Temporary_Data
+                end ref
+                sVStore --> controller : data saved
+            deactivate sVStore
+
+            controller -> aSUStore : saveLegacySystemTemporaryData()
+            activate aSUStore
+                ref over aSUStore
+                    SD_ArrivalSNSUser_Save_Temporary_Data
+                end ref
+                aSUStore --> controller : data saved
+            deactivate aSUStore
+
+            controller --> ui : success
+
+        deactivate controller
+
+        ui --> cc : informs operation success
+    deactivate ui
+
+deactivate cc
+
+@enduml

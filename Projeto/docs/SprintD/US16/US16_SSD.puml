@@ -1,0 +1,42 @@
+@startuml
+autonumber
+actor "Center coordinator" as centercoordinator
+participant ":System" as sys
+
+activate centercoordinator
+centercoordinator -> sys : Requests to analyze the performance of the center
+activate sys
+sys --> centercoordinator : Requests data (i.e date)
+deactivate sys
+
+
+centercoordinator -> sys : Types the requested  data
+activate sys
+sys --> centercoordinator : Requests data (i.e time interval)
+deactivate sys
+
+
+centercoordinator -> sys : Types the requested data
+activate sys
+sys --> centercoordinator : Presents the list with the difference between the  number clients \n arriving and the number of clients leaving the center
+centercoordinator -> sys :requests to analyze the performance of the center
+activate sys
+sys --> centercoordinator : requests data (i.e date)
+deactivate sys
+
+
+centercoordinator -> sys : types the requested  data
+activate sys
+sys --> centercoordinator : requests data (i.e time interval)
+deactivate sys
+
+
+centercoordinator -> sys : types the requested data
+activate sys
+sys --> centercoordinator : presents the list with the difference between the  number clients \n arriving and the number of clients leaving the center
+
+deactivate sys
+
+deactivate centercoordinator
+
+@enduml

@@ -1,0 +1,268 @@
+@startuml
+
+hide methods
+left to right direction
+skinparam classAttributeIconSize 0
+
+class Company {
+    -designation
+}
+
+class SNSUser {
+    -name
+    -sex
+    -phoneNumber
+    -email
+    -address
+    -birthDate
+    -SNSNumber
+    -citizenCardNumber
+}
+
+class Vaccine {
+    -id
+    -name
+    -brand
+}
+
+class VaccineType {
+    -code
+    -description
+    -technology
+}
+
+class VaccineAdministration {
+    -lotNumber
+    -administrationDate
+    -administrationTime
+    -leavingDate
+    -leavingTime
+}
+
+class ScheduleVaccine {
+    -date
+    -time
+}
+
+class VaccinationCenter {
+    -name
+    -phoneNumber
+    -email
+    -address
+    -faxNumber
+    -website
+}
+
+class Slot {
+    -duration
+    -limit
+}
+
+class HealthCareCenter {
+}
+
+class CommunityMassVaccinationCenter {
+}
+
+class Schedule {
+    -openingHours
+    -closingHours
+}
+
+class Employee {
+    -id
+    -name
+    -address
+    -phoneNumber
+    -citizenCardNumber
+    -role
+}
+
+class EmployeeRole {
+    -id
+    -designation
+}
+
+class Administrator {
+}
+
+class Nurse {
+}
+
+class Receptionist {
+}
+
+class CenterCoordinator {
+}
+
+class VaccinationCertificate {
+}
+
+class AdverseReaction {
+    -reaction
+}
+
+class VaccinationProgram {
+}
+
+class Report {
+}
+
+class AnalyzePerformace {
+}
+
+class AgeGroup {
+    -minAge
+    -maxAge
+    -dosesAdministered
+}
+
+class Dose {
+    -doseNumber
+    -dosage
+    -timeIntervalBetweenLastDose
+}
+
+class ArrivalSNSUser {
+    -date
+    -time
+}
+
+class Message {
+    -date
+    -time
+    -textMessage
+}
+
+class Email {
+    -subject
+    -recipientEmail
+}
+
+class SMS {
+    -number
+}
+
+class File {
+    -file
+}
+
+class LegacySystemFile #green {
+}
+
+class SortAlgorithm #green {
+}
+
+class VaccinationStatistics #green {
+    -date1
+    -date2
+}
+
+'----- Generalization -----
+
+CenterCoordinator --|> Employee
+Email --|> Message
+HealthCareCenter --|> VaccinationCenter
+Nurse --|> Employee
+Receptionist --|> Employee
+SMS --|> Message
+CommunityMassVaccinationCenter --|> VaccinationCenter
+
+'--------------------------
+
+'------- Relations --------
+
+Administrator "1" -- "*" VaccinationCenter : create >
+Administrator "1" -- "*" Employee : create >
+
+AdverseReaction "*" -- "1" VaccineAdministration : give <
+
+AgeGroup "1" -- "1..*" Dose : has >
+
+CenterCoordinator "1" -- "*" AnalyzePerformace : evaluate >
+CenterCoordinator "1" -- "*" Report : generate >
+CenterCoordinator "1" -- "1" CommunityMassVaccinationCenter : manage >
+CenterCoordinator "1" -[#green]- "*" LegacySystemFile : imported by <
+
+VaccinationCenter "1" -- "*" AnalyzePerformace : has >
+VaccinationCenter "1" -- "*" Report : has >
+VaccinationCenter "1" -- "*" ArrivalSNSUser : has >
+VaccinationCenter "1" -- "1" Slot : has >
+VaccinationCenter "1" -- "*" Message : contains >
+
+Company "1" -- "*" Administrator : knows >
+Company "1" -- "*" VaccinationCenter : manage >
+Company "1" -- "*" SNSUser : owns >
+Company "1" -- "*" Vaccine : applies >
+Company "1" -- "*" Message : send >
+Company "1" -- "*" VaccineAdministration : applies >
+
+Employee "*" -- "1" Company : employs <
+
+File "*" -- "1" Administrator : can load <
+File "1" -- "*" SNSUser : contains information about >
+
+HealthCareCenter "1" -- "*" VaccineType : can administer >
+
+LegacySystemFile "*" -[#green]- "*" SNSUser : knows >
+LegacySystemFile "*" -[#green]- "*" ScheduleVaccine : has information about >
+LegacySystemFile "*" -[#green]- "*" ArrivalSNSUser : has information about >
+LegacySystemFile "*" -[#green]- "*" VaccineAdministration : has information about >
+
+Message "0..1" -- "1" VaccineAdministration : is issued within a period of time after >
+Message "0..1" -- "1" ScheduleVaccine : emitted on >
+
+Nurse "1" -- "*" ScheduleVaccine : view >
+Nurse "1" -- "*" AdverseReaction : register >
+Nurse "1" -- "*" VaccinationCenter : work >
+Nurse "1" -- "*" VaccineAdministration : view and register >
+
+Receptionist "1" -- "1" ArrivalSNSUser : manage >
+Receptionist "1" -- "*" VaccinationCenter : work >
+
+Schedule "1" -- "1" VaccinationCenter : has <
+
+SNSUser "*" -- "1" Administrator: created by >
+SNSUser "*" -- "1" Receptionist: created by >
+SNSUser "1" -- "*" AdverseReaction : have >
+SNSUser "1" -- "*" Message : receive >
+
+SortAlgorithm "1" -[#green]- "*" LegacySystemFile : sort the information from >
+
+VaccinationCertificate "*" -- "1" Nurse : requested by >
+VaccinationCertificate "*" -- "1" SNSUser : requested by >
+
+VaccinationProgram "*" -- "1" Company : contains <
+
+ArrivalSNSUser "1" -- "*" AnalyzePerformace : based on <
+ArrivalSNSUser "1" -- "*" SNSUser : have >
+ArrivalSNSUser "1" -- "1..*" Nurse : seen by >
+
+Vaccine "*" -- "1" Administrator: created by >
+Vaccine "*" -- "1" VaccineType : is of >
+Vaccine "1" -- "1..*" AgeGroup : constituted >
+Vaccine "*" -[#green]- "*" LegacySystemFile : has information about <
+
+VaccineAdministration "*" -- "1" SNSUser : administered on >
+VaccineAdministration "*" -- "1" Vaccine : is administrated <
+VaccineAdministration "*" -- "1" Dose : has >
+VaccineAdministration "1" -- "1" ScheduleVaccine : fulfilling >
+
+ScheduleVaccine "*" -- "1" VaccinationCenter : has <
+ScheduleVaccine "*" -- "1" Receptionist : requested by >
+ScheduleVaccine "*" -- "1" SNSUser : requested by >
+ScheduleVaccine "*" -- "1" VaccineType : for taking >
+
+VaccineType "*" -- "1" Administrator: created by >
+VaccineType "*" -- "1" Company : promotes administration <
+VaccineType "1" -- "*" CommunityMassVaccinationCenter : administered by >
+VaccinationCenter "1" -- "*" VaccinationStatistics : has >
+'--------------------------
+
+'Aggregation
+
+Employee o-- EmployeeRole
+
+'--------------------------
+
+@enduml
